@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Changed in ISO 10993-1:2025: A Practical Summary for Regulatory Teams — BioEvalPro</title>
+  <meta name="description" content="The sixth edition of ISO 10993-1 was published in November 2025. Here's what changed, what it means for your biological evaluation documentation, and where to focus your transition efforts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --cream-dark: #F0EAE0;
+      --ink: #1A1A2E;
+      --ink-light: #3A3A52;
+      --ink-muted: #6B6B80;
+      --accent: #1B6B4A;
+      --accent-light: #E8F5EE;
+      --accent-hover: #14523A;
+      --amber-flag: #D4880F;
+      --border: #DDD5C8;
+      --shadow-sm: 0 1px 3px rgba(26,26,46,0.06);
+      --shadow-md: 0 4px 16px rgba(26,26,46,0.08);
+      --radius: 6px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Source Sans 3', 'Georgia', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,246,240,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .logo {
+      font-family: 'DM Serif Display', serif; font-size: 20px;
+      color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--accent); }
+    nav a {
+      color: var(--ink-muted); text-decoration: none; font-size: 15px;
+      font-weight: 500; margin-left: 32px; transition: color 0.2s;
+    }
+    nav a:hover { color: var(--ink); }
+
+    /* ARTICLE */
+    .article-header {
+      padding: 80px 0 40px;
+      max-width: 720px;
+      position: relative;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute; top: -64px; left: -200px; right: -200px; height: 300px;
+      background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%);
+      z-index: -1;
+    }
+    .article-back {
+      display: inline-block;
+      font-size: 14px; font-weight: 600; color: var(--accent);
+      text-decoration: none; margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--accent-hover); }
+    .article-back::before { content: '\2190 '; }
+    .article-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; color: var(--ink-muted);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex; gap: 16px;
+    }
+    .article-tag {
+      background: var(--accent-light); color: var(--accent);
+      padding: 2px 10px; border-radius: 4px;
+    }
+    .article-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px; line-height: 1.2; letter-spacing: -0.02em;
+    }
+
+    .article-body {
+      max-width: 720px;
+      padding-bottom: 60px;
+    }
+    .article-body p {
+      margin-bottom: 20px;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--ink-light);
+    }
+    .article-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: var(--ink);
+      margin: 48px 0 16px;
+      letter-spacing: -0.01em;
+    }
+    .article-body h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 36px 0 12px;
+    }
+    .article-body strong { color: var(--ink); }
+    .article-body a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .article-body a:hover { color: var(--accent-hover); }
+
+    .callout {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .callout p { color: var(--ink-light); margin-bottom: 0; }
+    .callout strong { color: var(--accent); }
+
+    .callout-amber {
+      background: #FEF4E4;
+      border-left-color: var(--amber-flag);
+    }
+    .callout-amber strong { color: var(--amber-flag); }
+
+    /* CTA BANNER */
+    .article-cta {
+      background: var(--ink);
+      border-radius: 12px;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin: 48px 0 80px;
+      max-width: 720px;
+    }
+    .article-cta-text h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px; color: #fff; margin-bottom: 8px;
+    }
+    .article-cta-text p { font-size: 15px; color: #B0B0C0; margin-bottom: 0; }
+    .btn-primary {
+      display: inline-block; background: var(--accent); color: #fff;
+      font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600;
+      padding: 14px 32px; border-radius: var(--radius); border: none;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a {
+      font-size: 14px; color: var(--ink-muted); text-decoration: none;
+      margin-left: 24px; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 700px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .header-inner nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html" style="color:var(--ink);">Blog</a>
+      <a href="index.html#waitlist">Get Early Access</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Blog</a>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="article-tag">ISO 10993-1:2025</span>
+        <span>8 min read</span>
+      </div>
+      <h1>What Changed in ISO 10993-1:2025: A Practical Summary for Regulatory Teams</h1>
+    </div>
+
+    <div class="article-body">
+
+      <p>The sixth edition of ISO 10993-1 was published in November 2025, replacing the 2018 version that has guided biological evaluation of medical devices for the past seven years. This is not a minor revision. The standard has been substantially reorganized and introduces several new requirements that will affect how every medical device manufacturer documents biological safety.</p>
+
+      <p>If you're responsible for biological evaluation documentation at a device company, a regulatory consultancy, or a CRO, here's what you need to know &mdash; and where to focus your transition efforts.</p>
+
+      <h2>The big picture: from checklists to risk-based thinking</h2>
+
+      <p>The most fundamental shift in the 2025 edition is the move away from the prescriptive "Table A1" approach that defined the 2018 standard. Previously, Table A1 provided a clear, category-based list of biological tests based on device contact type and duration. Many regulatory teams treated it as a checklist: device touches intact skin for less than 24 hours, check these boxes.</p>
+
+      <p>The 2025 standard replaces that single table with four separate tables that emphasize risk-based evaluation. The question is no longer "which tests does the table say I need?" but rather "what biological safety risks does my specific device actually present, and how do I justify my approach to evaluating them?"</p>
+
+      <div class="callout">
+        <p><strong>What this means in practice:</strong> If your current BEP and BER are structured around Table A1 as a compliance checklist, they will need to be restructured around a risk-based rationale. This doesn't necessarily mean more testing &mdash; it means better justification for the testing you do and don't perform.</p>
+      </div>
+
+      <h2>Key changes that affect your documentation</h2>
+
+      <h3>1. Terminology: endpoints become biological effects</h3>
+
+      <p>The 2025 edition replaces the term "endpoints" with "biological effects" throughout. This is more than a cosmetic change. Terms like biological harm, biological hazard, and biological risk analysis are now aligned with ISO 14971 risk management terminology. Your documentation needs to reflect this updated language &mdash; reviewers will notice if you're still using 2018 terminology.</p>
+
+      <h3>2. ISO 14971 risk management integration</h3>
+
+      <p>The 2025 standard explicitly embeds biological evaluation within the ISO 14971 risk management process. This was always implied, but it's now a clear requirement. Your biological evaluation must demonstrate direct linkage to your risk management file, with explicit risk estimation covering severity, probability, and uncertainty.</p>
+
+      <p>This means your BER can no longer exist as a standalone document that simply lists test results. It must cross-reference your risk management file and show how biological safety considerations feed into your overall risk analysis.</p>
+
+      <div class="callout-amber callout">
+        <p><strong>Common gap:</strong> Many existing BERs reference ISO 14971 in passing but don't demonstrate meaningful integration. Under the 2025 standard, reviewers will be looking for explicit traceability between your biological evaluation findings and your risk management file &mdash; including how you estimated severity, probability, and uncertainty for biological risks.</p>
+      </div>
+
+      <h3>3. Foreseeable misuse documentation</h3>
+
+      <p>One of the most significant additions in the 2025 standard is the requirement to address reasonably foreseeable misuse in your biological evaluation. This means considering use outside a device's intended purpose, looking at the full device lifecycle, and documenting the biological safety implications of predictable human behavior patterns.</p>
+
+      <p>You're not expected to address every possible misuse scenario. The standard focuses on patterns that are predictable based on real-world experience with similar devices. But you do need to document what you considered, what you assessed, and why certain scenarios were or weren't included in your evaluation.</p>
+
+      <h3>4. Exposure duration refinements</h3>
+
+      <p>The 2025 edition refines the criteria for exposure duration categories based on contact days rather than the broader categories used previously. This is significant because a change in exposure category can shift a device into prolonged or long-term use brackets, potentially triggering additional biological effect evaluations such as genotoxicity or carcinogenicity assessments.</p>
+
+      <p>Review your device's exposure categorization against the updated criteria. If your device's category changes under the new definitions, your entire evaluation strategy may need to be revisited.</p>
+
+      <h3>5. Changes to specific biological effects</h3>
+
+      <p>Several specific areas have been updated:</p>
+
+      <p><strong>Genotoxicity</strong> now has greater scope for assessors to define what is needed based on state-of-the-art knowledge. Additionally, genotoxicity is now listed as an effect for consideration for devices that contact intact mucosal membranes for a prolonged period, which was not explicitly required before.</p>
+
+      <p><strong>Material-mediated pyrogenicity</strong> testing is now recommended only for devices incorporating constituents that have previously elicited a pyrogenic response or with unknown pyrogenic potential. This is a narrowing of when this test is expected.</p>
+
+      <p><strong>Local effects after tissue contact</strong> replaces the previous "effects after implantation" terminology, reflecting that biological responses can occur from non-implanted devices as well.</p>
+
+      <h2>What doesn't change</h2>
+
+      <p>It's worth noting what the 2025 standard does not require:</p>
+
+      <p><strong>No mandatory re-testing.</strong> Devices with acceptable safety histories are not required to undergo new testing solely because the standard was updated. However, your existing data must be systematically reviewed and documented under the new framework to confirm that your safety conclusions still hold.</p>
+
+      <p><strong>Justification for testing not conducted is still acceptable.</strong> The standard maintains that you can justify not performing certain evaluations, but the 2025 edition makes the requirement for that justification more explicit. If you're not testing for something, your rationale needs to be clearly documented.</p>
+
+      <h2>Transition timeline</h2>
+
+      <p>A two-year transition period has been proposed by the relevant committees, which would extend through approximately late 2027. However, no official grace period has been confirmed in the EU. Notified bodies are already treating the 2025 edition as state of the art under the Medical Device Regulation, which means they may expect to see updated documentation sooner rather than later.</p>
+
+      <p>In the United States, the FDA continues to recognize the 2018 edition and has not yet confirmed acceptance of the 2025 version. The U.S. delegation notably voted against the FDIS at each stage, so the timeline for FDA recognition remains unclear.</p>
+
+      <div class="callout">
+        <p><strong>Practical recommendation:</strong> Don't wait for official transition deadlines. If you have submissions coming up in 2026 or 2027, discuss timing with your notified body now. For new submissions, consider aligning with the 2025 standard from the outset. For existing documentation, prioritize a gap analysis to identify where your current BEP and BER fall short of the new requirements.</p>
+      </div>
+
+      <h2>Where to start</h2>
+
+      <p>If you're responsible for transitioning your organization's biological evaluation documentation, here's a practical starting point:</p>
+
+      <p><strong>First, read the standard.</strong> The 2025 edition has been reorganized to be more user-friendly than previous versions. The structure follows a logical flow from planning through evaluation and reporting, with clearer section-by-section requirements for the biological evaluation plan and report.</p>
+
+      <p><strong>Second, perform a gap analysis.</strong> Compare your existing BEP and BER against the 2025 requirements. Focus on the areas most likely to create issues: risk management integration, foreseeable misuse documentation, exposure categorization, and whether your evaluation rationale is structured around risk-based thinking rather than Table A1 checkboxes.</p>
+
+      <p><strong>Third, update your internal processes.</strong> Your SOPs for biological evaluation planning and reporting should be aligned with the new requirements. This includes updating templates, review checklists, and any training materials that reference the 2018 standard.</p>
+
+      <p><strong>Fourth, engage your notified body or regulatory contact early.</strong> Proactively discussing your transition plan demonstrates good regulatory practice and helps you understand what your specific reviewer will expect.</p>
+
+      <p>The 2025 standard is a significant evolution in how biological safety is evaluated and documented. But for teams that have already been following risk-based principles, the transition may be less disruptive than it appears. The key is to start the gap analysis now, prioritize the areas with the highest impact, and build your updated documentation on a genuine risk-based foundation rather than a cosmetic relabeling of your existing approach.</p>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Need a structured gap analysis?</h3>
+          <p>BioEvalPro evaluates your full 10993 package against the 2025 standard and tells you exactly what needs fixing.</p>
+        </div>
+        <a href="index.html#waitlist" class="btn-primary">Join Waitlist</a>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@bioevalpro.com">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

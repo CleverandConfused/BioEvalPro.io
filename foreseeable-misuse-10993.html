@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foreseeable Misuse in ISO 10993-1:2025: What You Need to Document — BioEvalPro</title>
+  <meta name="description" content="Foreseeable misuse is a new requirement in ISO 10993-1:2025. What qualifies, how to assess it, and what your biological evaluation documentation needs to include.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --cream-dark: #F0EAE0;
+      --ink: #1A1A2E;
+      --ink-light: #3A3A52;
+      --ink-muted: #6B6B80;
+      --accent: #1B6B4A;
+      --accent-light: #E8F5EE;
+      --accent-hover: #14523A;
+      --amber-flag: #D4880F;
+      --border: #DDD5C8;
+      --shadow-sm: 0 1px 3px rgba(26,26,46,0.06);
+      --shadow-md: 0 4px 16px rgba(26,26,46,0.08);
+      --radius: 6px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Source Sans 3', 'Georgia', serif;
+      background: var(--cream); color: var(--ink);
+      line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,246,240,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before {
+      content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px;
+      background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1;
+    }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; transition: color 0.2s; }
+    .article-back:hover { color: var(--accent-hover); }
+    .article-back::before { content: '\2190 '; }
+    .article-meta {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted);
+      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px;
+    }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding-bottom: 60px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body strong { color: var(--ink); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { color: var(--accent-hover); }
+    .callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; }
+    .callout p { color: var(--ink-light); margin-bottom: 0; }
+    .callout strong { color: var(--accent); }
+    .callout-amber { background: #FEF4E4; border-left-color: var(--amber-flag); }
+    .callout-amber strong { color: var(--amber-flag); }
+
+    /* EXAMPLE BOX */
+    .example-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+    .example-box-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .example-box p { margin-bottom: 10px; }
+    .example-box p:last-child { margin-bottom: 0; }
+
+    .article-cta {
+      background: var(--ink); border-radius: 12px; padding: 40px 48px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      margin: 48px 0 80px; max-width: 720px;
+    }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; margin-bottom: 8px; }
+    .article-cta-text p { font-size: 15px; color: #B0B0C0; margin-bottom: 0; }
+    .btn-primary {
+      display: inline-block; background: var(--accent); color: #fff;
+      font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600;
+      padding: 14px 32px; border-radius: var(--radius); border: none;
+      cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    @media (max-width: 700px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .header-inner nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html" style="color:var(--ink);">Blog</a>
+      <a href="index.html#waitlist">Get Early Access</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Blog</a>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="article-tag">ISO 10993-1:2025</span>
+        <span>9 min read</span>
+      </div>
+      <h1>Foreseeable Misuse in ISO 10993-1:2025: What You Need to Document</h1>
+    </div>
+
+    <div class="article-body">
+
+      <p>Of all the new requirements introduced in the sixth edition of ISO 10993-1, foreseeable misuse documentation may be the one that creates the most uncertainty for regulatory teams. It's entirely new territory for biological evaluation &mdash; the 2018 standard didn't specifically address it &mdash; and the guidance on how to implement it is still developing.</p>
+
+      <p>This article covers what the 2025 standard actually requires, what qualifies as foreseeable misuse in the context of biological evaluation, and how to approach the documentation without overcomplicating it.</p>
+
+      <h2>What the standard requires</h2>
+
+      <p>The 2025 edition of ISO 10993-1 makes it clear that the biological evaluation must consider the biological safety implications of reasonably foreseeable misuse. This means looking beyond intended use to consider realistic scenarios where the device might be used differently than designed &mdash; and assessing whether those scenarios introduce biological risks that your evaluation needs to address.</p>
+
+      <p>The standard frames this within the existing ISO 14971 risk management process, where reasonably foreseeable misuse has long been a consideration. What's new is the explicit connection to biological evaluation specifically. Your BER now needs to demonstrate that foreseeable misuse was considered as part of your biological safety assessment, not just your general risk analysis.</p>
+
+      <div class="callout">
+        <p><strong>Important distinction:</strong> The standard refers to "reasonably foreseeable" misuse, not all possible misuse. You are not expected to anticipate every conceivable way someone might misuse your device. The focus is on predictable human behavior patterns based on real-world experience with similar devices and realistic usage scenarios.</p>
+      </div>
+
+      <h2>What qualifies as foreseeable misuse?</h2>
+
+      <p>Foreseeable misuse in the context of biological evaluation generally falls into a few categories. Understanding these categories helps you structure your assessment without trying to enumerate every possibility.</p>
+
+      <h3>Extended use beyond labeled duration</h3>
+
+      <p>If your device is labeled for limited contact duration, the most common foreseeable misuse is that a user leaves it in contact with tissue for longer than intended. This is predictable human behavior &mdash; patients forget to remove wound dressings on schedule, clinicians leave temporary devices in place longer than recommended during busy shifts, or a device designed for single-day use gets reused across multiple days.</p>
+
+      <div class="example-box">
+        <div class="example-box-label">Example</div>
+        <p>A wound dressing intended for 24-hour contact that is foreseeably left in place for 48&ndash;72 hours. The biological evaluation should consider whether the extended contact duration changes the exposure category or introduces additional leachable extraction that wasn't accounted for in the standard evaluation.</p>
+      </div>
+
+      <h3>Use on unintended tissue types</h3>
+
+      <p>A device designed for contact with intact skin might foreseeably come into contact with compromised skin or mucosal membranes. A device intended for one anatomical site might be used at a different site with different tissue sensitivity. The biological implications of contact with unintended tissue types can be meaningfully different.</p>
+
+      <div class="example-box">
+        <div class="example-box-label">Example</div>
+        <p>An adhesive sensor patch designed for placement on intact skin of the upper arm that users predictably place on other body locations with thinner or more sensitive skin. The biological evaluation should consider whether sensitization or irritation risks change with different placement sites.</p>
+      </div>
+
+      <h3>Use in unintended patient populations</h3>
+
+      <p>A device evaluated for use in adults might foreseeably be used in pediatric patients, where biological responses can differ. A device not specifically evaluated for use in immunocompromised patients might be used in that population. Consider whether realistic population variations affect your biological safety conclusions.</p>
+
+      <h3>Off-label clinical applications</h3>
+
+      <p>If a device is commonly used for purposes beyond its labeled indication &mdash; and this is a known pattern in clinical practice &mdash; the biological safety implications of that off-label use should be considered. This is particularly relevant for devices with broad clinical applicability where off-label use is well-documented.</p>
+
+      <h3>Reprocessing and reuse</h3>
+
+      <p>For devices intended for single use, foreseeable reprocessing and reuse is a relevant consideration, particularly in settings where economic pressures or supply constraints make reuse a predictable behavior. The biological evaluation should consider whether reprocessing introduces material degradation, residual chemical agents, or altered surface properties that affect biocompatibility.</p>
+
+      <h2>How to approach the documentation</h2>
+
+      <p>The goal is not to produce an exhaustive risk analysis for every conceivable misuse scenario. The goal is to demonstrate that you considered foreseeable misuse systematically and assessed whether any of those scenarios introduce biological risks that your standard evaluation doesn't cover.</p>
+
+      <h3>Step 1: Identify relevant misuse scenarios</h3>
+
+      <p>Start with your ISO 14971 risk management file. If you've already identified foreseeable misuse scenarios as part of your general risk analysis, those are your starting point. Review them through a biological safety lens specifically: does this misuse scenario change the nature, duration, or intensity of tissue contact in a way that could introduce additional biological risks?</p>
+
+      <p>If your risk management file doesn't already address foreseeable misuse comprehensively, you'll need to develop those scenarios. Sources of information include post-market surveillance data, clinical literature for similar devices, complaint data, and input from clinicians who use the device or similar devices regularly.</p>
+
+      <h3>Step 2: Assess biological safety implications</h3>
+
+      <p>For each relevant scenario, assess whether the misuse changes your biological evaluation conclusions. The key questions are:</p>
+
+      <p><strong>Does it change the exposure category?</strong> Extended use duration might shift your device from limited to prolonged contact, which could trigger additional biological effect evaluations.</p>
+
+      <p><strong>Does it change the tissue contact type?</strong> Contact with a different tissue type might require evaluation of additional biological effects not covered in your standard assessment.</p>
+
+      <p><strong>Does it introduce new chemical exposure risks?</strong> Extended contact or contact with different tissues might increase extractable or leachable exposure beyond what your chemical characterization addresses.</p>
+
+      <p><strong>Does it change the risk-benefit analysis?</strong> Even if additional biological risks are identified, they may be acceptable in the context of the device's clinical benefit, particularly if the misuse scenario represents an edge case rather than routine behavior.</p>
+
+      <h3>Step 3: Document your assessment</h3>
+
+      <p>Your BER should include a section addressing foreseeable misuse that covers three things:</p>
+
+      <p><strong>What you considered.</strong> List the foreseeable misuse scenarios you identified and briefly explain why each was considered foreseeable (referencing your risk management file, literature, or clinical experience).</p>
+
+      <p><strong>What you assessed.</strong> For each scenario that could affect biological safety, describe the assessment you performed. This might range from a brief justification that the misuse doesn't change your conclusions to a more detailed analysis of additional exposure or tissue contact considerations.</p>
+
+      <p><strong>What you concluded.</strong> State whether your existing biological evaluation adequately covers the identified misuse scenarios, or whether additional data or testing is needed. If additional risks were identified, describe how they're addressed in your risk management process.</p>
+
+      <div class="callout-amber callout">
+        <p><strong>Common pitfall:</strong> Don't simply state "foreseeable misuse was considered" without providing evidence. A one-sentence assertion that you thought about it is insufficient. Reviewers want to see the scenarios you identified, the rationale for including or excluding them, and the conclusions you reached. The depth should be proportionate to your device's risk profile, but even low-risk devices need more than a blanket statement.</p>
+      </div>
+
+      <h2>How much detail is enough?</h2>
+
+      <p>The depth of your foreseeable misuse assessment should be proportionate to the risk profile of your device and the nature of the foreseeable misuse scenarios.</p>
+
+      <p><strong>For low-risk devices with minimal foreseeable misuse implications</strong> (for example, a bandage where the most foreseeable misuse is leaving it on an extra day), a concise section identifying the scenario, briefly assessing the biological impact, and concluding that your existing evaluation is adequate may be sufficient. This might be half a page to a full page in your BER.</p>
+
+      <p><strong>For higher-risk or implantable devices</strong> where foreseeable misuse could significantly alter tissue contact, exposure duration, or patient population, a more detailed assessment is appropriate. This might include referenced literature, additional chemical characterization considerations, or specific risk estimation for misuse scenarios. This could run several pages depending on the number of relevant scenarios.</p>
+
+      <p>The standard doesn't prescribe a specific format or depth. Use your professional judgment, scaled to the risk profile. When in doubt, err on the side of documenting your reasoning rather than leaving it implicit.</p>
+
+      <h2>Connecting to your risk management file</h2>
+
+      <p>Since the 2025 standard ties foreseeable misuse to the ISO 14971 framework, your biological evaluation's treatment of foreseeable misuse should be traceable to and consistent with your risk management file. This means:</p>
+
+      <p>The misuse scenarios identified in your BER should align with those in your risk management file. If your risk management file identifies foreseeable misuse scenarios that your BER doesn't address from a biological perspective, that's a potential gap a reviewer could flag.</p>
+
+      <p>The risk estimation approach should be consistent. If your risk management file uses specific scales for severity and probability, your biological evaluation's assessment of misuse-related risks should use the same scales or explicitly explain why a different approach was taken.</p>
+
+      <p>This cross-referencing is part of the broader ISO 14971 integration requirement in the 2025 standard. Foreseeable misuse is one area where that integration needs to be particularly visible.</p>
+
+      <h2>What reviewers will look for</h2>
+
+      <p>Based on how notified bodies have historically approached new requirements, expect reviewers to check for three things:</p>
+
+      <p><strong>Evidence of consideration.</strong> Is there a section in your BER that specifically addresses foreseeable misuse? If not, that's an immediate flag.</p>
+
+      <p><strong>Substance behind the assessment.</strong> Did you identify specific scenarios, or did you make a generic statement? Specific scenarios with reasoned conclusions are credible. Vague assertions are not.</p>
+
+      <p><strong>Consistency with risk management.</strong> Does your biological evaluation's treatment of foreseeable misuse align with what's in your ISO 14971 risk management file? Inconsistencies between the two documents create audit findings.</p>
+
+      <p>The foreseeable misuse requirement is new, and reviewers are still developing their expectations. Teams that make a genuine effort to address it &mdash; even imperfectly &mdash; will be in a much stronger position than those that ignore it or treat it as a checkbox. This is an area where demonstrating thoughtful risk-based reasoning matters more than getting every detail perfect.</p>
+
+      <div class="callout">
+        <p><strong>Bottom line:</strong> Foreseeable misuse documentation doesn't need to be an enormous addition to your BER. For most devices, it's a structured section that identifies realistic scenarios, assesses their biological implications, and documents your conclusions with traceability to your risk management file. Start with what you know from your ISO 14971 process and build from there.</p>
+      </div>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Is your BER ready for the 2025 standard?</h3>
+          <p>BioEvalPro checks every section &mdash; including foreseeable misuse &mdash; against current requirements.</p>
+        </div>
+        <a href="index.html#waitlist" class="btn-primary">Join Waitlist</a>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@bioevalpro.com">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
