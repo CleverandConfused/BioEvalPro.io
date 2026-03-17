@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO 10993 Biological Evaluation Gap Analysis — Pre-Submission Review Tool</title>
+  <meta name="description" content="Evaluate your complete ISO 10993 biological evaluation package against notified body expectations. Score your readiness. Fix gaps before you submit. A fraction of the cost of traditional consulting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --cream-dark: #F0EAE0;
+      --ink: #1A1A2E;
+      --ink-light: #3A3A52;
+      --ink-muted: #6B6B80;
+      --accent: #1B6B4A;
+      --accent-light: #E8F5EE;
+      --accent-hover: #14523A;
+      --red-flag: #C0392B;
+      --amber-flag: #D4880F;
+      --green-pass: #1B6B4A;
+      --border: #DDD5C8;
+      --shadow-sm: 0 1px 3px rgba(26,26,46,0.06);
+      --shadow-md: 0 4px 16px rgba(26,26,46,0.08);
+      --shadow-lg: 0 8px 32px rgba(26,26,46,0.10);
+      --radius: 6px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', 'Georgia', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,246,240,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--accent); }
+    nav a {
+      color: var(--ink-muted);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      margin-left: 32px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 100px 0 80px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -64px;
+      left: 0;
+      right: 0;
+      height: 500px;
+      background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%);
+      z-index: -1;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 48px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 19px;
+      color: var(--ink-light);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--accent-hover); }
+    .btn-secondary::after { content: ' \2192'; }
+
+    /* ── HERO CARD ── */
+    .hero-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      animation: cardFadeIn 0.8s ease-out 0.3s both;
+    }
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-topbar {
+      background: var(--ink);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--ink-muted);
+    }
+    .card-dot.r { background: var(--red-flag); }
+    .card-dot.y { background: var(--amber-flag); }
+    .card-dot.g { background: var(--green-pass); }
+    .card-topbar-title {
+      color: #999;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    .card-body { padding: 24px 20px; }
+    .card-score {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .card-score-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 52px;
+      color: var(--amber-flag);
+      line-height: 1;
+    }
+    .card-score-label {
+      font-size: 14px;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+    .card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid var(--cream-dark);
+      font-size: 14px;
+    }
+    .card-row-label { color: var(--ink-light); }
+    .status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .status-pass { background: var(--accent-light); color: var(--green-pass); }
+    .status-flag { background: #FEF4E4; color: var(--amber-flag); }
+    .status-fail { background: #FDECEA; color: var(--red-flag); }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 0; }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 18px;
+      color: var(--ink-light);
+      max-width: 600px;
+      line-height: 1.65;
+    }
+
+    /* ── PROBLEM ── */
+    .problem {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 16px;
+      padding: 64px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .problem .section-label { color: var(--amber-flag); }
+    .problem .section-title { color: #fff; }
+    .problem-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .problem-stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 44px;
+      color: var(--amber-flag);
+      margin-bottom: 8px;
+    }
+    .problem-stat-text {
+      color: #B0B0C0;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    /* ── STEPS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .step-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 48px;
+      color: var(--cream-dark);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .step-title {
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+    .step-desc {
+      font-size: 15px;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    /* ── COVERAGE ── */
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .cov-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .cov-item:hover {
+      box-shadow: var(--shadow-sm);
+      border-color: var(--accent);
+    }
+    .cov-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .cov-title {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .cov-desc {
+      font-size: 14px;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+    .cov-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      background: var(--cream-dark);
+      color: var(--ink-muted);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+    .cov-badge.new {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    /* ── AUDIENCES ── */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .audience-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px 28px;
+      transition: box-shadow 0.2s;
+    }
+    .audience-card:hover { box-shadow: var(--shadow-md); }
+    .audience-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .audience-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .audience-card p {
+      font-size: 15px;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    /* ── PRICING ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .price-card.featured {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .price-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 16px;
+      border-radius: 100px;
+    }
+    .price-card:hover { box-shadow: var(--shadow-md); }
+    .price-tier {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .price-amount {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px;
+      margin-bottom: 4px;
+    }
+    .price-unit {
+      font-size: 14px;
+      color: var(--ink-muted);
+      margin-bottom: 20px;
+    }
+    .price-features {
+      text-align: left;
+      font-size: 14px;
+      color: var(--ink-light);
+      line-height: 2;
+    }
+    .price-features li {
+      list-style: none;
+      padding-left: 20px;
+      position: relative;
+    }
+    .price-features li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .price-cta { margin-top: 28px; }
+    .price-card .btn-primary { width: 100%; text-align: center; }
+    .btn-outline {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: transparent;
+      color: var(--accent);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      border: 2px solid var(--accent);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+
+    /* ── TRUST ── */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .trust-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 24px;
+      font-size: 14px;
+      color: var(--ink-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .trust-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--accent-light);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── WAITLIST ── */
+    .waitlist {
+      background: var(--ink);
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .waitlist .section-label { color: var(--amber-flag); }
+    .waitlist .section-title { color: #fff; margin: 0 auto 12px; }
+    .waitlist .section-desc { color: #B0B0C0; margin: 0 auto 40px; text-align: center; }
+    .waitlist-form {
+      display: flex;
+      max-width: 480px;
+      margin: 0 auto;
+      gap: 12px;
+    }
+    .waitlist-input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1px solid #3A3A52;
+      border-radius: var(--radius);
+      background: #2A2A42;
+      color: #fff;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .waitlist-input::placeholder { color: #6B6B80; }
+    .waitlist-input:focus { border-color: var(--accent); }
+    .waitlist-note {
+      font-size: 13px;
+      color: #6B6B80;
+      margin-top: 16px;
+    }
+    .waitlist-success {
+      display: none;
+      font-size: 17px;
+      color: #68D391;
+      margin-top: 12px;
+    }
+
+    /* ── CONTACT FORM ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 560px;
+      margin-top: 32px;
+    }
+    .contact-grid .full { grid-column: 1 / -1; }
+    .contact-input, .contact-textarea {
+      padding: 14px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .contact-input:focus, .contact-textarea:focus { border-color: var(--accent); }
+    .contact-input::placeholder, .contact-textarea::placeholder { color: var(--ink-muted); }
+    .contact-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .contact-success {
+      display: none;
+      font-size: 17px;
+      color: var(--accent);
+      margin-top: 16px;
+    }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 48px; max-width: 720px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-q {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--ink-muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+    .faq-item.open .faq-q::after { content: '\2212'; }
+    .faq-a {
+      font-size: 15px;
+      color: var(--ink-muted);
+      line-height: 1.65;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 300px; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 14px;
+      color: var(--ink-muted);
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--ink-muted);
+      text-decoration: none;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero h1 { font-size: 36px; }
+      .hero-card { max-width: 400px; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .coverage-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .problem { padding: 40px 28px; }
+      .problem-stats { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 60px 0 48px; }
+      .hero h1 { font-size: 30px; }
+      .steps { grid-template-columns: 1fr; }
+      .waitlist-form { flex-direction: column; }
+      .header-inner nav { display: none; }
+      .section-title { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="#how">How It Works</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#waitlist">Get Early Access</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge">Coming Soon &mdash; Join the Waitlist</div>
+      <h1>Know exactly what's wrong with your 10993 package <em>before</em> the auditor does.</h1>
+      <p class="hero-sub">Upload your biological evaluation documentation. Receive a structured gap report &mdash; every section scored against ISO 10993-1:2025 requirements, with specific remediation steps. A fraction of the cost of traditional consulting.</p>
+      <a href="#waitlist" class="btn-primary">Get Early Access</a>
+      <a href="#how" class="btn-secondary">See How It Works</a>
+    </div>
+    <div class="hero-card">
+      <div class="card-topbar">
+        <div class="card-dot r"></div>
+        <div class="card-dot y"></div>
+        <div class="card-dot g"></div>
+        <span class="card-topbar-title">gap-report.pdf</span>
+      </div>
+      <div class="card-body">
+        <div class="card-score">
+          <div class="card-score-num">72</div>
+          <div class="card-score-label">Readiness Score<br><strong style="color:var(--amber-flag)">3 areas need attention</strong></div>
+        </div>
+        <div class="card-row">
+          <span class="card-row-label">BEP Completeness</span>
+          <span class="status status-pass">PASS</span>
+        </div>
+        <div class="card-row">
+          <span class="card-row-label">Chemical Characterization (10993-18)</span>
+          <span class="status status-pass">PASS</span>
+        </div>
+        <div class="card-row">
+          <span class="card-row-label">Toxicological Risk Assessment (10993-17)</span>
+          <span class="status status-flag">FLAG</span>
+        </div>
+        <div class="card-row">
+          <span class="card-row-label">Risk Management Integration</span>
+          <span class="status status-fail">FAIL</span>
+        </div>
+        <div class="card-row">
+          <span class="card-row-label">2025 Version Compliance</span>
+          <span class="status status-flag">FLAG</span>
+        </div>
+        <div class="card-row">
+          <span class="card-row-label">Foreseeable Misuse Coverage</span>
+          <span class="status status-fail">FAIL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section>
+  <div class="container">
+    <div class="problem fade-up">
+      <div class="section-label">The Problem</div>
+      <div class="section-title">Your 10993 package has gaps you haven't found yet.</div>
+      <p style="color:#B0B0C0; font-size:17px; max-width:640px; line-height:1.65;">
+        ISO 10993-1:2025 introduced new requirements that most existing documentation doesn't address. Notified bodies are already auditing against the updated standard &mdash; and rejections cost months.
+      </p>
+      <div class="problem-stats">
+        <div>
+          <div class="problem-stat-num">$2k&ndash;8k</div>
+          <div class="problem-stat-text">Typical cost of a single gap analysis from an outside consultant</div>
+        </div>
+        <div>
+          <div class="problem-stat-num">3&ndash;6 mo</div>
+          <div class="problem-stat-text">Average delay from a notified body rejection requiring revised biocompatibility documentation</div>
+        </div>
+        <div>
+          <div class="problem-stat-num">12+</div>
+          <div class="problem-stat-text">Distinct ISO 10993 sub-standards that must be addressed across the full package</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container fade-up">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">From upload to remediation plan in 24 hours.</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Upload your package</div>
+        <div class="step-desc">Upload your BER, BEP, or full 10993 documentation as PDF or Word files.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Select evaluation type</div>
+        <div class="step-desc">New submission, 2018-to-2025 transition review, or legacy compliance check.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Every section is evaluated</div>
+        <div class="step-desc">Your documents are evaluated against a comprehensive requirements framework built from regulatory domain expertise and aligned with notified body expectations.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Receive your gap report</div>
+        <div class="step-desc">Section-by-section scoring with plain language explanations and specific remediation steps, delivered within 24 hours. Export as PDF.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section id="coverage" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container fade-up">
+    <div class="section-label">Full Series Coverage</div>
+    <div class="section-title">Every part of the 10993 series. One evaluation.</div>
+    <p class="section-desc">Each area receives a Pass, Flag, or Fail status &mdash; with a plain language explanation of why notified bodies challenge it, and what to fix.</p>
+    <div class="coverage-grid">
+      <div class="cov-item">
+        <div class="cov-icon">1</div>
+        <div>
+          <div class="cov-title">Biological Evaluation Plan</div>
+          <div class="cov-desc">Strategy justification, endpoint selection, and rationale completeness.</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">1</div>
+        <div>
+          <div class="cov-title">BER Structure &amp; Narrative</div>
+          <div class="cov-desc">Overall coherence against ISO 10993-1:2025 requirements.</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">18</div>
+        <div>
+          <div class="cov-title">Chemical Characterization</div>
+          <div class="cov-desc">Material identification, extractable/leachable coverage per Part 18.</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">5</div>
+        <div>
+          <div class="cov-title">Cytotoxicity</div>
+          <div class="cov-desc">Test documentation and result interpretation per Part 5.</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">10</div>
+        <div>
+          <div class="cov-title">Sensitization &amp; Irritation</div>
+          <div class="cov-desc">Protocol and endpoint documentation per Part 10.</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">3</div>
+        <div>
+          <div class="cov-title">Genotoxicity</div>
+          <div class="cov-desc">Risk justification and test selection rationale per Part 3.</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">17</div>
+        <div>
+          <div class="cov-title">Toxicological Risk Assessment</div>
+          <div class="cov-desc">TRA methodology and tolerable exposure calculations per Part 17.</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">&rarr;</div>
+        <div>
+          <div class="cov-title">ISO 14971 Risk Integration</div>
+          <div class="cov-desc">Risk management file cross-referencing &mdash; severity, probability, uncertainty.</div>
+          <div class="cov-badge new">New in 2025</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">&rarr;</div>
+        <div>
+          <div class="cov-title">Foreseeable Misuse</div>
+          <div class="cov-desc">Documentation of misuse scenarios and their biological safety implications.</div>
+          <div class="cov-badge new">New in 2025</div>
+        </div>
+      </div>
+      <div class="cov-item">
+        <div class="cov-icon">&Delta;</div>
+        <div>
+          <div class="cov-title">2018 &rarr; 2025 Version Gap Flagging</div>
+          <div class="cov-desc">Identifies elements compliant with 2018 but deficient under the 2025 standard.</div>
+          <div class="cov-badge new">Transition Support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Built For</div>
+    <div class="section-title">Designed for the people who do this work every day.</div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-role">Consultants</div>
+        <h3>Independent RA professionals</h3>
+        <p>Managing multiple client submissions? Run every package through a structured check before delivery. Consultant mode lets you manage all clients from one dashboard.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-role">Startups</div>
+        <h3>Device company RA leads</h3>
+        <p>Small regulatory teams don't always have the bandwidth for a full internal gap review. Get notified body-level scrutiny on your documentation before it ships.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-role">CROs</div>
+        <h3>Contract research organizations</h3>
+        <p>Handling regulatory submissions as a service? Integrate structured quality checks into your workflow. Enterprise tier includes multi-user access and API integration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container fade-up" style="text-align:center; max-width:700px;">
+    <div class="section-label">Pricing</div>
+    <div class="section-title">A fraction of the $2,000&ndash;$8,000 that other gap analysis services cost.</div>
+    <p class="section-desc" style="margin:0 auto 20px; text-align:center;">Traditional consultant-led gap analysis runs $2,000&ndash;$8,000 per engagement. Our tool delivers the same depth of first-pass analysis at a fraction of the cost &mdash; with per-submission and monthly subscription options available.</p>
+    <p style="font-size:16px; color:var(--ink-light); margin-bottom:36px; line-height:1.65;">We're finalizing pricing ahead of launch. Join the waitlist for early access and priority pricing, or reach out directly to discuss your needs.</p>
+    <a href="#waitlist" class="btn-primary" style="margin-right:16px;">Join Waitlist</a>
+    <a href="mailto:hello@bioevalpro.com" class="btn-secondary">Request Pricing</a>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Security &amp; Trust</div>
+    <div class="section-title">Your documentation is handled with care.</div>
+    <p class="section-desc">We know what's in these files. Enterprise-grade infrastructure with a security posture built for regulated industries.</p>
+    <div class="trust-row">
+      <div class="trust-item"><div class="trust-icon">&#128274;</div> Encryption in transit and at rest</div>
+      <div class="trust-item"><div class="trust-icon">&#128465;</div> Documents deleted after processing</div>
+      <div class="trust-item"><div class="trust-icon">&#127466;&#127482;</div> GDPR compliant &mdash; DPA available</div>
+      <div class="trust-item"><div class="trust-icon">&#9729;</div> Enterprise cloud hosting (Azure / AWS)</div>
+      <div class="trust-item"><div class="trust-icon">&#128203;</div> SOC 2 on roadmap</div>
+    </div>
+    <p style="font-size:14px; color:var(--ink-muted); margin-top:32px; max-width:640px; line-height:1.6;">
+      <strong>Disclaimer:</strong> This tool is a pre-submission gap checker designed to complement your regulatory expertise &mdash; not replace it. All output should be validated by a qualified regulatory affairs professional. This is not a compliance guarantee.
+    </p>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="waitlist" id="waitlist">
+  <div class="container">
+    <div class="section-label">Early Access</div>
+    <div class="section-title">Be the first to evaluate your 10993 package.</div>
+    <p class="section-desc">We're onboarding early users now. Join the waitlist and we'll reach out when your access is ready.</p>
+    <form class="waitlist-form" id="waitlistForm" onsubmit="return handleWaitlist(event)">
+      <input type="email" name="email" class="waitlist-input" placeholder="you@company.com" required aria-label="Email address">
+      <input type="hidden" name="formType" value="waitlist">
+      <button type="submit" class="btn-primary">Join Waitlist</button>
+    </form>
+    <p class="waitlist-note">No spam. We'll only email you about access and product updates.</p>
+    <p class="waitlist-success" id="waitlistSuccess">You're on the list. We'll be in touch soon.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <div class="section-title">Common questions.</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does this replace my regulatory consultant?</div>
+        <div class="faq-a">No. This is a pre-flight checker &mdash; it catches gaps, missing sections, and non-compliant justifications before your consultant or auditor does. Think of it as a structured first-pass review that saves your expert reviewers time and catches the obvious issues early.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which version of ISO 10993-1 does it evaluate against?</div>
+        <div class="faq-a">Primarily the 2025 standard, with awareness of the 2018-to-2025 delta. You can select your evaluation type &mdash; new submission, transition review, or legacy check &mdash; and the analysis adjusts accordingly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What file formats do you accept?</div>
+        <div class="faq-a">PDF and Word (.docx) files. You can upload individual documents or a complete package.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is my documentation handled?</div>
+        <div class="faq-a">Your files are encrypted in transit and at rest, evaluated through our secure analysis process, and deleted after your report is delivered. We do not retain your documentation. Enterprise cloud hosting with GDPR compliance and a DPA available on request.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much does it cost?</div>
+        <div class="faq-a">We offer both per-submission and monthly subscription options at a fraction of the $2,000&ndash;$8,000 that traditional consultant-led gap analysis costs. We're finalizing pricing ahead of launch &mdash; join the waitlist or reach out to us directly to discuss your needs and get priority pricing.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does the evaluation take?</div>
+        <div class="faq-a">You'll receive your gap report within 24 hours of uploading your documentation. Each report includes section-by-section scoring, plain language explanations, and specific remediation steps.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can it check my Clinical Evaluation Report too?</div>
+        <div class="faq-a">A CER gap scanner module is on our expansion roadmap. The initial launch focuses on the full ISO 10993 biological evaluation series.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:#fff; border-top:1px solid var(--border);">
+  <div class="container fade-up">
+    <div class="section-label">Get in Touch</div>
+    <div class="section-title">Have a question? Want to discuss pricing?</div>
+    <p class="section-desc">Whether you're exploring the tool for your team or have a question about coverage, we'd like to hear from you.</p>
+    <form class="contact-grid" id="contactForm" onsubmit="return handleContact(event)">
+      <input type="text" name="name" class="contact-input" placeholder="Your name" required aria-label="Your name">
+      <input type="email" name="email" class="contact-input" placeholder="you@company.com" required aria-label="Email address">
+      <textarea name="message" class="contact-textarea full" placeholder="Your question or message..." required aria-label="Message"></textarea>
+      <input type="hidden" name="formType" value="question">
+      <div class="full">
+        <button type="submit" class="btn-primary">Send Message</button>
+      </div>
+    </form>
+    <p class="contact-success" id="contactSuccess">Message sent. We'll get back to you shortly.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@bioevalpro.com">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // =============================================
+  // PASTE YOUR GOOGLE APPS SCRIPT URL BELOW
+  // =============================================
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwGL8D6Zpdx-Amee-nEWoaDQIvzDDxWaubX4yh0fh_8MfxPC___YnSmWhgUEAxTMZdy/exec';
+
+  // Waitlist form handler
+  function handleWaitlist(e) {
+    e.preventDefault();
+    var form = document.getElementById('waitlistForm');
+    var success = document.getElementById('waitlistSuccess');
+    var btn = form.querySelector('button');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    var iframe = document.createElement('iframe');
+    iframe.name = 'hidden-iframe-waitlist';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    var tempForm = document.createElement('form');
+    tempForm.method = 'POST';
+    tempForm.action = SCRIPT_URL;
+    tempForm.target = 'hidden-iframe-waitlist';
+
+    var fields = new FormData(form);
+    fields.forEach(function(value, key) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value;
+      tempForm.appendChild(input);
+    });
+
+    document.body.appendChild(tempForm);
+    tempForm.submit();
+
+    setTimeout(function() {
+      form.style.display = 'none';
+      success.style.display = 'block';
+      document.body.removeChild(tempForm);
+      document.body.removeChild(iframe);
+    }, 1500);
+
+    return false;
+  }
+
+  // Contact form handler
+  function handleContact(e) {
+    e.preventDefault();
+    var form = document.getElementById('contactForm');
+    var success = document.getElementById('contactSuccess');
+    var btn = form.querySelector('button');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    var iframe = document.createElement('iframe');
+    iframe.name = 'hidden-iframe-contact';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    var tempForm = document.createElement('form');
+    tempForm.method = 'POST';
+    tempForm.action = SCRIPT_URL;
+    tempForm.target = 'hidden-iframe-contact';
+
+    var fields = new FormData(form);
+    fields.forEach(function(value, key) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value;
+      tempForm.appendChild(input);
+    });
+
+    document.body.appendChild(tempForm);
+    tempForm.submit();
+
+    setTimeout(function() {
+      form.style.display = 'none';
+      success.style.display = 'block';
+      document.body.removeChild(tempForm);
+      document.body.removeChild(iframe);
+    }, 1500);
+
+    return false;
+  }
+
+  // Scroll fade-in
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+</script>
+
+</body>
+</html>
