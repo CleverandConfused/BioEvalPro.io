@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISO 10993 Biological Evaluation Gap Analysis — Pre-Submission Review Tool</title>
+  <title>ISO 10993 Biological Evaluation Gap Analysis | Pre-Submission Review Tool</title>
   <meta name="description" content="Evaluate your complete ISO 10993 biological evaluation package against notified body expectations. Score your readiness. Fix gaps before you submit. A fraction of the cost of traditional consulting.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,37 +178,62 @@
       to { opacity: 1; transform: translateY(0); }
     }
     .card-topbar {
-      background: #F0F0F0;
-      padding: 8px 12px;
+      background: #F3F3F3;
+      padding: 0;
+      display: flex;
+      align-items: stretch;
+      border-bottom: 1px solid #E0E0E0;
+      height: 32px;
+    }
+    .card-topbar-left {
       display: flex;
       align-items: center;
-      gap: 6px;
-      border-bottom: 1px solid #D5D5D5;
+      gap: 8px;
+      padding: 0 12px;
+      flex: 1;
+      min-width: 0;
     }
     .card-topbar-icon {
       width: 16px; height: 16px;
-      background: var(--accent);
-      border-radius: 3px;
+      background: #185ABD;
+      border-radius: 2px;
       display: flex; align-items: center; justify-content: center;
       font-size: 9px; color: #fff; font-weight: 700;
+      flex-shrink: 0;
     }
     .card-topbar-title {
-      color: #333;
-      font-family: 'Source Sans 3', sans-serif;
+      color: #616161;
+      font-family: 'Segoe UI', 'Source Sans 3', sans-serif;
       font-size: 12px;
-      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .card-topbar-controls {
-      display: flex; gap: 8px;
+      display: flex;
+      margin-left: auto;
     }
     .card-win-btn {
-      width: 12px; height: 12px;
-      border: 1px solid #CCC;
-      background: #F0F0F0;
-      border-radius: 1px;
-      font-size: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: #666;
+      width: 46px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      color: #616161;
+      font-size: 10px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card-win-btn.close-btn {
+      color: #616161;
+    }
+    .card-win-btn svg {
+      width: 10px;
+      height: 10px;
+      stroke: #616161;
+      stroke-width: 1.2;
+      fill: none;
     }
     .card-body { padding: 24px 20px; }
     .card-score {
@@ -818,20 +843,22 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="hero-badge">Coming Soon &mdash; Join the Waitlist</div>
+      <div class="hero-badge">Coming Soon &ndash; Join the Waitlist</div>
       <h1>Know exactly what's wrong with your 10993 package <em>before</em> the auditor does.</h1>
-      <p class="hero-sub">Upload your biological evaluation documentation. Receive a structured gap report scored against ISO 10993-1:2025 requirements, with specific remediation steps. A fraction of the cost of traditional consulting.</p>
+      <p class="hero-sub">Upload your biological evaluation documentation. Receive a structured gap report. Every section scored against ISO 10993-1:2025 requirements, with specific remediation steps. A fraction of the cost of traditional consulting.</p>
       <a href="#waitlist" class="btn-primary">Get Early Access</a>
       <a href="#how" class="btn-secondary">See How It Works</a>
     </div>
     <div class="hero-card">
       <div class="card-topbar">
-        <div class="card-topbar-icon">B</div>
-        <span class="card-topbar-title">BioEvalPro &mdash; Gap Analysis Report.pdf</span>
+        <div class="card-topbar-left">
+          <div class="card-topbar-icon">W</div>
+          <span class="card-topbar-title">Gap Analysis Report.pdf - BioEvalPro</span>
+        </div>
         <div class="card-topbar-controls">
-          <div class="card-win-btn">&ndash;</div>
-          <div class="card-win-btn">&#9633;</div>
-          <div class="card-win-btn">&times;</div>
+          <div class="card-win-btn"><svg viewBox="0 0 10 10"><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
+          <div class="card-win-btn"><svg viewBox="0 0 10 10"><rect x="1" y="1" width="8" height="8" rx="0.5"/></svg></div>
+          <div class="card-win-btn close-btn"><svg viewBox="0 0 10 10"><line x1="1" y1="1" x2="9" y2="9"/><line x1="9" y1="1" x2="1" y2="9"/></svg></div>
         </div>
       </div>
       <div class="card-body">
@@ -875,7 +902,7 @@
       <div class="section-label">The Problem</div>
       <div class="section-title">Your 10993 package has gaps you haven't found yet.</div>
       <p style="color:#B0B0C0; font-size:17px; max-width:640px; line-height:1.65;">
-        ISO 10993-1:2025 introduced new requirements that most existing documentation doesn't address. Notified bodies are already auditing against the updated standard &mdash; and rejections cost months.
+        ISO 10993-1:2025 introduced new requirements that most existing documentation doesn't address. Notified bodies are already auditing against the updated standard, and rejections cost months.
       </p>
       <div class="problem-stats">
         <div>
@@ -930,7 +957,7 @@
   <div class="container fade-up">
     <div class="section-label">Our Approach</div>
     <div class="section-title">What powers every evaluation.</div>
-    <p class="section-desc">Every report is built on a structured evaluation framework drawing from multiple authoritative sources &mdash; not a single-pass review.</p>
+    <p class="section-desc">Every report is built on a structured evaluation framework drawing from multiple authoritative sources, not a single-pass review.</p>
     <div class="method-grid">
       <div class="method-card">
         <div class="method-icon">1</div>
@@ -950,12 +977,12 @@
       <div class="method-card">
         <div class="method-icon">&#916;</div>
         <h3>2018 &rarr; 2025 Delta Awareness</h3>
-        <p>For teams transitioning from the fifth edition, our framework identifies elements that were compliant under 2018 but fall short of 2025 requirements &mdash; including new areas like foreseeable misuse documentation and explicit risk estimation.</p>
+        <p>For teams transitioning from the fifth edition, our framework identifies elements that were compliant under 2018 but fall short of 2025 requirements, including new areas like foreseeable misuse documentation and explicit risk estimation.</p>
       </div>
       <div class="method-card">
         <div class="method-icon">&#10003;</div>
         <h3>Notified Body Pattern Recognition</h3>
-        <p>Our evaluation criteria are built from documented patterns of notified body findings and common audit deficiencies. We flag the issues that reviewers actually challenge &mdash; not just theoretical non-conformances.</p>
+        <p>Our evaluation criteria are built from documented patterns of notified body findings and common audit deficiencies. We flag the issues that reviewers actually challenge, not just theoretical non-conformances.</p>
       </div>
       <div class="method-card">
         <div class="method-icon">&#9998;</div>
@@ -971,7 +998,7 @@
   <div class="container fade-up">
     <div class="section-label">Full Series Coverage</div>
     <div class="section-title">Every part of the 10993 series. One evaluation.</div>
-    <p class="section-desc">Each area receives a Pass, Flag, or Fail status &mdash; with a plain language explanation of why notified bodies challenge it, and what to fix.</p>
+    <p class="section-desc">Each area receives a Pass, Flag, or Fail status, with a plain language explanation of why notified bodies challenge it, and what to fix.</p>
     <div class="coverage-grid">
       <div class="cov-item">
         <div class="cov-icon">1</div>
@@ -1026,7 +1053,7 @@
         <div class="cov-icon">&rarr;</div>
         <div>
           <div class="cov-title">ISO 14971 Risk Integration</div>
-          <div class="cov-desc">Risk management file cross-referencing &mdash; severity, probability, uncertainty.</div>
+          <div class="cov-desc">Risk management file cross-referencing: severity, probability, uncertainty.</div>
           <div class="cov-badge new">New in 2025</div>
         </div>
       </div>
@@ -1080,7 +1107,7 @@
   <div class="container fade-up" style="text-align:center; max-width:700px;">
     <div class="section-label">Pricing</div>
     <div class="section-title">A fraction of the $2,000&ndash;$8,000 that other gap analysis services cost.</div>
-    <p class="section-desc" style="margin:0 auto 20px; text-align:center;">Traditional consultant-led gap analysis runs $2,000&ndash;$8,000 per engagement. Our tool delivers the same depth of first-pass analysis at a fraction of the cost &mdash; with per-submission and monthly subscription options available.</p>
+    <p class="section-desc" style="margin:0 auto 20px; text-align:center;">Traditional consultant-led gap analysis runs $2,000&ndash;$8,000 per engagement. Our tool delivers the same depth of first-pass analysis at a fraction of the cost, with per-submission and monthly subscription options available.</p>
     <p style="font-size:16px; color:var(--ink-light); margin-bottom:36px; line-height:1.65;">We're finalizing pricing ahead of launch. Join the waitlist for early access and priority pricing, or reach out directly to discuss your needs.</p>
     <a href="#waitlist" class="btn-primary" style="margin-right:16px;">Join Waitlist</a>
     <a href="mailto:hello@bioevalpro.com" class="btn-secondary">Request Pricing</a>
@@ -1096,12 +1123,12 @@
     <div class="trust-row">
       <div class="trust-item"><div class="trust-icon">&#128274;</div> Encryption in transit and at rest</div>
       <div class="trust-item"><div class="trust-icon">&#128465;</div> Documents deleted after processing</div>
-      <div class="trust-item"><div class="trust-icon">&#127466;&#127482;</div> GDPR compliant &mdash; DPA available</div>
+      <div class="trust-item"><div class="trust-icon">&#127466;&#127482;</div> GDPR compliant. DPA available</div>
       <div class="trust-item"><div class="trust-icon">&#9729;</div> Enterprise cloud hosting (Azure / AWS)</div>
       <div class="trust-item"><div class="trust-icon">&#128203;</div> SOC 2 on roadmap</div>
     </div>
     <p style="font-size:14px; color:var(--ink-muted); margin-top:32px; max-width:640px; line-height:1.6;">
-      <strong>Disclaimer:</strong> This tool is a pre-submission gap checker designed to complement your regulatory expertise &mdash; not replace it. All output should be validated by a qualified regulatory affairs professional. This is not a compliance guarantee.
+      <strong>Disclaimer:</strong> This tool is a pre-submission gap checker designed to complement your regulatory expertise, not replace it. All output should be validated by a qualified regulatory affairs professional. This is not a compliance guarantee.
     </p>
   </div>
 </section>
@@ -1130,11 +1157,11 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does this replace my regulatory consultant?</div>
-        <div class="faq-a">No. This is a pre-flight checker &mdash; it catches gaps, missing sections, and non-compliant justifications before your consultant or auditor does. Think of it as a structured first-pass review that saves your expert reviewers time and catches the obvious issues early.</div>
+        <div class="faq-a">No. This is a pre-flight checker. It catches gaps, missing sections, and non-compliant justifications before your consultant or auditor does. Think of it as a structured first-pass review that saves your expert reviewers time and catches the obvious issues early.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which version of ISO 10993-1 does it evaluate against?</div>
-        <div class="faq-a">Primarily the 2025 standard, with awareness of the 2018-to-2025 delta. You can select your evaluation type &mdash; new submission, transition review, or legacy check &mdash; and the analysis adjusts accordingly.</div>
+        <div class="faq-a">Primarily the 2025 standard, with awareness of the 2018-to-2025 delta. You can select your evaluation type (new submission, transition review, or legacy check) and the analysis adjusts accordingly.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What file formats do you accept?</div>
@@ -1146,7 +1173,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much does it cost?</div>
-        <div class="faq-a">We offer both per-submission and monthly subscription options at a fraction of the $2,000&ndash;$8,000 that traditional consultant-led gap analysis costs. We're finalizing pricing ahead of launch &mdash; join the waitlist or reach out to us directly to discuss your needs and get priority pricing.</div>
+        <div class="faq-a">We offer both per-submission and monthly subscription options at a fraction of the $2,000&ndash;$8,000 that traditional consultant-led gap analysis costs. We're finalizing pricing ahead of launch. Join the waitlist or reach out to us directly to discuss your needs and get priority pricing.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does the evaluation take?</div>
