@@ -5,6 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ISO 10993 Biological Evaluation Gap Analysis | Pre-Submission Review Tool</title>
   <meta name="description" content="Evaluate your complete ISO 10993 biological evaluation package against notified body expectations. Score your readiness. Fix gaps before you submit. A fraction of the cost of traditional consulting.">
+  <link rel="canonical" href="https://bioevalpro.com/">
+
+  <!-- Open Graph for LinkedIn / social sharing -->
+  <meta property="og:title" content="BioEvalPro | ISO 10993 Pre-Submission Gap Analysis">
+  <meta property="og:description" content="Upload your biological evaluation documentation. Receive a structured gap report scored against ISO 10993-1:2025 requirements with specific remediation steps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bioevalpro.com/">
+  <meta property="og:site_name" content="BioEvalPro">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BioEvalPro | ISO 10993 Pre-Submission Gap Analysis">
+  <meta name="twitter:description" content="Upload your biological evaluation documentation. Receive a structured gap report scored against ISO 10993-1:2025 requirements.">
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BioEvalPro">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BioEvalPro",
+    "applicationCategory": "BusinessApplication",
+    "description": "Pre-submission gap analysis tool for ISO 10993 biological evaluation documentation. Evaluates BEP, BER, and full 10993 packages against the 2025 standard.",
+    "url": "https://bioevalpro.com",
+    "offers": {
+      "@type": "Offer",
+      "description": "Per-submission and monthly subscription options available",
+      "category": "Regulatory Compliance"
+    },
+    "operatingSystem": "Web-based"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -375,6 +410,42 @@
       font-size: 15px;
       color: var(--ink-muted);
       line-height: 1.6;
+    }
+
+    /* ── COMPARISON ── */
+    .compare-strip {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 0;
+      margin-top: 48px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 15px;
+    }
+    .compare-strip-header {
+      background: var(--ink);
+      color: #fff;
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .compare-strip-header.highlight {
+      background: var(--accent);
+    }
+    .compare-strip-cell {
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--cream-dark);
+      color: var(--ink-light);
+      background: #fff;
+    }
+    .compare-strip-cell.highlight {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .compare-strip-cell:nth-last-child(-n+3) {
+      border-bottom: none;
     }
 
     /* ── COVERAGE ── */
@@ -781,6 +852,8 @@
       .steps { grid-template-columns: repeat(2, 1fr); }
       .coverage-grid { grid-template-columns: 1fr; }
       .method-grid { grid-template-columns: 1fr; }
+      .compare-strip { font-size: 13px; }
+      .compare-strip-cell, .compare-strip-header { padding: 10px 12px; }
       .audience-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
       .problem { padding: 40px 28px; }
@@ -833,6 +906,7 @@
       <div class="hero-badge">Coming Soon &ndash; Join the Waitlist</div>
       <h1>Know exactly what's wrong with your 10993 package <em>before</em> the auditor does.</h1>
       <p class="hero-sub">Upload your biological evaluation documentation. Receive a structured gap report. Every section scored against ISO 10993-1:2025 requirements, with specific remediation steps. A fraction of the cost of traditional consulting.</p>
+      <p style="font-size:14px; color:var(--ink-muted); margin-bottom:28px; max-width:480px;">Built by regulatory affairs professionals with hands-on experience in ISO 10993 biological evaluation and notified body submissions.</p>
       <a href="#waitlist" class="btn-primary">Get Early Access</a>
       <a href="#how" class="btn-secondary">See How It Works</a>
     </div>
@@ -894,11 +968,11 @@
       <div class="problem-stats">
         <div>
           <div class="problem-stat-num">$2k&ndash;8k</div>
-          <div class="problem-stat-text">Typical cost of a single gap analysis from an outside consultant</div>
+          <div class="problem-stat-text">Typical range for a single consultant-led gap analysis engagement</div>
         </div>
         <div>
           <div class="problem-stat-num">3&ndash;6 mo</div>
-          <div class="problem-stat-text">Average delay from a notified body rejection requiring revised biocompatibility documentation</div>
+          <div class="problem-stat-text">Estimated delay when a notified body requires revised biocompatibility documentation</div>
         </div>
         <div>
           <div class="problem-stat-num">12+</div>
@@ -1067,7 +1141,7 @@
       <div class="audience-card">
         <div class="audience-role">Consultants</div>
         <h3>Independent RA professionals</h3>
-        <p>Managing multiple client submissions? Run every package through a structured check before delivery. Consultant mode lets you manage all clients from one dashboard.</p>
+        <p>Managing multiple client submissions? Run every package through a structured check before delivery. Catch gaps early and deliver stronger documentation to your clients.</p>
       </div>
       <div class="audience-card">
         <div class="audience-role">Startups</div>
@@ -1077,8 +1151,45 @@
       <div class="audience-card">
         <div class="audience-role">CROs</div>
         <h3>Contract research organizations</h3>
-        <p>Handling regulatory submissions as a service? Integrate structured quality checks into your workflow. Enterprise tier includes multi-user access and API integration.</p>
+        <p>Handling regulatory submissions as a service? Integrate structured quality checks into your workflow and deliver consistently thorough reviews across your portfolio.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container fade-up">
+    <div class="section-label">Why BioEvalPro</div>
+    <div class="section-title">How we compare to traditional gap analysis.</div>
+    <div class="compare-strip">
+      <div class="compare-strip-header"></div>
+      <div class="compare-strip-header">Traditional Consulting</div>
+      <div class="compare-strip-header highlight">BioEvalPro</div>
+
+      <div class="compare-strip-cell"><strong>Turnaround</strong></div>
+      <div class="compare-strip-cell">2&ndash;4 weeks typical</div>
+      <div class="compare-strip-cell highlight">Within 24 hours</div>
+
+      <div class="compare-strip-cell"><strong>Cost per review</strong></div>
+      <div class="compare-strip-cell">$2,000&ndash;$8,000</div>
+      <div class="compare-strip-cell highlight">A fraction of that</div>
+
+      <div class="compare-strip-cell"><strong>ISO 10993-1:2025 coverage</strong></div>
+      <div class="compare-strip-cell">Varies by consultant</div>
+      <div class="compare-strip-cell highlight">Full series, every review</div>
+
+      <div class="compare-strip-cell"><strong>Structured scoring</strong></div>
+      <div class="compare-strip-cell">Usually narrative-only</div>
+      <div class="compare-strip-cell highlight">Pass / Flag / Fail per section</div>
+
+      <div class="compare-strip-cell"><strong>Remediation steps</strong></div>
+      <div class="compare-strip-cell">Depends on engagement</div>
+      <div class="compare-strip-cell highlight">Included in every report</div>
+
+      <div class="compare-strip-cell"><strong>2018 &rarr; 2025 delta flagging</strong></div>
+      <div class="compare-strip-cell">If specifically requested</div>
+      <div class="compare-strip-cell highlight">Built into every evaluation</div>
     </div>
   </div>
 </section>
@@ -1091,7 +1202,7 @@
     <p class="section-desc" style="margin:0 auto 20px; text-align:center;">Traditional consultant-led gap analysis runs $2,000&ndash;$8,000 per engagement. Our tool delivers the same depth of first-pass analysis at a fraction of the cost, with per-submission and monthly subscription options available.</p>
     <p style="font-size:16px; color:var(--ink-light); margin-bottom:36px; line-height:1.65;">We're finalizing pricing ahead of launch. Join the waitlist for early access and priority pricing, or reach out directly to discuss your needs.</p>
     <a href="#waitlist" class="btn-primary" style="margin-right:16px;">Join Waitlist</a>
-    <a href="mailto:hello@bioevalpro.com" class="btn-secondary">Request Pricing</a>
+    <a href="#contact" class="btn-secondary">Request Pricing</a>
   </div>
 </section>
 
@@ -1177,6 +1288,13 @@
     <form class="contact-grid" id="contactForm" onsubmit="return handleContact(event)">
       <input type="text" name="name" class="contact-input" placeholder="Your name" required aria-label="Your name">
       <input type="email" name="email" class="contact-input" placeholder="you@company.com" required aria-label="Email address">
+      <select name="topic" class="contact-input full" required aria-label="Topic" style="color:var(--ink-muted);">
+        <option value="" disabled selected>What can we help with?</option>
+        <option value="Pricing inquiry" style="color:var(--ink);">Pricing inquiry</option>
+        <option value="Product question" style="color:var(--ink);">Product question</option>
+        <option value="Partnership or advisory" style="color:var(--ink);">Partnership or advisory opportunity</option>
+        <option value="General inquiry" style="color:var(--ink);">General inquiry</option>
+      </select>
       <textarea name="message" class="contact-textarea full" placeholder="Your question or message..." required aria-label="Message"></textarea>
       <input type="hidden" name="formType" value="question">
       <div class="full">
