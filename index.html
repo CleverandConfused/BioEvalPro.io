@@ -77,8 +77,9 @@
       font-size: 15px;
       font-weight: 500;
       margin-left: 32px;
+      transition: color 0.2s;
     }
-    nav a:hover { color: var(--ink-muted); }
+    nav a:hover { color: var(--ink); }
 
     /* ── HERO ── */
     .hero {
@@ -143,11 +144,14 @@
       padding: 14px 32px;
       border-radius: var(--radius);
       border: none;
+      cursor: pointer;
       text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
       letter-spacing: 0.01em;
     }
     .btn-primary:hover {
-      background: var(--accent);
+      background: var(--accent-hover);
+      transform: translateY(-1px);
     }
     .btn-secondary {
       display: inline-block;
@@ -156,8 +160,9 @@
       font-size: 16px;
       text-decoration: none;
       margin-left: 24px;
+      transition: color 0.2s;
     }
-    .btn-secondary:hover { color: var(--accent); }
+    .btn-secondary:hover { color: var(--accent-hover); }
     .btn-secondary::after { content: ' \2192'; }
 
     /* ── HERO CARD ── */
@@ -327,6 +332,11 @@
       display: flex;
       align-items: flex-start;
       gap: 14px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .cov-item:hover {
+      box-shadow: var(--shadow-sm);
+      border-color: var(--accent);
     }
     .cov-icon {
       flex-shrink: 0;
@@ -379,7 +389,9 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 32px 28px;
+      transition: box-shadow 0.2s;
     }
+    .audience-card:hover { box-shadow: var(--shadow-md); }
     .audience-role {
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
@@ -412,6 +424,7 @@
       border-radius: 10px;
       padding: 36px 28px;
       text-align: center;
+      transition: box-shadow 0.2s, border-color 0.2s;
     }
     .price-card.featured {
       border-color: var(--accent);
@@ -433,6 +446,7 @@
       padding: 4px 16px;
       border-radius: 100px;
     }
+    .price-card:hover { box-shadow: var(--shadow-md); }
     .price-tier {
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
@@ -483,9 +497,11 @@
       padding: 14px 32px;
       border-radius: var(--radius);
       border: 2px solid var(--accent);
+      cursor: pointer;
       text-decoration: none;
+      transition: background 0.2s, color 0.2s;
     }
-    .btn-outline:hover { background: transparent; color: var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
 
     /* ── TRUST ── */
     .trust-row {
@@ -543,6 +559,7 @@
       font-family: 'Source Sans 3', sans-serif;
       font-size: 16px;
       outline: none;
+      transition: border-color 0.2s;
     }
     .waitlist-input::placeholder { color: #6B6B80; }
     .waitlist-input:focus { border-color: var(--accent); }
@@ -576,6 +593,7 @@
       font-family: 'Source Sans 3', sans-serif;
       font-size: 16px;
       outline: none;
+      transition: border-color 0.2s;
       width: 100%;
     }
     .contact-input:focus, .contact-textarea:focus { border-color: var(--accent); }
@@ -601,6 +619,7 @@
       font-weight: 600;
       font-size: 17px;
       margin-bottom: 8px;
+      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -644,8 +663,9 @@
       color: var(--ink-muted);
       text-decoration: none;
       margin-left: 24px;
+      transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--ink-muted); }
+    .footer-links a:hover { color: var(--ink); }
 
     /* ── ANIMATIONS ── */
     .fade-up {
@@ -657,46 +677,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* ── MOBILE MENU ── */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      padding: 8px;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .mobile-menu-btn span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--ink);
-      border-radius: 2px;
-    }
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 64px;
-      left: 0;
-      right: 0;
-      background: var(--cream);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 28px 24px;
-      z-index: 99;
-      box-shadow: var(--shadow-md);
-    }
-    .mobile-nav.open { display: block; }
-    .mobile-nav a {
-      display: block;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: 500;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .mobile-nav a:last-child { border-bottom: none; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -716,9 +696,7 @@
       .steps { grid-template-columns: 1fr; }
       .waitlist-form { flex-direction: column; }
       .header-inner nav { display: none; }
-      .mobile-menu-btn { display: flex; }
       .section-title { font-size: 28px; }
-      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -731,22 +709,12 @@
     <nav>
       <a href="#how">How It Works</a>
       <a href="#coverage">Coverage</a>
-      <a href="blog.html">Insights</a>
+      <a href="blog.html">Blog</a>
       <a href="#pricing">Pricing</a>
       <a href="#waitlist">Get Early Access</a>
     </nav>
-    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </header>
-<div class="mobile-nav" id="mobileNav">
-  <a href="#how" onclick="document.getElementById('mobileNav').classList.remove('open')">How It Works</a>
-  <a href="#coverage" onclick="document.getElementById('mobileNav').classList.remove('open')">Coverage</a>
-  <a href="blog.html">Insights</a>
-  <a href="#pricing" onclick="document.getElementById('mobileNav').classList.remove('open')">Pricing</a>
-  <a href="#waitlist" onclick="document.getElementById('mobileNav').classList.remove('open')">Get Early Access</a>
-</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1085,7 +1053,7 @@
   // =============================================
   // PASTE YOUR GOOGLE APPS SCRIPT URL BELOW
   // =============================================
-  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwGL8D6Zpdx-Amee-nEWoaDQIvzDDxWaubX4yh0fh_8MfxPC___YnSmWhgUEAxTMZdy/exec';
+  var SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
 
   // Waitlist form handler
   function handleWaitlist(e) {
