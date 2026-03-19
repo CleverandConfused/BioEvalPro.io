@@ -291,12 +291,11 @@
     }
 
     /* ── WHAT THE TOOL DOES ── */
-    .value-grid { margin-top: 40px; }
-    .value-does { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; border-left: 4px solid var(--accent); }
-    .value-heading { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; color: var(--accent); }
-    .value-list { list-style: none; padding: 0; }
-    .value-list li { font-size: 15px; color: var(--ink-light); line-height: 1.6; padding: 6px 0 6px 24px; position: relative; }
-    .value-list li::before { position: absolute; left: 0; font-weight: 700; font-size: 14px; content: '\2713'; color: var(--accent); }
+    .delivers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .delivers-item { display: flex; align-items: flex-start; gap: 14px; background: var(--cream); border-radius: 8px; padding: 20px 22px; }
+    .delivers-icon { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 15px; font-weight: 700; }
+    .delivers-title { font-weight: 600; font-size: 16px; margin-bottom: 4px; color: var(--ink); }
+    .delivers-desc { font-size: 14px; color: var(--ink-muted); line-height: 1.55; }
 
     /* ── USE CASES ── */
     .usecase-grid {
@@ -847,6 +846,7 @@
       .coverage-grid { grid-template-columns: 1fr; }
       .method-grid { grid-template-columns: 1fr; }
       .usecase-grid { grid-template-columns: 1fr; }
+      .delivers-grid { grid-template-columns: 1fr; }
       .compare-strip { font-size: 13px; }
       .compare-strip-cell, .compare-strip-header { padding: 10px 12px; }
       .audience-grid { grid-template-columns: 1fr; }
@@ -915,18 +915,49 @@
   <div class="container fade-up">
     <div class="section-label">What BioEvalPro Does</div>
     <div class="section-title">Gap finding. Quality evaluation. Improvement guidance.</div>
-    <p class="section-desc">BioEvalPro reads your biological evaluation documentation, evaluates each section against ISO 10993-1:2025 requirements, and tells you what needs fixing.</p>
-    <div class="value-grid">
-      <div class="value-does">
-        <div class="value-heading">What the tool delivers</div>
-        <ul class="value-list">
-          <li>Pass, Flag, or Fail scoring for every section</li>
-          <li>Missing content and weak justification identification</li>
-          <li>High-scrutiny area warnings based on notified body patterns</li>
-          <li>Specific remediation guidance for each finding</li>
-          <li>Likelihood indicators for insufficient documentation</li>
-          <li>2018-to-2025 transition gap detection</li>
-        </ul>
+    <p class="section-desc" style="margin-bottom:36px;">BioEvalPro reads your biological evaluation documentation, evaluates each section against ISO 10993-1:2025 requirements, and tells you what needs fixing.</p>
+    <div class="delivers-grid">
+      <div class="delivers-item">
+        <div class="delivers-icon">&#10003;</div>
+        <div>
+          <div class="delivers-title">Section-by-Section Scoring</div>
+          <div class="delivers-desc">Every area rated Pass, Flag, or Fail with a plain language explanation.</div>
+        </div>
+      </div>
+      <div class="delivers-item">
+        <div class="delivers-icon">&#10003;</div>
+        <div>
+          <div class="delivers-title">Gap Identification</div>
+          <div class="delivers-desc">Missing content, weak justifications, and incomplete rationale surfaced automatically.</div>
+        </div>
+      </div>
+      <div class="delivers-item">
+        <div class="delivers-icon">&#10003;</div>
+        <div>
+          <div class="delivers-title">Scrutiny Warnings</div>
+          <div class="delivers-desc">Flags areas notified bodies are known to challenge based on documented review patterns.</div>
+        </div>
+      </div>
+      <div class="delivers-item">
+        <div class="delivers-icon">&#10003;</div>
+        <div>
+          <div class="delivers-title">Remediation Guidance</div>
+          <div class="delivers-desc">Specific suggestions for strengthening each flagged section.</div>
+        </div>
+      </div>
+      <div class="delivers-item">
+        <div class="delivers-icon">&#10003;</div>
+        <div>
+          <div class="delivers-title">Likelihood Indicators</div>
+          <div class="delivers-desc">Qualified assessments where documentation may be insufficient to demonstrate safety.</div>
+        </div>
+      </div>
+      <div class="delivers-item">
+        <div class="delivers-icon">&#10003;</div>
+        <div>
+          <div class="delivers-title">2018 &rarr; 2025 Transition Detection</div>
+          <div class="delivers-desc">Identifies exactly which new requirements your existing documentation doesn't address.</div>
+        </div>
       </div>
     </div>
   </div>
