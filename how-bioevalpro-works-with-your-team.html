@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How BioEvalPro Fits Into Your Regulatory Team's Workflow — BioEvalPro</title>
+  <meta name="description" content="BioEvalPro is a documentation quality tool, not a consultancy. Here's how it works alongside your regulatory team, toxicologists, and contracted experts to strengthen your 10993 package.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF6F0; --cream-dark: #F0EAE0; --ink: #1A1A2E; --ink-light: #3A3A52;
+      --ink-muted: #6B6B80; --accent: #1B6B4A; --accent-light: #E8F5EE; --accent-hover: #14523A;
+      --amber-flag: #D4880F; --border: #DDD5C8; --shadow-md: 0 4px 16px rgba(26,26,46,0.08); --radius: 6px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', 'Georgia', serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,240,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before { content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px; background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1; }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back::before { content: '\2190 '; }
+    .article-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px; }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding-bottom: 60px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body strong { color: var(--ink); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; }
+    .callout p { color: var(--ink-light); margin-bottom: 0; }
+    .callout strong { color: var(--accent); }
+    .callout-amber { background: #FEF4E4; border-left-color: var(--amber-flag); }
+    .callout-amber strong { color: var(--amber-flag); }
+
+    .workflow-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+    .workflow-table th { background: var(--ink); color: #fff; padding: 12px 16px; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .workflow-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--ink-light); vertical-align: top; line-height: 1.6; }
+    .workflow-table tr:nth-child(even) td { background: #fff; }
+    .workflow-table tr:nth-child(odd) td { background: var(--cream); }
+
+    .scenario-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin: 32px 0; }
+    .scenario-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .scenario-box p { margin-bottom: 12px; }
+    .scenario-box p:last-child { margin-bottom: 0; }
+
+    .article-cta { background: var(--ink); border-radius: 12px; padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; margin: 48px 0 80px; max-width: 720px; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; margin-bottom: 8px; }
+    .article-cta-text p { font-size: 15px; color: #B0B0C0; margin-bottom: 0; }
+    .btn-primary { display: inline-block; background: var(--accent); color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600; padding: 14px 32px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .mobile-menu-btn { display: none; background: none; border: none; padding: 8px; flex-direction: column; gap: 5px; }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--border); padding: 16px 28px 24px; z-index: 99; box-shadow: var(--shadow-md); }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a { display: block; color: var(--ink); text-decoration: none; font-size: 17px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .mobile-nav a:last-child { border-bottom: none; }
+    @media (max-width: 700px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .header-inner nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .workflow-table { font-size: 13px; }
+      .workflow-table th, .workflow-table td { padding: 10px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html" style="color:var(--ink);">Insights</a>
+      <a href="index.html#waitlist">Get Early Access</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Insights</a>
+  <a href="index.html#waitlist">Get Early Access</a>
+</div>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Insights</a>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="article-tag">How It Works</span>
+        <span>8 min read</span>
+      </div>
+      <h1>How BioEvalPro Fits Into Your Regulatory Team's Workflow</h1>
+    </div>
+
+    <div class="article-body">
+
+      <p>BioEvalPro is a documentation quality evaluation tool. It reads your biological evaluation documentation, scores each section against ISO 10993-1:2025 requirements and documented notified body expectations, identifies gaps and weaknesses, and provides specific guidance on how to improve.</p>
+
+      <p>It is not a toxicology consultancy. It is not a biocompatibility testing service. It does not make device-specific scientific determinations about whether your materials are safe or whether your test results are sufficient.</p>
+
+      <p>Understanding that distinction is important because it defines how the tool fits into your existing workflow and where it adds the most value. This article explains what BioEvalPro evaluates, what it doesn't, and how to use it alongside your regulatory team, toxicologists, and contracted experts for the strongest possible submissions.</p>
+
+      <h2>What BioEvalPro actually evaluates</h2>
+
+      <p>When you upload a biological evaluation package, the platform evaluates the quality of your documentation across several dimensions.</p>
+
+      <h3>Structural completeness</h3>
+
+      <p>Does your BEP include a justified evaluation strategy? Does your BER address every required area? Are all relevant sub-standards of the ISO 10993 series covered or explicitly justified as not applicable? Missing sections are the simplest form of gap, and they're also the most common reason for notified body deficiency findings.</p>
+
+      <h3>Substantive quality</h3>
+
+      <p>This is where the tool goes beyond a checklist. A toxicological risk assessment section that exists but contains only a general statement that "materials are considered biocompatible" without identifying specific chemical constituents, citing tolerable exposure limits, or calculating margins of safety is substantively weak. BioEvalPro evaluates whether each section contains the level of detail and specificity that notified body reviewers expect. Sections with generic language, unsupported conclusions, or missing data references get flagged with an explanation of what's missing and guidance on what stronger documentation looks like.</p>
+
+      <h3>Scrutiny indicators</h3>
+
+      <p>Certain areas of biological evaluation documentation consistently receive more attention from notified bodies. Risk management integration is heavily scrutinized under the <a href="iso-10993-2025-changes.html">2025 standard</a>. Chemical characterization sections are a focus area for most major notified bodies. Biological equivalence claims are almost always challenged. BioEvalPro flags these high-scrutiny areas so your team knows where to invest the most effort in strengthening documentation before submission.</p>
+
+      <h3>Likelihood assessments</h3>
+
+      <p>Where documentation patterns are commonly associated with deficiency findings, BioEvalPro provides qualified assessments. A chemical characterization section that lists three materials with no analytical data and no justification for omitting extractable testing is not just incomplete; it is likely insufficient to demonstrate safety. The tool uses language like "likely insufficient," "may receive additional scrutiny," and "consider strengthening" to communicate risk without making absolute determinations. These assessments are based on documented review patterns, not device-specific scientific analysis.</p>
+
+      <h3>2018-to-2025 transition gaps</h3>
+
+      <p>For teams with existing documentation written against the 2018 standard, the tool identifies specifically which <a href="iso-10993-2025-vs-2018.html">2025 requirements</a> are not addressed. This includes new areas like <a href="foreseeable-misuse-10993.html">foreseeable misuse documentation</a>, explicit risk estimation requirements, and the shift from endpoint-based to biological effects-based evaluation. The <a href="transition-review-10993.html">transition review feature</a> is designed specifically for this use case.</p>
+
+      <h2>What BioEvalPro does not evaluate</h2>
+
+      <p>Equally important is understanding what falls outside the tool's scope. These are areas where your subject matter experts are essential.</p>
+
+      <h3>Device-specific scientific judgment</h3>
+
+      <p>BioEvalPro cannot determine whether a particular material is safe for a particular clinical application. It cannot tell you whether your device's extractable profile poses an acceptable risk given the intended patient population. It cannot decide whether a material change in your supply chain is significant enough to require new biocompatibility testing. These are scientific judgment calls that require a toxicologist or biocompatibility specialist who understands your specific device, its materials, and its clinical context.</p>
+
+      <h3>Test result interpretation</h3>
+
+      <p>If your cytotoxicity testing produced a borderline result, BioEvalPro cannot tell you whether that result is acceptable for your device. If your sensitization study showed a response in one animal, the tool cannot determine whether that finding is clinically significant. Interpreting test results requires scientific expertise applied to the specific circumstances of your device.</p>
+
+      <h3>Regulatory strategy</h3>
+
+      <p>The tool does not advise on which regulatory pathway to pursue, how to structure your overall submission strategy, or how to respond to a specific deficiency letter from a notified body. Strategic regulatory decisions require experience with specific notified bodies, an understanding of your company's broader submission timeline, and judgment about which battles to fight and which to concede.</p>
+
+      <h2>How the tool and your experts work together</h2>
+
+      <p>The most effective use of BioEvalPro is as a quality layer that runs before your experts spend their time. Here's how that looks in practice across different team structures.</p>
+
+      <table class="workflow-table">
+        <thead>
+          <tr>
+            <th style="width:25%">Step</th>
+            <th style="width:35%">BioEvalPro's role</th>
+            <th style="width:40%">Your expert's role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Documentation drafted</strong></td>
+            <td>Not involved yet. Your team or consultant drafts the BEP, BER, and supporting documentation.</td>
+            <td>Regulatory team or contracted consultant writes the documentation based on device-specific knowledge.</td>
+          </tr>
+          <tr>
+            <td><strong>Quality review</strong></td>
+            <td>Upload the draft. BioEvalPro evaluates quality, flags gaps, identifies weak sections, and provides remediation guidance.</td>
+            <td>Reviews the gap report. Prioritizes which findings to address. Makes judgment calls on device-specific items the tool flagged for attention.</td>
+          </tr>
+          <tr>
+            <td><strong>Remediation</strong></td>
+            <td>The gap report guides what needs to be revised. Specific suggestions show what stronger documentation looks like.</td>
+            <td>Rewrites weak sections using the tool's guidance as a starting point. Adds device-specific scientific justification where needed.</td>
+          </tr>
+          <tr>
+            <td><strong>Final check</strong></td>
+            <td>Run the revised documentation through BioEvalPro again to confirm gaps have been addressed.</td>
+            <td>Final expert review before submission to the notified body.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The key insight is that the tool handles the systematic, requirement-by-requirement quality evaluation so your experts can focus on the scientific and strategic questions that actually require their expertise. A toxicologist's time is better spent evaluating whether your TRA calculations are scientifically sound than checking whether your BER includes a foreseeable misuse section.</p>
+
+      <h2>Three team structures, three ways to use the tool</h2>
+
+      <div class="scenario-box">
+        <div class="scenario-label">In-house regulatory team</div>
+        <p>You have an internal RA lead who manages biological evaluation documentation. They draft the BEP and BER, coordinate with testing labs, and manage the notified body relationship. BioEvalPro runs as a quality check before the RA lead submits the package. The gap report catches structural issues and quality weaknesses that the RA lead can fix directly, while flagging any areas that may need input from an external toxicologist or biocompatibility specialist.</p>
+      </div>
+
+      <div class="scenario-box">
+        <div class="scenario-label">Outsourced to a consultant or CRO</div>
+        <p>You hire an outside firm to write your biological evaluation documentation. BioEvalPro runs as a verification step when you receive the deliverable. Instead of accepting the documentation at face value and discovering gaps during the notified body review, you have a structured quality report that shows exactly where the outsourced work meets expectations and where it falls short. This gives you leverage to request revisions before you pay the final invoice and before the documentation goes to the notified body.</p>
+      </div>
+
+      <div class="scenario-box">
+        <div class="scenario-label">Independent RA consultant managing multiple clients</div>
+        <p>You handle biological evaluation documentation for several device companies. BioEvalPro runs as a systematic quality check across your entire client portfolio. Every package gets the same level of structured review regardless of how busy your week is. The tool catches the gaps you might miss on a Friday afternoon review of your fifth BER that week. You deliver stronger documentation to your clients, and your clients see fewer deficiency findings from their notified bodies.</p>
+      </div>
+
+      <h2>What about areas the tool can't fully assess?</h2>
+
+      <p>When BioEvalPro encounters a section that requires device-specific scientific judgment, it doesn't stay silent. It identifies the section, notes what quality indicators it can evaluate (structural completeness, presence of required elements, whether conclusions reference supporting data), and clearly indicates where expert review is recommended.</p>
+
+      <p>For example, when evaluating a toxicological risk assessment section, the tool can determine whether the section identifies specific chemical constituents, whether it cites tolerable exposure values from recognized sources, whether it documents margin of safety calculations, and whether the conclusions reference the data presented. If the TRA lists three constituents but only calculates margins of safety for two, the tool flags the inconsistency. What the tool cannot determine is whether the selected tolerable exposure values are the most appropriate for the specific clinical application, or whether the margin of safety threshold chosen by the assessor is adequately conservative. Those questions get flagged for your toxicologist.</p>
+
+      <p>This approach means you always get value from every section of the report. Even in areas where the tool can't make a final scientific determination, it surfaces the structural and quality issues that would otherwise consume your expert's time to identify manually.</p>
+
+      <div class="callout">
+        <p><strong>The principle:</strong> BioEvalPro handles the systematic quality evaluation. Your experts handle the scientific judgment. Together, the documentation that reaches the notified body is stronger than either approach alone.</p>
+      </div>
+
+      <h2>When to run the evaluation</h2>
+
+      <p>The tool adds the most value at two points in your workflow.</p>
+
+      <p><strong>After the first complete draft.</strong> Once your BEP, BER, and supporting documentation are drafted, run them through BioEvalPro before any human reviewer sees them. The gap report identifies the obvious issues immediately, so your expert reviewers start from a cleaner baseline. This is especially valuable when documentation was drafted by someone less experienced or when multiple authors contributed different sections that may not be consistent with each other.</p>
+
+      <p><strong>Before final submission.</strong> After revisions and expert review are complete, run the final package through BioEvalPro one more time as a safety net. This catches anything that slipped through during the revision process, confirms that the gaps identified in the first review were actually addressed, and gives you confidence that the package is as strong as possible before it reaches the notified body.</p>
+
+      <p>For teams managing the <a href="transition-review-10993.html">2018-to-2025 transition</a>, there's a third optimal point: before you start updating documentation at all. Running your existing 2018-era documentation through the transition review gives you the complete picture of what needs to change, so every subsequent action is informed by the full gap analysis.</p>
+
+      <h2>Building this into your quality system</h2>
+
+      <p>For organizations that want to formalize BioEvalPro's role, the tool fits naturally as a documented step in your biological evaluation procedure. Your SOP for BEP/BER preparation could include a step requiring documentation to be evaluated through BioEvalPro prior to expert review and prior to submission. The gap report becomes part of your quality record, showing that a structured quality check was performed and that identified gaps were addressed.</p>
+
+      <p>This is particularly valuable for organizations managing large device portfolios or undergoing notified body audits where demonstrating a systematic approach to documentation quality strengthens your overall quality management story. It shows that your organization doesn't just write documentation and submit it; you have a structured process for evaluating and improving documentation quality before it leaves your hands.</p>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Ready to add a quality layer to your workflow?</h3>
+          <p>Join the waitlist for early access to BioEvalPro.</p>
+        </div>
+        <a href="index.html#waitlist" class="btn-primary">Join Waitlist</a>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@bioevalpro.com">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
