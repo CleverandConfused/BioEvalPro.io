@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Your Existing 10993 Package Against the 2025 Standard Before Your Next Review — BioEvalPro</title>
+  <meta name="description" content="Already have ISO 10993 documentation from the 2018 standard? BioEvalPro identifies exactly what needs updating before your next notified body review. Here's how the transition checker works.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --cream-dark: #F0EAE0;
+      --ink: #1A1A2E;
+      --ink-light: #3A3A52;
+      --ink-muted: #6B6B80;
+      --accent: #1B6B4A;
+      --accent-light: #E8F5EE;
+      --accent-hover: #14523A;
+      --amber-flag: #D4880F;
+      --border: #DDD5C8;
+      --shadow-sm: 0 1px 3px rgba(26,26,46,0.06);
+      --shadow-md: 0 4px 16px rgba(26,26,46,0.08);
+      --radius: 6px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Source Sans 3', 'Georgia', serif;
+      background: var(--cream); color: var(--ink);
+      line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,246,240,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before {
+      content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px;
+      background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1;
+    }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back::before { content: '\2190 '; }
+    .article-meta {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted);
+      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px;
+    }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding-bottom: 60px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body strong { color: var(--ink); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; }
+    .callout p { color: var(--ink-light); margin-bottom: 0; }
+    .callout strong { color: var(--accent); }
+    .callout-amber { background: #FEF4E4; border-left-color: var(--amber-flag); }
+    .callout-amber strong { color: var(--amber-flag); }
+
+    /* SCENARIO BOX */
+    .scenario-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin: 32px 0;
+    }
+    .scenario-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    .scenario-box p { margin-bottom: 12px; }
+    .scenario-box p:last-child { margin-bottom: 0; }
+
+    /* MINI REPORT */
+    .mini-report {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 32px 0;
+      max-width: 520px;
+    }
+    .mini-report-header {
+      background: var(--cream-dark);
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .mini-report-body { padding: 20px; }
+    .mini-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      font-size: 14px;
+    }
+    .mini-row:last-child { border-bottom: none; }
+    .mini-row-label { color: var(--ink-light); }
+    .status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; font-weight: 500;
+      padding: 3px 10px; border-radius: 100px; white-space: nowrap;
+    }
+    .status-pass { background: var(--accent-light); color: var(--accent); }
+    .status-flag { background: #FEF4E4; color: var(--amber-flag); }
+    .status-fail { background: #FDECEA; color: #C0392B; }
+    .status-new { background: #EDE9FE; color: #6B21A8; }
+
+    /* FLOW DIAGRAM */
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 32px 0;
+    }
+    .flow-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .flow-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 32px;
+      flex-shrink: 0;
+    }
+    .flow-dot {
+      width: 12px; height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .flow-connector {
+      width: 2px;
+      flex: 1;
+      background: var(--border);
+      min-height: 24px;
+    }
+    .flow-content {
+      padding-bottom: 24px;
+    }
+    .flow-content strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .flow-content p {
+      font-size: 15px;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .article-cta {
+      background: var(--ink); border-radius: 12px; padding: 40px 48px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      margin: 48px 0 80px; max-width: 720px;
+    }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; margin-bottom: 8px; }
+    .article-cta-text p { font-size: 15px; color: #B0B0C0; margin-bottom: 0; }
+    .btn-primary {
+      display: inline-block; background: var(--accent); color: #fff;
+      font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600;
+      padding: 14px 32px; border-radius: var(--radius); border: none;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* MOBILE MENU */
+    .mobile-menu-btn {
+      display: none; background: none; border: none; padding: 8px;
+      flex-direction: column; gap: 5px;
+    }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-nav {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--cream); border-bottom: 1px solid var(--border);
+      padding: 16px 28px 24px; z-index: 99; box-shadow: var(--shadow-md);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block; color: var(--ink); text-decoration: none;
+      font-size: 17px; font-weight: 500; padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+
+    @media (max-width: 700px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .header-inner nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .mini-report { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html" style="color:var(--ink);">Insights</a>
+      <a href="index.html#waitlist">Get Early Access</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Insights</a>
+  <a href="index.html#waitlist">Get Early Access</a>
+</div>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Insights</a>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="article-tag">Transition Tool</span>
+        <span>10 min read</span>
+      </div>
+      <h1>Your 2018 Documentation Isn't Ready for the 2025 Standard. Here's How to Find Out Exactly What Needs to Change.</h1>
+    </div>
+
+    <div class="article-body">
+
+      <p>If you have a medical device on the market with biological evaluation documentation written against ISO 10993-1:2018, you're facing a question that every regulatory team in the industry is asking right now: what specifically needs to change before the next notified body review?</p>
+
+      <p>The answer is not "redo everything." The answer is not "wait and see." The answer is a targeted gap analysis that compares your existing documentation against the 2025 requirements and tells you, section by section, what's already compliant, what needs updating, and what's entirely missing.</p>
+
+      <p>That's exactly what BioEvalPro's transition review is designed to do.</p>
+
+      <h2>The problem with the current approach</h2>
+
+      <p>Most teams are handling the 2018-to-2025 transition in one of two ways, and neither is efficient.</p>
+
+      <p><strong>Option one: hire a consultant.</strong> You send your existing BEP and BER to an outside regulatory consultant who manually reads through the documentation, compares it against the new standard, and delivers a report in two to four weeks. This costs $2,000 to $8,000 per engagement depending on the complexity of your device portfolio. If you have 15 legacy products, you're looking at a six-figure line item just to understand the scope of the problem.</p>
+
+      <p><strong>Option two: figure it out internally.</strong> Your regulatory team reads the 2025 standard, tries to map the changes against your existing documentation, and builds their own assessment. This is cheaper but slow, inconsistent across reviewers, and easy to get wrong. The <a href="iso-10993-2025-changes.html">changes in the 2025 edition</a> are substantial enough that a casual read-through won't catch everything.</p>
+
+      <p>Both approaches share the same weakness: they're manual processes applied to a structured problem. The 2025 standard has specific, enumerable requirements. Your documentation either addresses them or it doesn't. This is precisely the kind of evaluation that a purpose-built tool can do faster, cheaper, and more consistently than a human reviewer doing it from memory.</p>
+
+      <h2>How the transition review works</h2>
+
+      <p>BioEvalPro's transition review is designed for teams with existing 10993 documentation that need to understand the gap between their current state and the 2025 standard. The process is straightforward.</p>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-line"><div class="flow-dot"></div><div class="flow-connector"></div></div>
+          <div class="flow-content">
+            <strong>Upload your existing documentation</strong>
+            <p>Your current BEP, BER, or full 10993 package as PDF or Word files. These can be the exact documents your notified body last reviewed.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-line"><div class="flow-dot"></div><div class="flow-connector"></div></div>
+          <div class="flow-content">
+            <strong>Select "2018-to-2025 transition review"</strong>
+            <p>This tells the platform to evaluate your documentation specifically through the lens of what changed between editions, not just general completeness.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-line"><div class="flow-dot"></div><div class="flow-connector"></div></div>
+          <div class="flow-content">
+            <strong>The platform evaluates every 2025 delta</strong>
+            <p>Your documentation is parsed against each specific change introduced in the sixth edition. The evaluation checks whether your existing text addresses, partially addresses, or entirely omits each new requirement.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-line"><div class="flow-dot"></div><div class="flow-connector"></div></div>
+          <div class="flow-content">
+            <strong>Receive a transition-specific gap report</strong>
+            <p>A focused report showing exactly which 2025 requirements your documentation already satisfies and which ones need attention, with specific remediation guidance for each gap.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>What the platform checks for</h2>
+
+      <p>The transition review evaluates your documentation against every significant change between the 2018 and 2025 editions. Here's what the evaluation engine is looking for in your uploaded documents.</p>
+
+      <h3>Risk management integration (ISO 14971)</h3>
+
+      <p>The 2025 standard requires explicit integration between your biological evaluation and your ISO 14971 risk management process. The platform scans your documentation for references to risk management files, for evidence of severity and probability estimation applied to biological risks, and for traceability between your biological evaluation findings and risk controls. If your BER mentions ISO 14971 in the introduction but never cross-references specific risk analyses, that's a flag. If there's no mention of risk estimation methodology at all, that's a fail. For more detail on what this integration looks like, see <a href="iso-10993-2025-vs-2018.html">the full 2018 vs 2025 comparison</a>.</p>
+
+      <h3>Foreseeable misuse documentation</h3>
+
+      <p>This requirement is entirely new in 2025. The platform checks whether your documentation addresses reasonably foreseeable misuse scenarios and their biological safety implications. For 2018-era documentation, this section almost certainly doesn't exist, so the transition report will flag it as a new addition needed and provide guidance on what to include. We covered this topic in depth in <a href="foreseeable-misuse-10993.html">a separate article on foreseeable misuse requirements</a>.</p>
+
+      <h3>Terminology alignment</h3>
+
+      <p>The 2025 edition replaces "endpoints" with "biological effects" throughout and aligns terminology with ISO 14971. The platform scans your documentation for outdated terminology. This might sound cosmetic, but a notified body reviewer reading a document that still uses 2018 language will immediately question whether the underlying evaluation has been updated or just relabeled.</p>
+
+      <h3>Explicit risk estimation</h3>
+
+      <p>The 2025 standard requires transparent documentation of how biological risks were estimated, including scales for severity, probability, and uncertainty. The platform checks whether your documentation includes this level of detail. Many 2018-era BERs present risk conclusions without showing the estimation methodology, which is insufficient under the new standard.</p>
+
+      <h3>Exposure duration reclassification</h3>
+
+      <p>The 2025 edition refines exposure duration criteria based on contact days. The platform evaluates whether your device's exposure categorization might change under the updated definitions. If it does, the transition report flags this as a potential trigger for additional biological effect evaluations.</p>
+
+      <h3>Biological equivalence requirements</h3>
+
+      <p>If your documentation relies on equivalence claims, the platform checks whether those claims address the expanded requirements in the 2025 standard, which now explicitly require chemical, physical, and contact equivalence to be documented separately.</p>
+
+      <h3>Table A1 dependency</h3>
+
+      <p>The 2025 edition replaces the prescriptive Table A1 with four risk-based tables. The platform checks whether your evaluation rationale is structured around a Table A1 checklist approach or a genuine risk-based rationale. Documentation that reads like a checkbox exercise against the old table will be flagged for restructuring.</p>
+
+      <h2>What the transition report looks like</h2>
+
+      <p>The output is focused and actionable. Rather than scoring your entire package on general completeness, the transition report zeroes in on the specific 2025 deltas.</p>
+
+      <div class="mini-report">
+        <div class="mini-report-header">Transition Gap Report (sample)</div>
+        <div class="mini-report-body">
+          <div class="mini-row">
+            <span class="mini-row-label">ISO 14971 Risk Integration</span>
+            <span class="status status-flag">PARTIAL</span>
+          </div>
+          <div class="mini-row">
+            <span class="mini-row-label">Foreseeable Misuse Documentation</span>
+            <span class="status status-new">MISSING</span>
+          </div>
+          <div class="mini-row">
+            <span class="mini-row-label">2025 Terminology Alignment</span>
+            <span class="status status-flag">NEEDS UPDATE</span>
+          </div>
+          <div class="mini-row">
+            <span class="mini-row-label">Explicit Risk Estimation</span>
+            <span class="status status-new">MISSING</span>
+          </div>
+          <div class="mini-row">
+            <span class="mini-row-label">Exposure Duration Categorization</span>
+            <span class="status status-pass">CURRENT</span>
+          </div>
+          <div class="mini-row">
+            <span class="mini-row-label">Biological Equivalence (if claimed)</span>
+            <span class="status status-pass">CURRENT</span>
+          </div>
+          <div class="mini-row">
+            <span class="mini-row-label">Risk-Based Rationale (vs Table A1)</span>
+            <span class="status status-flag">PARTIAL</span>
+          </div>
+        </div>
+      </div>
+
+      <p>Each flagged item in the full report includes a plain language explanation of why the 2025 standard requires it, what your current documentation is missing, and a specific remediation suggestion. The report is designed to be handed directly to whoever is responsible for updating the documentation.</p>
+
+      <h2>The real use case: legacy devices coming up for review</h2>
+
+      <p>Here's where this gets practical.</p>
+
+      <div class="scenario-box">
+        <div class="scenario-label">Scenario</div>
+        <p>You're a regulatory affairs lead at a mid-size device company. You have 12 devices on the EU market, all with biological evaluation documentation written between 2019 and 2023 against the 2018 standard. Three of those devices are due for notified body certificate renewal in the next 12 months. Two others need updated documentation because of material changes in the supply chain.</p>
+        <p>Your notified body has signaled they expect documentation to reflect the 2025 standard as state of the art. You need to know, for each device, exactly what needs to change in the biological evaluation package before you submit for renewal.</p>
+        <p><strong>Without BioEvalPro:</strong> You either hire a consultant for each device ($24,000 to $96,000 for all 12, or $10,000 to $40,000 for just the urgent five), or your team spends weeks manually reviewing each package against the new standard.</p>
+        <p><strong>With BioEvalPro:</strong> You upload all five urgent packages and receive transition reports within 24 hours. Each report tells you exactly which 2025 requirements each device's documentation already meets and which need work. You now have a prioritized remediation plan. For the three renewals, you start updating documentation immediately. For the two material changes, you know whether the 2025 gaps overlap with the material change assessment, which could save duplicate effort.</p>
+      </div>
+
+      <p>The transition report doesn't just tell you what's missing. It helps you plan the work. If you know that all 12 devices are missing foreseeable misuse documentation, you can create a template once and adapt it across the portfolio. If you know that 8 of 12 need updated risk estimation methodology, you can standardize the approach rather than inventing it device by device.</p>
+
+      <h2>Timing matters: get ahead of the review cycle</h2>
+
+      <p>The smartest time to run a transition review is before you start updating your documentation, not after. Here's why.</p>
+
+      <p>If you update your BER first and then discover during the notified body review that you missed a 2025 requirement, you're back to square one. The review gets paused, you receive a deficiency letter, and you lose weeks or months in the approval cycle. A transition review before you begin updating gives you the complete picture upfront. Every change you make is informed by the full list of gaps.</p>
+
+      <p>This is especially valuable when you're simultaneously formulating new test protocols. If your device is coming up for retesting (whether due to certificate renewal, a material change, or a post-market finding), you need to know whether the 2025 standard changes your testing requirements. Does the updated exposure duration categorization shift your device into a different bracket? Does the expanded biological equivalence requirement affect your equivalence claim? Does the new foreseeable misuse requirement introduce scenarios that your current test data doesn't cover?</p>
+
+      <p>Answering these questions before you commit to a test protocol can save significant time and money. Running tests against 2018 requirements when your notified body expects 2025 compliance means you may need to test again.</p>
+
+      <div class="callout">
+        <p><strong>The takeaway:</strong> Run the transition review first. Use the results to inform both your documentation updates and your test protocol planning. This way, every action you take is aligned with the 2025 standard from the start, and nothing gets reworked later.</p>
+      </div>
+
+      <h2>Faster results without cutting corners</h2>
+
+      <p>Traditional gap analysis is a proven process, but it takes time. A consultant needs to read your documentation, reference the current standard, and compile findings. For a single device that's typically two to four weeks. For a portfolio of legacy products, the timeline and cost scale linearly.</p>
+
+      <p>BioEvalPro compresses that timeline by performing a thorough, requirement-by-requirement evaluation in hours instead of weeks. The platform checks every 2025 delta against your uploaded documentation with the same level of detail on the fifteenth review that it delivers on the first. That consistency matters when you're evaluating multiple devices across a portfolio and need confidence that nothing was overlooked.</p>
+
+      <p>The result is a comprehensive gap report that your team can act on immediately. Use it to prioritize documentation updates, scope the work for your regulatory team, plan test protocols around confirmed gaps, or hand it to a consultant as a starting brief so their engagement focuses on strategic decisions rather than discovery. However you use it, the transition review gives you a clear, structured picture of where you stand, delivered fast enough to keep your timelines on track.</p>
+
+      <h2>Getting started</h2>
+
+      <p>BioEvalPro is currently onboarding early users. If you have legacy 10993 documentation that needs to be assessed against the 2025 standard, the transition review is designed specifically for your situation.</p>
+
+      <p>The process is simple: upload your existing documentation, select the transition review option, and receive a gap report within 24 hours that tells you exactly what needs to change. No ambiguity, no guesswork, no waiting weeks for a consultant's calendar to open up.</p>
+
+      <p>If you're facing a certificate renewal, a significant change assessment, or simply want to understand the scope of work ahead, the transition review is the fastest way to get a clear picture.</p>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Find out what your 2018 documentation is missing.</h3>
+          <p>Join the waitlist for BioEvalPro's transition review.</p>
+        </div>
+        <a href="index.html#waitlist" class="btn-primary">Join Waitlist</a>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@bioevalpro.com">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
