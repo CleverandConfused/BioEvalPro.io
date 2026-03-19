@@ -291,18 +291,12 @@
     }
 
     /* ── WHAT THE TOOL DOES ── */
-    .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
-    .value-does, .value-doesnt { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; }
-    .value-does { border-left: 4px solid var(--accent); }
-    .value-doesnt { border-left: 4px solid var(--amber-flag); }
-    .value-heading { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; }
-    .value-does .value-heading { color: var(--accent); }
-    .value-doesnt .value-heading { color: var(--amber-flag); }
+    .value-grid { margin-top: 40px; }
+    .value-does { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; border-left: 4px solid var(--accent); }
+    .value-heading { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; color: var(--accent); }
     .value-list { list-style: none; padding: 0; }
     .value-list li { font-size: 15px; color: var(--ink-light); line-height: 1.6; padding: 6px 0 6px 24px; position: relative; }
-    .value-list li::before { position: absolute; left: 0; font-weight: 700; font-size: 14px; }
-    .value-does .value-list li::before { content: '\2713'; color: var(--accent); }
-    .value-doesnt .value-list li::before { content: '\2192'; color: var(--amber-flag); }
+    .value-list li::before { position: absolute; left: 0; font-weight: 700; font-size: 14px; content: '\2713'; color: var(--accent); }
 
     /* ── USE CASES ── */
     .usecase-grid {
@@ -853,7 +847,6 @@
       .coverage-grid { grid-template-columns: 1fr; }
       .method-grid { grid-template-columns: 1fr; }
       .usecase-grid { grid-template-columns: 1fr; }
-      .value-grid { grid-template-columns: 1fr; }
       .compare-strip { font-size: 13px; }
       .compare-strip-cell, .compare-strip-header { padding: 10px 12px; }
       .audience-grid { grid-template-columns: 1fr; }
@@ -922,31 +915,20 @@
   <div class="container fade-up">
     <div class="section-label">What BioEvalPro Does</div>
     <div class="section-title">Gap finding. Quality evaluation. Improvement guidance.</div>
-    <p class="section-desc">BioEvalPro reads your biological evaluation documentation and evaluates the quality of each section against ISO 10993-1:2025 requirements and documented notified body expectations. The tool identifies gaps, flags areas likely to receive heavier scrutiny, and provides specific guidance on how sections can be strengthened.</p>
+    <p class="section-desc">BioEvalPro reads your biological evaluation documentation, evaluates each section against ISO 10993-1:2025 requirements, and tells you what needs fixing.</p>
     <div class="value-grid">
       <div class="value-does">
         <div class="value-heading">What the tool delivers</div>
         <ul class="value-list">
-          <li>Section-by-section quality evaluation with Pass, Flag, or Fail scoring</li>
-          <li>Identification of missing content, weak justifications, and incomplete rationale</li>
-          <li>Flags for areas that notified bodies are known to scrutinize more heavily</li>
-          <li>Specific remediation suggestions with guidance on what stronger documentation looks like</li>
-          <li>Likelihood indicators where documentation may be insufficient to demonstrate safety</li>
-          <li>2018-to-2025 delta flagging for teams transitioning existing documentation</li>
-        </ul>
-      </div>
-      <div class="value-doesnt">
-        <div class="value-heading">Where your experts come in</div>
-        <ul class="value-list">
-          <li>Device-specific scientific determinations about material safety or clinical risk</li>
-          <li>Toxicological judgment calls on whether specific extractable profiles are acceptable</li>
-          <li>Decisions on whether a material change requires additional biological testing</li>
-          <li>Final regulatory strategy and submission decisions for your specific device</li>
-          <li>Interpretation of test results in the context of your device's intended use</li>
+          <li>Pass, Flag, or Fail scoring for every section</li>
+          <li>Missing content and weak justification identification</li>
+          <li>High-scrutiny area warnings based on notified body patterns</li>
+          <li>Specific remediation guidance for each finding</li>
+          <li>Likelihood indicators for insufficient documentation</li>
+          <li>2018-to-2025 transition gap detection</li>
         </ul>
       </div>
     </div>
-    <p style="font-size:15px; color:var(--ink-light); margin-top:28px; max-width:700px; line-height:1.65;">BioEvalPro is not a toxicology or biocompatibility consultancy. The tool evaluates documentation quality and identifies where your package is strong, where it needs work, and where reviewers are likely to push back. The scientific and strategic decisions remain with your regulatory team, your toxicologist, or your contracted experts. <a href="how-bioevalpro-works-with-your-team.html" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;">Read more about how BioEvalPro fits into your team's workflow.</a></p>
   </div>
 </section>
 
@@ -957,7 +939,7 @@
       <div class="section-label">The Problem</div>
       <div class="section-title">Your 10993 package has gaps you haven't found yet.</div>
       <p style="color:#B0B0C0; font-size:17px; max-width:640px; line-height:1.65;">
-        ISO 10993-1:2025 introduced new requirements that most existing documentation doesn't address. Notified bodies are already auditing against the updated standard, and rejections cost months.
+        ISO 10993-1:2025 introduced requirements most existing documentation doesn't address. Notified bodies are already auditing against it, and rejections cost months.
       </p>
       <div class="problem-stats">
         <div>
@@ -985,27 +967,27 @@
     <div class="usecase-grid">
       <div class="usecase-card">
         <h3>2018 &rarr; 2025 Transition Review</h3>
-        <p>Upload your existing biological evaluation documentation written against the 2018 standard. BioEvalPro identifies exactly which 2025 requirements your documentation already meets and which ones need updating. Get a prioritized remediation plan before you start rewriting anything.</p>
+        <p>Upload existing 2018-era documentation. See exactly which 2025 requirements are met and which need work, with a prioritized remediation plan.</p>
       </div>
       <div class="usecase-card">
         <h3>Pre-Submission Gap Check</h3>
-        <p>Before submitting new or updated 10993 documentation to a notified body, run it through BioEvalPro for a final quality check. Catch missing sections, weak justifications, and non-compliant elements before the reviewer does.</p>
+        <p>Run your package through BioEvalPro before sending it to the notified body. Catch weak sections and missing elements before the reviewer does.</p>
       </div>
       <div class="usecase-card">
         <h3>Material or Supplier Change Documentation Check</h3>
-        <p>After a material or supplier change triggers a biological evaluation update, confirm that the revised documentation reflects the change throughout. Check that your BER, chemical characterization, and risk assessment sections were all updated consistently.</p>
+        <p>After a material or supplier change, confirm the revised documentation reflects the change consistently across your BER, chemical characterization, and risk assessment.</p>
       </div>
       <div class="usecase-card">
         <h3>Post-Acquisition File Review</h3>
-        <p>Acquired a device portfolio? Quickly assess the state of inherited biological evaluation documentation across multiple products. Understand the scope of remediation work before planning your transition timeline.</p>
+        <p>Acquired a device portfolio? Assess the state of inherited biological evaluation documentation and scope the remediation work ahead.</p>
       </div>
       <div class="usecase-card">
         <h3>Outsourced Deliverable Verification</h3>
-        <p>If your BEP or BER was written by an outside consultant or CRO, run it through BioEvalPro before you accept the deliverable. A structured second check before submission protects you from gaps in outsourced work.</p>
+        <p>Run outsourced BEP or BER deliverables through BioEvalPro before accepting them. Catch gaps in contracted work before submission.</p>
       </div>
       <div class="usecase-card">
         <h3>Pre-Testing Documentation Review</h3>
-        <p>Before committing to a new round of biocompatibility testing, check that your biological evaluation plan and supporting documentation are aligned with the 2025 standard. Confirm your evaluation strategy reflects current requirements before you scope and fund the testing program.</p>
+        <p>Before funding a new round of biocompatibility testing, confirm your evaluation plan is aligned with the 2025 standard.</p>
       </div>
     </div>
   </div>
@@ -1030,7 +1012,7 @@
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-title">Every section is evaluated</div>
-        <div class="step-desc">Your documents are evaluated against a comprehensive requirements framework built from regulatory domain expertise and aligned with notified body expectations.</div>
+        <div class="step-desc">Evaluated against a requirements framework built from regulatory expertise and notified body expectations.</div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
@@ -1084,31 +1066,31 @@
   <div class="container fade-up">
     <div class="section-label">The Evaluation Engine</div>
     <div class="section-title">What powers every BioEvalPro report.</div>
-    <p class="section-desc">Every report is generated by a structured evaluation platform drawing from multiple authoritative sources, not a single-pass review.</p>
+    <p class="section-desc">Built from multiple authoritative sources, not a single-pass review.</p>
     <div class="method-grid">
       <div class="method-card">
         <h3>ISO 10993 Series Requirements</h3>
-        <p>Your documentation is evaluated against requirements derived from the full ISO 10993 series, including the 2025 edition of Part 1 and key sub-standards covering chemical characterization, cytotoxicity, sensitization, genotoxicity, and toxicological risk assessment.</p>
+        <p>Evaluated against the full ISO 10993 series, including Part 1:2025 and key sub-standards for chemical characterization, cytotoxicity, sensitization, genotoxicity, and toxicological risk assessment.</p>
       </div>
       <div class="method-card">
         <h3>ISO 14971 Risk Integration</h3>
-        <p>The 2025 standard requires explicit integration with ISO 14971 risk management processes. The platform checks for traceability between your biological evaluation and your risk management file, including severity, probability, and uncertainty estimation.</p>
+        <p>Checks for traceability between your biological evaluation and risk management file, including severity, probability, and uncertainty estimation.</p>
       </div>
       <div class="method-card">
         <h3>Regulatory Guidance Alignment</h3>
-        <p>Evaluations are informed by published FDA biocompatibility guidance, EU MDCG guidance documents, and notified body position papers. This ensures your documentation is assessed against real-world regulatory expectations, not just the standard text.</p>
+        <p>Informed by FDA biocompatibility guidance, EU MDCG documents, and notified body position papers. Assessed against real-world expectations, not just standard text.</p>
       </div>
       <div class="method-card">
         <h3>2018 &rarr; 2025 Delta Awareness</h3>
-        <p>For teams transitioning from the fifth edition, the platform identifies elements that were compliant under 2018 but fall short of 2025 requirements, including new areas like foreseeable misuse documentation and explicit risk estimation.</p>
+        <p>Identifies elements compliant under 2018 but short of 2025 requirements, including foreseeable misuse and explicit risk estimation.</p>
       </div>
       <div class="method-card">
         <h3>Notified Body Pattern Recognition</h3>
-        <p>BioEvalPro's evaluation criteria are built from documented patterns of notified body findings and common audit deficiencies. The tool flags the issues that reviewers actually challenge, not just theoretical non-conformances.</p>
+        <p>Flags the issues reviewers actually challenge, based on documented patterns of notified body findings and common audit deficiencies.</p>
       </div>
       <div class="method-card">
         <h3>Actionable Remediation</h3>
-        <p>Every flagged item includes a plain language explanation of why it matters and a specific remediation suggestion. Reports are designed to be handed directly to the person responsible for fixing the documentation.</p>
+        <p>Every finding includes a plain language explanation and a specific suggestion for improvement.</p>
       </div>
     </div>
   </div>
@@ -1119,7 +1101,7 @@
   <div class="container fade-up">
     <div class="section-label">Coverage Areas</div>
     <div class="section-title">Comprehensive evaluation across the 10993 series.</div>
-    <p class="section-desc">Each area receives a Pass, Flag, or Fail status, with a plain language explanation of why notified bodies challenge it, and what to fix.</p>
+    <p class="section-desc">Each area scored Pass, Flag, or Fail with an explanation and remediation guidance.</p>
     <div class="coverage-grid">
       <div class="cov-item">
         <div class="cov-icon">1</div>
@@ -1207,17 +1189,17 @@
       <div class="audience-card">
         <div class="audience-role">Consultants</div>
         <h3>Independent RA professionals</h3>
-        <p>Managing multiple client submissions? Run every package through a structured check before delivery. Catch gaps early and deliver stronger documentation to your clients.</p>
+        <p>Run every client package through a structured check before delivery. Catch gaps early, deliver stronger documentation.</p>
       </div>
       <div class="audience-card">
         <div class="audience-role">Startups</div>
         <h3>Device company RA leads</h3>
-        <p>Small regulatory teams don't always have the bandwidth for a full internal gap review. Get notified body-level scrutiny on your documentation before it ships.</p>
+        <p>Small teams can't always do a full internal gap review. Get notified body-level scrutiny before your package ships.</p>
       </div>
       <div class="audience-card">
         <div class="audience-role">CROs</div>
         <h3>Contract research organizations</h3>
-        <p>Handling regulatory submissions as a service? Integrate structured quality checks into your workflow and deliver consistently thorough reviews across your portfolio.</p>
+        <p>Add structured quality checks to your workflow. Deliver consistently thorough reviews across your client portfolio.</p>
       </div>
     </div>
   </div>
@@ -1265,8 +1247,8 @@
   <div class="container fade-up" style="text-align:center; max-width:700px;">
     <div class="section-label">Pricing</div>
     <div class="section-title">A fraction of the $2,000&ndash;$8,000 that other gap analysis services cost.</div>
-    <p class="section-desc" style="margin:0 auto 20px; text-align:center;">Traditional consultant-led gap analysis runs $2,000&ndash;$8,000 per engagement. BioEvalPro delivers the same depth of first-pass analysis at a fraction of the cost, with per-submission and monthly subscription options available.</p>
-    <p style="font-size:16px; color:var(--ink-light); margin-bottom:36px; line-height:1.65;">We're finalizing pricing ahead of launch. Join the waitlist for early access and priority pricing, or reach out directly to discuss your needs.</p>
+    <p class="section-desc" style="margin:0 auto 20px; text-align:center;">Traditional consultant-led gap analysis runs $2,000&ndash;$8,000 per engagement. BioEvalPro delivers comparable first-pass analysis at a fraction of the cost.</p>
+    <p style="font-size:16px; color:var(--ink-light); margin-bottom:36px; line-height:1.65;">Pricing is being finalized. Join the waitlist for early access and priority pricing.</p>
     <a href="#waitlist" class="btn-primary" style="margin-right:16px;">Join Waitlist</a>
     <a href="#contact" class="btn-secondary">Request Pricing</a>
   </div>
@@ -1277,7 +1259,7 @@
   <div class="container fade-up">
     <div class="section-label">Security &amp; Trust</div>
     <div class="section-title">Your documentation is handled with care.</div>
-    <p class="section-desc">BioEvalPro takes document security seriously. Enterprise-grade infrastructure with a security posture built for regulated industries.</p>
+    <p class="section-desc">Enterprise-grade infrastructure built for regulated industries.</p>
     <div class="trust-row">
       <div class="trust-item"><div class="trust-icon">&#128274;</div> Encryption in transit and at rest</div>
       <div class="trust-item"><div class="trust-icon">&#128465;</div> Documents deleted after processing</div>
@@ -1315,31 +1297,31 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does this replace my regulatory consultant or toxicologist?</div>
-        <div class="faq-a">No. BioEvalPro evaluates documentation quality, identifies gaps, and flags areas likely to receive scrutiny. Device-specific scientific judgment calls, such as whether a material change requires retesting or whether an extractable profile is acceptable, remain with your regulatory team, toxicologist, or contracted experts. The tool strengthens your documentation before it reaches those reviewers.</div>
+        <div class="faq-a">No. BioEvalPro evaluates documentation quality and flags gaps. Device-specific scientific judgment calls remain with your regulatory team, toxicologist, or contracted experts.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which version of ISO 10993-1 does it evaluate against?</div>
-        <div class="faq-a">Primarily the 2025 standard, with full awareness of the 2018-to-2025 delta. You can select your evaluation type (new submission or transition review) and the analysis adjusts accordingly.</div>
+        <div class="faq-a">The 2025 standard, with full 2018-to-2025 delta awareness. Select your evaluation type and the analysis adjusts accordingly.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What file formats do you accept?</div>
-        <div class="faq-a">PDF and Word (.docx) files. You can upload individual documents or a complete package.</div>
+        <div class="faq-a">PDF and Word (.docx). Individual documents or a complete package.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is my documentation handled?</div>
-        <div class="faq-a">Your files are encrypted in transit and at rest, evaluated through BioEvalPro's secure analysis process, and deleted after your report is delivered. Documentation is not retained. Enterprise cloud hosting with GDPR compliance and a DPA available on request.</div>
+        <div class="faq-a">Encrypted in transit and at rest. Deleted after your report is delivered. Enterprise cloud hosting, GDPR compliant, DPA available on request.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much does it cost?</div>
-        <div class="faq-a">BioEvalPro offers both per-submission and monthly subscription options at a fraction of the $2,000&ndash;$8,000 that traditional consultant-led gap analysis costs. Pricing is being finalized ahead of launch. Join the waitlist or reach out directly to discuss your needs and get priority pricing.</div>
+        <div class="faq-a">A fraction of the $2,000&ndash;$8,000 traditional consultants charge. Per-submission and subscription options. Pricing finalizing ahead of launch.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does the evaluation take?</div>
-        <div class="faq-a">You'll receive your gap report within 24 hours of uploading your documentation. Each report includes section-by-section scoring, plain language explanations, and specific remediation steps.</div>
+        <div class="faq-a">Within 24 hours. Full section-by-section scoring with explanations and remediation steps.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can it check my Clinical Evaluation Report too?</div>
-        <div class="faq-a">A CER gap scanner module is on the expansion roadmap. The initial launch focuses on the full ISO 10993 biological evaluation series.</div>
+        <div class="faq-a">CER gap scanning is on the roadmap. Launch focuses on the full ISO 10993 series.</div>
       </div>
     </div>
   </div>
@@ -1350,7 +1332,7 @@
   <div class="container fade-up">
     <div class="section-label">Get in Touch</div>
     <div class="section-title">Have a question? Want to discuss pricing?</div>
-    <p class="section-desc">Whether you're exploring the tool for your team or have a question about coverage, we'd like to hear from you.</p>
+    <p class="section-desc">Questions about the tool, coverage, or pricing? We'd like to hear from you.</p>
     <form class="contact-grid" id="contactForm" onsubmit="return handleContact(event)">
       <input type="text" name="name" class="contact-input" placeholder="Your name" required aria-label="Your name">
       <input type="email" name="email" class="contact-input" placeholder="you@company.com" required aria-label="Email address">
