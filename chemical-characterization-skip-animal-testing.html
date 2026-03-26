@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Counts as Sufficient Chemical Characterization Data to Skip Animal Testing</title>
+  <meta name="description" content="ISO 10993 allows chemical characterization and toxicological risk assessment as an alternative to animal testing for several biocompatibility endpoints. Here is what sufficient data looks like in practice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FAF6F0; --cream-dark: #F0EAE0; --ink: #1A1A2E; --ink-light: #3A3A52; --ink-muted: #6B6B80; --accent: #1B6B4A; --accent-light: #E8F5EE; --accent-hover: #14523A; --amber-flag: #D4880F; --border: #DDD5C8; --shadow-md: 0 4px 16px rgba(26,26,46,0.08); --radius: 6px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', 'Georgia', serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,240,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before { content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px; background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1; }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back::before { content: '\2190 '; }
+    .article-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px; }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding-bottom: 60px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body strong { color: var(--ink); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; }
+    .callout p { color: var(--ink-light); margin-bottom: 0; }
+    .callout strong { color: var(--accent); }
+    .callout-amber { background: #FEF4E4; border-left-color: var(--amber-flag); }
+    .callout-amber strong { color: var(--amber-flag); }
+    .example-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .example-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 12px; }
+    .example-box p { margin-bottom: 12px; }
+    .example-box p:last-child { margin-bottom: 0; }
+    .footnotes { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .footnotes p { font-size: 14px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 8px; }
+    .footnotes a { color: var(--accent); word-break: break-all; }
+    sup a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .article-cta { background: var(--ink); border-radius: 12px; padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; margin: 48px 0 80px; max-width: 720px; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; margin-bottom: 8px; }
+    .article-cta-text p { font-size: 15px; color: #B0B0C0; margin-bottom: 0; }
+    .btn-primary { display: inline-block; background: var(--accent); color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600; padding: 14px 32px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .mobile-menu-btn { display: none; background: none; border: none; padding: 8px; flex-direction: column; gap: 5px; }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--border); padding: 16px 28px 24px; z-index: 99; box-shadow: var(--shadow-md); }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a { display: block; color: var(--ink); text-decoration: none; font-size: 17px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .mobile-nav a:last-child { border-bottom: none; }
+    @media (max-width: 700px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .header-inner nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html" style="color:var(--ink);">Insights</a>
+      <a href="index.html#waitlist">Get Early Access</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Insights</a>
+  <a href="index.html#waitlist">Get Early Access</a>
+</div>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Insights</a>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="article-tag">Chemical Characterization</span>
+        <span>10 min read</span>
+      </div>
+      <h1>What Counts as Sufficient Chemical Characterization Data to Skip Animal Testing</h1>
+    </div>
+
+    <div class="article-body">
+
+      <p>Chemical characterization combined with toxicological risk assessment is one of the most powerful tools available to medical device manufacturers for reducing biological testing scope. When done well, it can address multiple biocompatibility endpoints simultaneously, eliminate the need for animal testing for those endpoints, and produce a stronger scientific basis for safety than biological testing alone.</p>
+
+      <p>When done poorly, it generates deficiency findings, delays submissions, and sometimes results in more testing than would have been required if the manufacturer had simply followed the traditional approach.</p>
+
+      <p>This article explains what "sufficient" chemical characterization data looks like in practice, which biological effects it can address, and where the approach reaches its limits.</p>
+
+      <h2>The regulatory basis for the approach</h2>
+
+      <p>Both the ISO 10993 series and FDA guidance support using chemical characterization as an alternative to biological testing for specific endpoints. ISO 10993-1:2025 explicitly requires a stepwise evaluation approach in which material characterization and in vitro testing are performed first, with in vivo testing conducted only when earlier steps produce insufficient data.<sup><a href="#fn1">1</a></sup></p>
+
+      <p>The FDA's guidance on ISO 10993-1 identifies chemical characterization in conjunction with toxicological risk assessment as an acceptable approach for evaluating the following biological effects: acute systemic toxicity, subacute systemic toxicity, subchronic systemic toxicity, chronic systemic toxicity, genotoxicity, carcinogenicity, and reproductive/developmental toxicity.<sup><a href="#fn2">2</a></sup></p>
+
+      <p>In the EU, the legal basis for biocompatibility is the General Safety and Performance Requirements (GSPR) in Annex I of the Medical Device Regulation (EU 2017/745). GSPR 10.1 requires compatibility of materials with biological tissues, GSPR 10.2 addresses contaminants and residues, and GSPR 10.4 covers substances leaching from the device.<sup><a href="#fn2b">2b</a></sup> The EU MDR also introduces additional requirements for substances classified as carcinogenic, mutagenic, or toxic to reproduction (CMR) under Annex I, Section 10.4.1, which can require specific chemical characterization and justification beyond what ISO 10993 alone addresses. Notified bodies are expected to verify that these CMR requirements are met, and chemical characterization data is the primary evidence for doing so.</p>
+
+      <p>The approach does not replace all biological testing. Cytotoxicity, sensitization, irritation, hemocompatibility, and implantation effects generally still require their own specific test methods, though in vitro alternatives exist for some of these as well.<sup><a href="#fn3">3</a></sup></p>
+
+      <p>The AAMI has noted that using chemical characterization to assess toxicity can reduce testing costs by $200,000 or more and accelerate time to market by six months or longer, depending on the device.<sup><a href="#fn4">4</a></sup> These savings are significant, but they are only realizable if the chemical characterization data is sufficient to support the toxicological risk assessment that replaces the biological testing.</p>
+
+      <h2>What sufficient data requires</h2>
+
+      <h3>Comprehensive extractable and leachable studies</h3>
+
+      <p>The foundation of the approach is extractable and leachable (E&L) testing under ISO 10993-18. The chemical characterization must identify and, where possible, quantify the substances that could be released from the device into the body during clinical use.</p>
+
+      <p>For the data to be considered sufficient, the extraction study must use conditions that represent or exceed clinical exposure. The FDA's draft guidance on chemical analysis for biocompatibility assessment recommends extractions in at least triplicate, using solvents that represent the range of polarity relevant to the clinical contact environment.<sup><a href="#fn5">5</a></sup> A single-solvent extraction at one temperature is generally not sufficient because it may miss compounds that are soluble in different polarity environments.</p>
+
+      <p>The test article must be in its final finished form, including all manufacturing processes and sterilization. If the test article differs from the final device, the differences must be justified and their potential impact on the extractable profile addressed.</p>
+
+      <h3>Properly calculated analytical evaluation thresholds</h3>
+
+      <p>The analytical evaluation threshold (AET) defines the lowest concentration of a substance that must be reliably identified and quantified. It is the dividing line between compounds that require toxicological assessment and those that are considered below the level of concern.</p>
+
+      <p>AET calculation is a frequent source of deficiency findings. The FDA has specifically noted that submitted AET calculations often do not account for instrument variability inherent to semi-quantitative analytical techniques.<sup><a href="#fn6">6</a></sup> Setting the AET too high risks missing toxicologically relevant extractables. Setting it appropriately requires understanding the analytical method's sensitivity and incorporating realistic uncertainty factors.</p>
+
+      <p>Every substance detected above the AET must be addressed in the toxicological risk assessment. Substances below the AET can generally be excluded from individual assessment, though the Threshold of Toxicological Concern (TTC) concept may be applied as an additional safety net for low-level unknowns.<sup><a href="#fn7">7</a></sup></p>
+
+      <h3>Complete toxicological risk assessment</h3>
+
+      <p>Chemical characterization data alone does not justify skipping biological testing. The data must be evaluated in a separate toxicological risk assessment following ISO 10993-17:2023.<sup><a href="#fn8">8</a></sup> This is a critical point: the chemical data identifies what substances are present and in what quantities. The TRA evaluates whether those quantities pose an acceptable risk to the patient.</p>
+
+      <p>A sufficient TRA identifies each substance detected above the AET, assigns a tolerable exposure (TE) or tolerable intake (TI) value from recognized toxicological sources, calculates the estimated patient exposure based on the extractable data and clinical use conditions, and determines the margin of safety (MOS) for each substance. The MOS must be adequate for the exposure scenario, and the sources for all toxicological reference values must be documented and traceable.</p>
+
+      <p>A TRA that addresses four out of six identified extractables is not sufficient. Every substance above the AET must be assessed. This is one of the <a href="common-deficiency-findings-10993.html">most common deficiency findings</a> in biological evaluation documentation.</p>
+
+      <div class="callout-amber callout">
+        <p><strong>Common gap:</strong> A chemical characterization study identifies eight extractable compounds. The TRA calculates margins of safety for five of them. The remaining three are described as "trace-level compounds not expected to pose a toxicological concern." This is a deficiency. Every compound above the AET requires a documented risk assessment, regardless of the perceived level of concern.</p>
+      </div>
+
+      <h2>Where the approach works best</h2>
+
+      <p>Chemical characterization combined with TRA is most effective and most likely to be accepted by reviewers in the following situations.</p>
+
+      <p><strong>Well-characterized materials with established toxicological profiles.</strong> If your device uses materials whose extractable profiles are well understood and whose constituents have established tolerable exposure values in the toxicological literature, the TRA can be straightforward and defensible.</p>
+
+      <p><strong>Devices with existing chemical data from prior submissions.</strong> If you have already performed chemical characterization on a similar device or the same materials, that data may support the current evaluation with appropriate bridging justification.</p>
+
+      <p><strong>Material or manufacturing changes.</strong> When a change triggers a re-evaluation, chemical characterization can be used to establish chemical equivalency between the original and modified device, potentially avoiding the need to repeat biological testing. ISO 10993-18 provides a framework for this comparison.<sup><a href="#fn9">9</a></sup></p>
+
+      <h2>Where the approach reaches its limits</h2>
+
+      <p>Chemical characterization and TRA cannot address every biological effect. The approach is generally not accepted as a standalone substitute for cytotoxicity testing (ISO 10993-5), sensitization testing (ISO 10993-10), irritation testing (ISO 10993-23), hemocompatibility evaluation (ISO 10993-4), or local effects after tissue contact (ISO 10993-6).<sup><a href="#fn2">2</a></sup></p>
+
+      <p>These effects involve biological responses that are not fully predicted by chemical composition alone. A material's cytotoxic potential, for example, depends on how cells respond to the material as a whole, not just its individual chemical constituents. Similarly, sensitization involves an immune response that cannot be reliably predicted from chemical data alone, though in vitro and in chemico alternatives to animal testing do exist for sensitization assessment.<sup><a href="#fn3">3</a></sup></p>
+
+      <p>For novel materials, materials with complex or poorly characterized compositions, or devices where degradation products are a significant concern, the chemical characterization approach may produce incomplete data. In these cases, biological testing may still be necessary to fill the gaps.</p>
+
+      <div class="callout">
+        <p><strong>The practical test:</strong> If your chemical characterization identifies and quantifies all relevant extractables, your AET is properly calculated, and your TRA demonstrates adequate margins of safety for every identified substance, you have a defensible basis for addressing systemic toxicity, genotoxicity, carcinogenicity, and reproductive toxicity without animal testing. If any of those elements is missing or incomplete, the approach does not hold together.</p>
+      </div>
+
+      <h2>Documentation quality matters</h2>
+
+      <p>Even when the underlying data is scientifically sufficient, poor documentation can result in deficiency findings. The chemical characterization report, the TRA, and the biological evaluation plan must all reference each other consistently. The BEP should identify chemical characterization and TRA as the evaluation method for the relevant biological effects. The TRA should reference the specific chemical characterization report and its findings. The BER should summarize the conclusions and cross-reference both documents.</p>
+
+      <p>Inconsistencies between these documents are exactly what reviewers check first. <a href="index.html#what-it-does">BioEvalPro</a> cross-references your chemical characterization, TRA, and BEP to confirm that every extractable above the AET is accounted for, that your endpoint exclusions are supported by the data you have, and that no section contradicts another. It scores the strength of your justifications and tells you where the weak points are before your reviewer does. <a href="index.html#waitlist">Join the waitlist</a> for early access, or <a href="index.html#contact">get in touch</a> to learn more.</p>
+
+      <div class="footnotes">
+        <p id="fn1"><sup>1</sup> ISO 10993-1:2025, Clause 4.4 and the stepwise evaluation approach described in Clause 6. See also Johner Institute, "No animal testing to prove biocompatibility," December 2025. <a href="https://blog.johner-institute.com/regulatory-affairs/no-animal-testing-to-prove-biocompatibility/">blog.johner-institute.com</a></p>
+        <p id="fn2"><sup>2</sup> FDA Guidance, "Use of International Standard ISO 10993-1: Biological evaluation of medical devices, Part 1: Evaluation and testing within a risk management process," updated 2023. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/use-international-standard-iso-10993-1-biological-evaluation-medical-devices-part-1-evaluation-and">fda.gov</a></p>
+        <p id="fn2b"><sup>2b</sup> Regulation (EU) 2017/745 (Medical Device Regulation), Annex I, Chapter II, Sections 10.1, 10.2, and 10.4. For CMR substance requirements, see Section 10.4.1.</p>
+        <p id="fn3"><sup>3</sup> Catarina et al., "The 'Big Three' in biocompatibility testing of medical devices: implementation of alternatives to animal experimentation," Frontiers in Bioengineering and Biotechnology, 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10800850/">PMC</a></p>
+        <p id="fn4"><sup>4</sup> Rahimi, A., "Medical Devices Chemical Characterization and Toxicological Risk Assessment: Benefits, Challenges, and Common Mistakes," AAMI News, 2025. <a href="https://array.aami.org/content/news/medical-devices-chemical-characterization-and-toxicological-risk-assessment-benefits">array.aami.org</a></p>
+        <p id="fn5"><sup>5</sup> FDA Draft Guidance, "Chemical Analysis for Biocompatibility Assessment of Medical Devices," 2024. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents">fda.gov</a></p>
+        <p id="fn6"><sup>6</sup> OSMA Spring Meeting Summary (2023), as reported by BONEZONE. <a href="https://bonezonepub.com/2023/05/22/osma-highlights-industry-troubles-with-fda-guidance-on-biocompatibility-mri-labeling/">bonezonepub.com</a></p>
+        <p id="fn7"><sup>7</sup> Johner Institute, "Chemical characterization according to ISO 10993-18," December 2025. <a href="https://blog.johner-institute.com/regulatory-affairs/iso-10993-18-chemical-characterization/">blog.johner-institute.com</a></p>
+        <p id="fn8"><sup>8</sup> ISO 10993-17:2023, "Biological evaluation of medical devices, Part 17: Toxicological risk assessment of medical device constituents." <a href="https://www.iso.org/standard/75323.html">iso.org</a></p>
+        <p id="fn9"><sup>9</sup> ISO 10993-18:2020, "Biological evaluation of medical devices, Part 18: Chemical characterization of medical device materials within a risk management process," Annex C.</p>
+      </div>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Your chemical data is only as strong as the TRA that follows it.</h3>
+          <p>BioEvalPro checks whether every extractable above the AET is addressed in your toxicological risk assessment, whether your endpoint exclusions are supported by the chemical data you have, and whether your BEP, chemical characterization, and TRA tell a consistent story.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <a href="index.html#waitlist" class="btn-primary">Join the Waitlist</a>
+          <a href="index.html#contact" style="color:#B0B0C0; font-size:14px; text-align:center; text-decoration:underline; text-underline-offset:3px;">Have questions? Get in touch</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@bioevalpro.com">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
