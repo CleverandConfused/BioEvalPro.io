@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Changed in ISO 10993-1:2025: A Practical Summary for Regulatory Teams — BioEvalPro</title>
-  <meta name="description" content="The sixth edition of ISO 10993-1 was published in November 2025. Here's what changed, what it means for your biological evaluation documentation, and where to focus your transition efforts.">
+  <meta name="description" content="The sixth edition of <a href="https://www.iso.org/standard/68936.html">ISO 10993-1</a> was published in November 2025. Here's what changed, what it means for your biological evaluation documentation, and where to focus your transition efforts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -53,9 +53,9 @@
     .logo span { color: var(--accent); }
     nav a {
       color: var(--ink-muted); text-decoration: none; font-size: 15px;
-      font-weight: 500; margin-left: 32px; transition: color 0.2s;
+      font-weight: 500; margin-left: 32px;
     }
-    nav a:hover { color: var(--ink); }
+    nav a:hover { color: var(--ink-muted); }
 
     /* ARTICLE */
     .article-header {
@@ -75,7 +75,7 @@
       text-decoration: none; margin-bottom: 24px;
       transition: color 0.2s;
     }
-    .article-back:hover { color: var(--accent-hover); }
+    .article-back:hover { color: var(--accent); }
     .article-back::before { content: '\2190 '; }
     .article-meta {
       font-family: 'JetBrains Mono', monospace;
@@ -122,7 +122,7 @@
       text-decoration: underline;
       text-underline-offset: 3px;
     }
-    .article-body a:hover { color: var(--accent-hover); }
+    .article-body a:hover { color: var(--accent); }
 
     .callout {
       background: var(--accent-light);
@@ -161,10 +161,10 @@
       display: inline-block; background: var(--accent); color: #fff;
       font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600;
       padding: 14px 32px; border-radius: var(--radius); border: none;
-      cursor: pointer; text-decoration: none;
-      transition: background 0.2s, transform 0.15s; white-space: nowrap;
+      text-decoration: none;
+      white-space: nowrap;
     }
-    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-primary:hover { background: var(--accent); }
 
     /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 40px 0; }
@@ -172,14 +172,34 @@
     .footer-copy { font-size: 14px; color: var(--ink-muted); }
     .footer-links a {
       font-size: 14px; color: var(--ink-muted); text-decoration: none;
-      margin-left: 24px; transition: color 0.2s;
+      margin-left: 24px;
     }
-    .footer-links a:hover { color: var(--ink); }
+    .footer-links a:hover { color: var(--ink-muted); }
+
+    /* MOBILE MENU */
+    .mobile-menu-btn {
+      display: none; background: none; border: none; padding: 8px;
+      flex-direction: column; gap: 5px;
+    }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-nav {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--cream); border-bottom: 1px solid var(--border);
+      padding: 16px 28px 24px; z-index: 99; box-shadow: var(--shadow-md);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block; color: var(--ink); text-decoration: none;
+      font-size: 17px; font-weight: 500; padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
 
     @media (max-width: 700px) {
       .article-header h1 { font-size: 30px; }
       .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
       .header-inner nav { display: none; }
+      .mobile-menu-btn { display: flex; }
     }
   </style>
 </head>
@@ -190,16 +210,24 @@
     <a href="index.html" class="logo">BioEval<span>Pro</span></a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="blog.html" style="color:var(--ink);">Blog</a>
+      <a href="blog.html" style="color:var(--ink);">Insights</a>
       <a href="index.html#waitlist">Get Early Access</a>
     </nav>
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Insights</a>
+  <a href="index.html#waitlist">Get Early Access</a>
+</div>
 
 <article>
   <div class="container">
     <div class="article-header">
-      <a href="blog.html" class="article-back">Back to Blog</a>
+      <a href="blog.html" class="article-back">Back to Insights</a>
       <div class="article-meta">
         <span>March 2026</span>
         <span class="article-tag">ISO 10993-1:2025</span>
@@ -212,7 +240,7 @@
 
       <p>The sixth edition of ISO 10993-1 was published in November 2025, replacing the 2018 version that has guided biological evaluation of medical devices for the past seven years. This is not a minor revision. The standard has been substantially reorganized and introduces several new requirements that will affect how every medical device manufacturer documents biological safety.</p>
 
-      <p>If you're responsible for biological evaluation documentation at a device company, a regulatory consultancy, or a CRO, here's what you need to know ; and where to focus your transition efforts.</p>
+      <p>If you're responsible for biological evaluation documentation at a device company, a regulatory consultancy, or a CRO, here's what you need to know, and where to focus your transition efforts.</p>
 
       <h2>The big picture: from checklists to risk-based thinking</h2>
 
@@ -221,7 +249,7 @@
       <p>The 2025 standard replaces that single table with four separate tables that emphasize risk-based evaluation. The question is no longer "which tests does the table say I need?" but rather "what biological safety risks does my specific device actually present, and how do I justify my approach to evaluating them?"</p>
 
       <div class="callout">
-        <p><strong>What this means in practice:</strong> If your current BEP and BER are structured around Table A1 as a compliance checklist, they will need to be restructured around a risk-based rationale. This doesn't necessarily mean more testing ,; it means better justification for the testing you do and don't perform.</p>
+        <p><strong>What this means in practice:</strong> If your current BEP and BER are structured around Table A1 as a compliance checklist, they will need to be restructured around a risk-based rationale. This doesn't necessarily mean more testing. It means better justification for the testing you do and don't perform.</p>
       </div>
 
       <h2>Key changes that affect your documentation</h2>
@@ -237,7 +265,7 @@
       <p>This means your BER can no longer exist as a standalone document that simply lists test results. It must cross-reference your risk management file and show how biological safety considerations feed into your overall risk analysis.</p>
 
       <div class="callout-amber callout">
-        <p><strong>Common gap:</strong> Many existing BERs reference ISO 14971 in passing but don't demonstrate meaningful integration. Under the 2025 standard, reviewers will be looking for explicit traceability between your biological evaluation findings and your risk management file, Including how you estimated severity, probability, and uncertainty for biological risks.</p>
+        <p><strong>Common gap:</strong> Many existing BERs reference ISO 14971 in passing but don't demonstrate meaningful integration. Under the 2025 standard, reviewers will be looking for explicit traceability between your biological evaluation findings and your risk management file, including how you estimated severity, probability, and uncertainty for biological risks.</p>
       </div>
 
       <h3>3. Foreseeable misuse documentation</h3>
@@ -272,9 +300,9 @@
 
       <h2>Transition timeline</h2>
 
-      <p>A two-year transition period has been proposed by the relevant committees, which would extend through approximately late 2027. However, no official grace period has been confirmed in the EU. Notified bodies are already treating the 2025 edition as state of the art under the Medical Device Regulation, which means they may expect to see updated documentation sooner rather than later.</p>
+      <p>A two-year transition period has been proposed by the relevant committees, which would extend through approximately late 2027. However, no official grace period has been confirmed in the EU. Notified bodies are already treating the 2025 edition as state of the art under the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32017R0745">Medical Device Regulation</a>, which means they may expect to see updated documentation sooner rather than later.</p>
 
-      <p>In the United States, the FDA continues to recognize the 2018 edition and has not yet confirmed acceptance of the 2025 version. The U.S. delegation notably voted against the FDIS at each stage, so the timeline for FDA recognition remains unclear.</p>
+      <p>In the United States, the <a href="https://www.fda.gov/medical-devices/biocompatibility-assessment-resource-center/basics-biocompatibility-information-needed-assessment-fda">FDA</a> continues to recognize the 2018 edition and has not yet confirmed acceptance of the 2025 version. The U.S. delegation notably voted against the FDIS at each stage, so the timeline for FDA recognition remains unclear.</p>
 
       <div class="callout">
         <p><strong>Practical recommendation:</strong> Don't wait for official transition deadlines. If you have submissions coming up in 2026 or 2027, discuss timing with your notified body now. For new submissions, consider aligning with the 2025 standard from the outset. For existing documentation, prioritize a gap analysis to identify where your current BEP and BER fall short of the new requirements.</p>
