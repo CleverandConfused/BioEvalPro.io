@@ -41,15 +41,15 @@
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
     .logo span { color: var(--accent); }
-    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
-    nav a:hover { color: var(--ink); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; }
+    nav a:hover { color: var(--ink-muted); }
     .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
     .article-header::before {
       content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px;
       background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1;
     }
-    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; transition: color 0.2s; }
-    .article-back:hover { color: var(--accent-hover); }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back:hover { color: var(--accent); }
     .article-back::before { content: '\2190 '; }
     .article-meta {
       font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted);
@@ -63,7 +63,7 @@
     .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
     .article-body strong { color: var(--ink); }
     .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-    .article-body a:hover { color: var(--accent-hover); }
+    .article-body a:hover { color: var(--accent); }
     .callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; }
     .callout p { color: var(--ink-light); margin-bottom: 0; }
     .callout strong { color: var(--accent); }
@@ -94,18 +94,38 @@
       display: inline-block; background: var(--accent); color: #fff;
       font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600;
       padding: 14px 32px; border-radius: var(--radius); border: none;
-      cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap;
+      text-decoration: none; white-space: nowrap;
     }
-    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-primary:hover { background: var(--accent); }
     footer { border-top: 1px solid var(--border); padding: 40px 0; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; }
     .footer-copy { font-size: 14px; color: var(--ink-muted); }
-    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--ink); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; }
+    .footer-links a:hover { color: var(--ink-muted); }
+    /* MOBILE MENU */
+    .mobile-menu-btn {
+      display: none; background: none; border: none; padding: 8px;
+      flex-direction: column; gap: 5px;
+    }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-nav {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--cream); border-bottom: 1px solid var(--border);
+      padding: 16px 28px 24px; z-index: 99; box-shadow: var(--shadow-md);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block; color: var(--ink); text-decoration: none;
+      font-size: 17px; font-weight: 500; padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+
     @media (max-width: 700px) {
       .article-header h1 { font-size: 30px; }
       .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
       .header-inner nav { display: none; }
+      .mobile-menu-btn { display: flex; }
       .compare-table { font-size: 13px; }
       .compare-table th, .compare-table td { padding: 10px 10px; }
     }
@@ -118,16 +138,24 @@
     <a href="index.html" class="logo">BioEval<span>Pro</span></a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="blog.html" style="color:var(--ink);">Blog</a>
+      <a href="blog.html" style="color:var(--ink);">Insights</a>
       <a href="index.html#waitlist">Get Early Access</a>
     </nav>
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Insights</a>
+  <a href="index.html#waitlist">Get Early Access</a>
+</div>
 
 <article>
   <div class="container">
     <div class="article-header">
-      <a href="blog.html" class="article-back">Back to Blog</a>
+      <a href="blog.html" class="article-back">Back to Insights</a>
       <div class="article-meta">
         <span>March 2026</span>
         <span class="article-tag">Transition Guide</span>
@@ -138,7 +166,7 @@
 
     <div class="article-body">
 
-      <p>If you're managing the transition from the fifth edition (2018) to the sixth edition (2025) of ISO 10993-1, you need to know exactly where the differences are so you can prioritize your documentation updates. Not everything changed, and not every change requires the same level of effort.</p>
+      <p>If you're managing the transition from the fifth edition (2018) to the sixth edition (2025) of <a href="https://www.iso.org/standard/68936.html">ISO 10993-1</a>, you need to know exactly where the differences are so you can prioritize your documentation updates. Not everything changed, and not every change requires the same level of effort.</p>
 
       <p>This article walks through the major differences side by side, organized by the areas most likely to affect your biological evaluation plan and report.</p>
 
@@ -202,7 +230,7 @@
           <tr>
             <td><strong>Local effects terminology</strong></td>
             <td>"Effects after implantation"</td>
-            <td>"Local effects after tissue contact" &mdash; broader scope covering non-implanted devices <span class="changed">Changed</span></td>
+            <td>"Local effects after tissue contact" , broader scope covering non-implanted devices <span class="changed">Changed</span></td>
           </tr>
           <tr>
             <td><strong>Device lifecycle</strong></td>
@@ -223,7 +251,7 @@
 
       <h3>High priority: update now</h3>
 
-      <p><strong>Risk management integration.</strong> If your current BER references ISO 14971 in passing without demonstrating meaningful traceability, this is your biggest gap. Under the 2025 standard, your biological evaluation needs to show explicit linkage to your risk management file &mdash; not just a mention in the introduction, but actual cross-references showing how biological risks were estimated, evaluated, and controlled.</p>
+      <p><strong>Risk management integration.</strong> If your current BER references ISO 14971 in passing without demonstrating meaningful traceability, this is your biggest gap. Under the 2025 standard, your biological evaluation needs to show explicit linkage to your risk management file. Not just a mention in the introduction, but actual cross-references showing how biological risks were estimated, evaluated, and controlled.</p>
 
       <p><strong>Foreseeable misuse.</strong> This is entirely new. If your documentation doesn't address it at all, that's a clear deficiency under the 2025 standard. You don't need an exhaustive analysis, but you do need documented evidence that you considered foreseeable misuse scenarios and assessed their biological safety implications.</p>
 
@@ -251,7 +279,7 @@
 
       <p>One pattern to avoid is updating terminology and section headings to match the 2025 standard while leaving the underlying approach unchanged. Changing "endpoints" to "biological effects" in your BER is necessary, but if the evaluation itself is still structured as a Table A1 checkbox exercise, a knowledgeable reviewer will see through the relabeling.</p>
 
-      <p>The 2025 standard rewards genuine risk-based thinking. If your team has already been approaching biological evaluation from a risk perspective and asking what risks this specific device presents rather than what tests the table requires, the transition will be relatively smooth. If your approach has been primarily checklist-driven, the transition is an opportunity to build a stronger evaluation foundation, not just a documentation exercise.</p>
+      <p>The 2025 standard rewards genuine risk-based thinking. If your team has already been approaching biological evaluation from a risk perspective, asking what risks this specific device presents rather than what tests the table requires, the transition will be relatively smooth. If your approach has been primarily checklist-driven, the transition is an opportunity to build a stronger evaluation foundation, not just a documentation exercise.</p>
 
       <h2>What about existing submissions?</h2>
 
@@ -265,7 +293,7 @@
 
       <h2>Planning your transition</h2>
 
-      <p>The most efficient approach for most organizations is to start with one or two key devices. Ideally those with upcoming submissions and update their BEP and BER to the 2025 framework. Once you've established the revised structure and risk estimation approach for those devices, you can apply the same pattern across your portfolio more efficiently.</p>
+      <p>The most efficient approach for most organizations is to start with one or two key devices, ideally those with upcoming submissions, and update their BEP and BER to the 2025 framework. Once you've established the revised structure and risk estimation approach for those devices, you can apply the same pattern across your portfolio more efficiently.</p>
 
       <p>This also gives you a chance to validate your updated approach with your notified body or regulatory reviewer before rolling it out broadly. Early engagement with your reviewer on how you're handling the transition is consistently one of the most effective ways to avoid surprises.</p>
 
