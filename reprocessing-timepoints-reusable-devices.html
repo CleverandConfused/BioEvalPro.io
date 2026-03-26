@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Justify Your Reprocessing Timepoint Strategy for Reusable Device Biocompatibility</title>
+  <meta name="description" content="<a href="https://www.iso.org/standard/68936.html">ISO 10993-1:2025</a> requires reusable devices to be evaluated considering the maximum number of validated reprocessing cycles. Here is how to build a risk-based justification for your timepoint selection, from first use to end of life.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FAF6F0; --cream-dark: #F0EAE0; --ink: #1A1A2E; --ink-light: #3A3A52; --ink-muted: #6B6B80; --accent: #1B6B4A; --accent-light: #E8F5EE; --accent-hover: #14523A; --amber-flag: #D4880F; --border: #DDD5C8; --shadow-md: 0 4px 16px rgba(26,26,46,0.08); --radius: 6px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', 'Georgia', serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,240,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before { content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px; background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1; }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back::before { content: '\2190 '; }
+    .article-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px; }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding-bottom: 60px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body strong { color: var(--ink); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; }
+    .callout p { color: var(--ink-light); margin-bottom: 0; }
+    .callout strong { color: var(--accent); }
+    .callout-amber { background: #FEF4E4; border-left-color: var(--amber-flag); }
+    .callout-amber strong { color: var(--amber-flag); }
+    .example-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .example-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 12px; }
+    .example-box p { margin-bottom: 12px; }
+    .example-box p:last-child { margin-bottom: 0; }
+    .footnotes { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .footnotes p { font-size: 14px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 8px; }
+    .footnotes a { color: var(--accent); word-break: break-all; }
+    sup a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .article-cta { background: var(--ink); border-radius: 12px; padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; margin: 48px 0 80px; max-width: 720px; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; margin-bottom: 8px; }
+    .article-cta-text p { font-size: 15px; color: #B0B0C0; margin-bottom: 0; }
+    .btn-primary { display: inline-block; background: var(--accent); color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600; padding: 14px 32px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .mobile-menu-btn { display: none; background: none; border: none; padding: 8px; flex-direction: column; gap: 5px; }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--border); padding: 16px 28px 24px; z-index: 99; box-shadow: var(--shadow-md); }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a { display: block; color: var(--ink); text-decoration: none; font-size: 17px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .mobile-nav a:last-child { border-bottom: none; }
+    @media (max-width: 700px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .header-inner nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html" style="color:var(--ink);">Insights</a>
+      <a href="index.html#waitlist">Get Early Access</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Insights</a>
+  <a href="index.html#waitlist">Get Early Access</a>
+</div>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Insights</a>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="article-tag">Reusable Devices</span>
+        <span>8 min read</span>
+      </div>
+      <h1>How to Justify Your Reprocessing Timepoint Strategy for Reusable Device Biocompatibility</h1>
+    </div>
+
+    <div class="article-body">
+
+      <p>Reusable medical devices present a biocompatibility question that single-use devices do not: does the device remain biologically safe after repeated cycles of cleaning, disinfection, and sterilization? A surgical instrument validated for 500 reprocessing cycles may interact with patient tissue differently at cycle 1 than at cycle 500. The question for manufacturers is how to evaluate that difference, and at which timepoints.</p>
+
+      <p>ISO 10993-1:2025 requires reusable devices to be evaluated considering the maximum number of validated processing cycles.<sup><a href="#fn1">1</a></sup> The FDA's guidance on reprocessing reinforces this, stating that manufacturers are responsible for providing validated reprocessing instructions and supporting biocompatibility throughout the device's claimed reuse life.<sup><a href="#fn2">2</a></sup> What neither source prescribes in detail is exactly which intermediate timepoints, if any, must be evaluated between first use and end of validated life (T-end).</p>
+
+      <p>This article covers what the standards and guidance actually require, where manufacturers have discretion, and how to build a risk-based justification for your timepoint strategy that will hold up under regulatory review.</p>
+
+      <h2>A note on terminology: T0 vs. T1</h2>
+
+      <p>In practice, the true "T0" condition, meaning the device as it comes off the manufacturing line before any cleaning or sterilization, is never the condition a patient encounters. A reusable device undergoes at least one full reprocessing cycle (cleaning, disinfection or sterilization) before its first clinical use. For this reason, many manufacturers define their baseline as "T1": the device after the first complete reprocessing cycle, which represents the condition the patient actually contacts.</p>
+
+      <p>This distinction matters for biocompatibility evaluation. Testing a device in its as-manufactured state may miss the effects of the first reprocessing cycle, including potential residues from cleaning agents, surface changes from sterilization, or leachables introduced by the initial chemical exposure. Conversely, it may overestimate risk by capturing manufacturing residues that would be removed by the first cleaning cycle. In either case, T1 is a more clinically relevant baseline than true T0 for most reusable devices.</p>
+
+      <p>Throughout this article, "baseline" refers to the device after its first reprocessing cycle (T1), reflecting the condition at first patient contact. "T-end" refers to the device after its maximum validated number of reprocessing cycles.</p>
+
+      <h2>What the standards clearly require</h2>
+
+      <p>There are several points on which the regulatory expectations are concrete and well-documented.</p>
+
+      <p><strong>Evaluation at the maximum validated reprocessing cycle is expected.</strong> ISO 10993-1:2025 explicitly states that reusable devices should be evaluated considering the maximum number of validated processing cycles.<sup><a href="#fn1">1</a></sup> This means your biological evaluation must, at minimum, address the device's condition at end of validated life. Testing only at baseline (after the first reprocessing cycle) and claiming the results apply across all subsequent cycles is not sufficient without additional justification.</p>
+
+      <p>In the EU, the MDR reinforces this through GSPR requirements in Annex I. Section 23.4.n requires manufacturers to provide detailed information on reprocessing procedures, including validated methods of re-sterilization. The MDR also introduced the Class Ir (reusable) classification for devices that were previously Class I but are now subject to additional scrutiny specifically because they are reprocessed between uses. Notified bodies expect reusable device documentation to demonstrate that biological safety is maintained across the full validated reuse life, not just at initial production.<sup><a href="#fn2b">2b</a></sup></p>
+
+      <p><strong>Two separate requirements apply to reusable devices.</strong> ISO 10993-1 requires that biocompatibility evaluation be performed on the device in its final finished form, meaning the as-manufactured condition including any sterilization and packaging. Separately, the standard requires that reusable devices be evaluated considering the maximum number of validated reprocessing cycles.<sup><a href="#fn3">3</a></sup> These are distinct requirements. The first addresses the device as produced. The second addresses how the device changes over its reuse life. Both must be satisfied, which in practice means your biological evaluation needs to account for the device's condition not just at production, but also after repeated exposure to cleaning agents, disinfectants, and sterilization conditions across its full validated lifecycle.</p>
+
+      <p><strong>Reprocessing can change the extractable profile.</strong> Repeated exposure to cleaning chemistries, disinfectants, and sterilization conditions (steam, ethylene oxide, hydrogen peroxide plasma) can alter a device's surface properties, leach new substances from the material, or cause residue accumulation from the reprocessing agents themselves. The FDA has specifically noted that reprocessing chemicals may build up on devices over multiple cycles, and that manufacturers should account for this in their biocompatibility evaluation.<sup><a href="#fn2">2</a></sup></p>
+
+      <div class="callout">
+        <p><strong>What is concrete:</strong> You must address end-of-life condition in your biological evaluation. You must consider how reprocessing affects your device's biological safety. These are not optional considerations. They are explicit requirements in both the standard and FDA guidance.</p>
+      </div>
+
+      <h2>Where the standards leave discretion</h2>
+
+      <p><strong>No prescribed intermediate timepoints.</strong> Neither ISO 10993-1 nor the FDA's reprocessing guidance specifies that you must test at cycle 50, 100, 250, or any other intermediate point. The expectation is that the manufacturer evaluates the device at conditions representative of worst-case clinical use. For most devices, that worst case is T-end. Whether to include intermediate timepoints is left to the manufacturer's risk assessment, but an undocumented decision will be questioned.</p>
+
+      <p><strong>No universal definition of "sufficient" reprocessing simulation.</strong> Some manufacturers run the full validated protocol for the complete number of cycles. Others use accelerated or simplified cycling. The key requirement is that your simulation is representative of worst-case exposure and that you can justify why your approach is adequate.</p>
+
+      <div class="callout-amber callout">
+        <p><strong>A note on evolving expectations:</strong> The FDA's 2024 draft guidance on chemical analysis for biocompatibility assessment recommends testing after maximum reprocessing cycles, including all combinations of reprocessing parameters listed in the device's labeling. Industry groups have raised concerns that this recommendation, if finalized as written, could be extremely burdensome for devices with complex reprocessing instructions or very high cycle counts.<sup><a href="#fn4">4</a></sup> This area of guidance is still evolving, and manufacturers should monitor the final guidance when published. The practical takeaway is that FDA expectations in this area appear to be increasing, not decreasing.</p>
+      </div>
+
+      <h2>Building a timepoint justification</h2>
+
+      <h3>When baseline and T-end alone may be sufficient</h3>
+
+      <p>For many devices, evaluating biocompatibility at baseline (after the first reprocessing cycle, representing first patient contact) and T-end (after maximum validated cycles) provides adequate coverage. This approach is generally supportable when the following conditions are met:</p>
+
+      <p><strong>The device materials are well-characterized and chemically stable.</strong> Metals such as stainless steel and titanium alloys, for example, are not expected to undergo significant surface chemistry changes through standard steam sterilization cycles. If your material characterization data supports stability across the reprocessing conditions, the argument that T-end represents the worst case is straightforward.</p>
+
+      <p><strong>The reprocessing method does not involve aggressive chemistries.</strong> Steam sterilization is generally considered less likely to alter material properties than chemical sterilization methods such as ethylene oxide or hydrogen peroxide plasma. If your reprocessing method is thermally based with minimal chemical exposure, the risk of progressive material degradation between baseline and T-end is lower.</p>
+
+      <p><strong>There is no known mechanism for progressive accumulation.</strong> If no plausible pathway exists for cleaning agent residue buildup, surface degradation, or extractable profile changes that would worsen incrementally with each cycle, then the T-end condition represents the most conservative case. Baseline and T-end bookend the full lifecycle, and the intermediate points would not reveal anything not captured at the extremes. For example, a stainless steel retractor cleaned with water-soluble enzymatic detergent and steam sterilized at 134C has no mechanism for absorbing or accumulating residues between cycles. Cycle 125 does not look meaningfully different from cycle 10 or cycle 250 for this material and reprocessing combination.</p>
+
+      <div class="example-box">
+        <div class="example-label">Example: Baseline and T-end justification</div>
+        <p>A stainless steel surgical instrument validated for 250 steam sterilization cycles. The BEP states: "Biocompatibility evaluation was performed on test articles at T1 (after the first complete reprocessing cycle, representing the condition at first patient contact) and at T-end (after 250 validated steam sterilization cycles per the reprocessing instructions for use). Stainless steel 316L does not undergo significant surface chemistry changes under repeated steam sterilization. The reprocessing protocol uses enzymatic detergent followed by ultrasonic cleaning and steam sterilization at 134C. No chemical sterilant residue accumulation is expected. T-end represents the worst-case condition for extractable and surface property evaluation. Intermediate timepoints were not evaluated as no plausible mechanism for non-linear degradation or accumulation has been identified for this material and reprocessing combination."</p>
+      </div>
+
+      <h3>When T-end alone may be sufficient</h3>
+
+      <p>There are cases where skipping baseline testing entirely and evaluating only at T-end can be justified. The logic is straightforward: if the device can only get worse with repeated reprocessing (which is the expected direction for most materials), then T-end represents the worst-case condition. If the device passes at T-end, it would have passed at every earlier point in its reuse life.</p>
+
+      <p>This approach is most defensible for chemically stable materials where the reprocessing method has a known, predictable, and monotonically cumulative effect on the device. If there is no mechanism by which the first reprocessing cycle would produce a worse extractable profile than the last, T-end alone captures the worst case.</p>
+
+      <p>There is a practical counterargument, however. Baseline testing establishes a reference point that allows you to characterize the magnitude of change across the reuse life. Some reviewers want to see this delta even if T-end is the only timepoint that matters for the safety conclusion. Including baseline data also strengthens your justification by demonstrating that you understand how your device changes over its lifecycle, rather than simply claiming T-end is worst case without comparative evidence.</p>
+
+      <p>Whether to include or omit baseline testing is a judgment call that should be documented with device-specific rationale in the BEP. For detailed guidance on how to structure this type of justification so it holds up under review, see <a href="writing-biocompatibility-justifications.html">how to write biocompatibility justifications that survive regulatory review</a>.</p>
+
+      <h3>When intermediate timepoints should be considered</h3>
+
+      <p>There are scenarios where testing only at baseline and T-end may not adequately characterize the biocompatibility risk across the device's reuse life. These include:</p>
+
+      <p><strong>Polymeric devices exposed to chemical sterilants.</strong> Polymers can absorb and retain chemicals from cleaning and sterilization agents. This absorption may be cumulative, meaning the extractable profile at cycle 100 could be meaningfully different from the profile at cycle 1 or cycle 500. For these materials, intermediate timepoints can reveal whether residue accumulation follows a linear pattern (in which case T-end is indeed worst case) or a non-linear pattern (in which case an intermediate point could actually be worse than T-end if, for example, the material saturates and then off-gasses).</p>
+
+      <p><strong>Devices with complex geometries that trap residues.</strong> Devices with lumens, channels, crevices, or mated surfaces can retain cleaning and disinfecting agents in areas that are difficult to rinse. Residue buildup in these areas may progress unevenly across cycles. The FDA has specifically identified debris retention in complex device geometries as a reprocessing concern.<sup><a href="#fn5">5</a></sup></p>
+
+      <p><strong>Devices where surface coatings or treatments may degrade.</strong> If a device has a biocompatible coating, anodization, or surface treatment that could wear or degrade with repeated reprocessing, intermediate timepoints may be needed to characterize when the protective layer begins to fail and what the underlying material contributes to the extractable profile once exposed.</p>
+
+      <p><strong>Mixed-material devices where components age at different rates.</strong> A device assembled from multiple materials (for example, a metal body with polymer seals, adhesive bonds, or elastomeric components) may see different components respond to reprocessing at different rates. The polymer seal may degrade significantly before the metal body shows any change. Intermediate timepoints can identify which component drives the biocompatibility risk and when.</p>
+
+      <div class="example-box">
+        <div class="example-label">Example: Intermediate timepoints justified</div>
+        <p>A polymer-bodied endoscopic instrument validated for 500 reprocessing cycles involving enzymatic detergent cleaning, high-level disinfection with peracetic acid, and ethylene oxide sterilization. The BEP states: "Due to the polymeric construction and repeated exposure to peracetic acid and ethylene oxide, extractable testing was performed at T1, T-100, T-250, and T-500 to characterize the progression of the extractable profile across the device's validated reuse life. This approach was selected because polymer materials are known to absorb and retain chemical sterilant residues, and the accumulation pattern may not be linear. The toxicological risk assessment evaluates the worst-case extractable data from any timepoint."</p>
+      </div>
+
+      <h2>What to document in your BEP</h2>
+
+      <p>Regardless of your timepoint strategy, the BEP should explicitly address: the maximum validated cycle count with reference to your reprocessing validation; the reprocessing method including specific chemistries at each stage; which timepoints were evaluated and why; how the reprocessed test articles were prepared (full protocol or abbreviated, with justification); and for multiple timepoints, confirmation that the TRA evaluates worst-case data from any timepoint, not just T-end.</p>
+
+      <h2>The areas of genuine uncertainty</h2>
+
+      <p>The FDA's 2024 draft guidance on chemical analysis suggests testing after maximum reprocessing cycles for each separate reprocessing scheme listed in the labeling, including all combinations of detergent and disinfection chemistries, manual versus automatic washing methods, and sterilization modalities. Industry feedback has characterized this recommendation as "extremely time-consuming and cost prohibitive" for devices with multiple reprocessing options and high cycle counts.<sup><a href="#fn4">4</a></sup> Whether the final guidance retains this recommendation, softens it, or provides additional flexibility is not yet known.</p>
+
+      <p>There is also no published consensus on how many intermediate timepoints are "enough" when they are warranted. Three? Five? Equally spaced across the reuse life? Concentrated at the early cycles where changes are most rapid? The answer depends on the material, the reprocessing method, and the specific risk being assessed. This is an area where the manufacturer's scientific judgment and material science expertise determine the approach, and where the justification in the BEP must demonstrate that the selected timepoints are scientifically rational, not arbitrary.</p>
+
+      <p>Finally, the question of whether cleaning validation data (demonstrating that soil and residue are adequately removed at each cycle) can partially substitute for biocompatibility testing at intermediate timepoints is an area where regulatory expectations vary. A strong cleaning validation program reduces the concern about residue accumulation, which may support a simpler biocompatibility timepoint strategy. But cleaning validation and biocompatibility evaluation address different questions, and one does not fully replace the other.</p>
+
+      <div class="callout">
+        <p><strong>The principle:</strong> The standard tells you to consider reprocessing. It does not tell you exactly how many timepoints to test. That means the justification in your BEP is doing the heavy lifting. A well-reasoned, device-specific rationale for your timepoint selection is far more defensible than a complex testing matrix with no documented reasoning behind it.</p>
+      </div>
+
+      <h2>Checking your documentation</h2>
+
+      <p>Before submission, verify that your BEP explicitly addresses reprocessing, that the timepoints selected are justified with device-specific rationale, and that the BER, chemical characterization, and TRA are consistent in how they reference the reprocessed test articles. If your BEP says T-end testing was performed but the chemical characterization report references test articles at baseline only, you have a <a href="common-deficiency-findings-10993.html">consistency gap</a> that a reviewer will find.</p>
+
+      <p><a href="index.html#what-it-does">BioEvalPro</a> evaluates your reprocessing justifications for completeness and strength, scoring how well your timepoint rationale is supported by the evidence in the rest of your package. It checks whether your BEP, chemical characterization, and TRA reference the same test article conditions, whether your timepoint exclusions are documented with device-specific rationale, and whether your conclusions are traceable to the data you present. Weak justifications and undocumented decisions are flagged with specific guidance on what to strengthen. <a href="index.html#waitlist">Join the waitlist</a> for early access, or <a href="index.html#contact">get in touch</a> to discuss your reusable device documentation.</p>
+
+      <div class="footnotes">
+        <p id="fn1"><sup>1</sup> ISO 10993-1:2025, requirements for considering reprocessing cycles in the biological evaluation of reusable devices. See also Seleon GmbH, "New revision: Biocompatibility according to ISO 10993-1," and Congenius, "ISO 10993-1:2025: What's new in the revised standard?" <a href="https://congenius.ch/iso10993-biocompatibility-whats-new-in-the-2025-standard/">congenius.ch</a></p>
+        <p id="fn2"><sup>2</sup> FDA Guidance, "Reprocessing Medical Devices in Health Care Settings: Validation Methods and Labeling," March 2015. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/reprocessing-medical-devices-health-care-settings-validation-methods-and-labeling">fda.gov</a></p>
+        <p id="fn2b"><sup>2b</sup> Regulation (EU) 2017/745 (Medical Device Regulation), Annex I, Section 23.4.n (reprocessing instructions) and Classification Rule 14 (Class Ir reusable devices). See also QServe Group, "Biocompatibility under EU 2017/745 (MDR): how to deal with legacy devices?" November 2025. <a href="https://qservegroup.com/blog/en/understand-the-challenges-biocompatibility-under-eu-2017745-mdr-how-to-deal-with-legacy-devices">qservegroup.com</a></p>
+        <p id="fn3"><sup>3</sup> Efor Group, "Medical device lifecycle and ISO 10993-1:2025," discussing lifetime evaluation including reprocessing cycle considerations. <a href="https://efor-group.com/en/lifetime-lifecycle-iso-10993-1-standard-2025/">efor-group.com</a></p>
+        <p id="fn4"><sup>4</sup> Hyman, Phelps &amp; McNamara, P.C., "New Draft Guidance Provides Detailed (and Burdensome) Recommendations for Chemical Assessments to Support Medical Device Biocompatibility," The FDA Law Blog, November 2024. <a href="https://www.thefdalawblog.com/2024/11/new-draft-guidance-provides-detailed-and-burdensome-recommendations-for-chemical-assessments-to-support-medical-device-biocompatibility/">thefdalawblog.com</a></p>
+        <p id="fn5"><sup>5</sup> FDA, "Working Together to Improve Reusable Medical Device Reprocessing." <a href="https://www.fda.gov/medical-devices/reprocessing-reusable-medical-devices/working-together-improve-reusable-medical-device-reprocessing">fda.gov</a></p>
+      </div>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Your timepoint justification is only as strong as the documentation behind it.</h3>
+          <p>BioEvalPro scores the strength of your reprocessing justifications, checks every cross-reference between your BEP and supporting data, and flags undocumented decisions before they become deficiency findings. If your rationale has a gap, the report tells you exactly where and what to fix.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <a href="index.html#waitlist" class="btn-primary">Join the Waitlist</a>
+          <a href="index.html#contact" style="color:#B0B0C0; font-size:14px; text-align:center; text-decoration:underline; text-underline-offset:3px;">Have questions? Get in touch</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@bioevalpro.com">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

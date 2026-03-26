@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FDA vs. EU MDR Expectations for Biological Evaluation: Where They Actually Differ</title>
+  <meta name="description" content="The FDA and EU notified bodies both require biological evaluation under ISO 10993, but they review it differently. Concrete differences in endpoint selection, equivalence, CMR substances, documentation structure, and how deficiency findings are generated.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FAF6F0; --cream-dark: #F0EAE0; --ink: #1A1A2E; --ink-light: #3A3A52; --ink-muted: #6B6B80; --accent: #1B6B4A; --accent-light: #E8F5EE; --accent-hover: #14523A; --amber-flag: #D4880F; --border: #DDD5C8; --shadow-md: 0 4px 16px rgba(26,26,46,0.08); --radius: 6px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', 'Georgia', serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,240,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before { content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px; background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1; }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back::before { content: '\2190 '; }
+    .article-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px; }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding-bottom: 60px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body strong { color: var(--ink); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; }
+    .callout p { color: var(--ink-light); margin-bottom: 0; }
+    .callout strong { color: var(--accent); }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+    .compare-table th { background: var(--ink); color: #fff; padding: 12px 16px; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .compare-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--ink-light); vertical-align: top; line-height: 1.6; }
+    .compare-table tr:nth-child(even) td { background: #fff; }
+    .compare-table tr:nth-child(odd) td { background: var(--cream); }
+    .example-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .example-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 12px; }
+    .example-box p { margin-bottom: 12px; }
+    .example-box p:last-child { margin-bottom: 0; }
+    .footnotes { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .footnotes p { font-size: 14px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 8px; }
+    .footnotes a { color: var(--accent); word-break: break-all; }
+    sup a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .article-cta { background: var(--ink); border-radius: 12px; padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; margin: 48px 0 80px; max-width: 720px; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; margin-bottom: 8px; }
+    .article-cta-text p { font-size: 15px; color: #B0B0C0; margin-bottom: 0; }
+    .btn-primary { display: inline-block; background: var(--accent); color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600; padding: 14px 32px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .mobile-menu-btn { display: none; background: none; border: none; padding: 8px; flex-direction: column; gap: 5px; }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--border); padding: 16px 28px 24px; z-index: 99; box-shadow: var(--shadow-md); }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a { display: block; color: var(--ink); text-decoration: none; font-size: 17px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .mobile-nav a:last-child { border-bottom: none; }
+    @media (max-width: 700px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .header-inner nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 10px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html" style="color:var(--ink);">Insights</a>
+      <a href="index.html#waitlist">Get Early Access</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Insights</a>
+  <a href="index.html#waitlist">Get Early Access</a>
+</div>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Insights</a>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="article-tag">FDA vs. MDR</span>
+        <span>9 min read</span>
+      </div>
+      <h1>FDA vs. EU MDR Expectations for Biological Evaluation: Where They Actually Differ</h1>
+    </div>
+
+    <div class="article-body">
+
+      <p>Both the FDA and EU notified bodies require biological evaluation under ISO 10993. Both expect documented justifications, traceable evidence, and a risk-based approach. At that level, they sound identical. But in practice, they review biological evaluation documentation differently, focus on different things, and generate different types of deficiency findings.</p>
+
+      <p>This article breaks down the specific, concrete differences that affect how you write your BEP, BER, and supporting documentation for each market. If you submit to both, these are the areas where a single documentation set needs to satisfy two distinct review approaches.</p>
+
+      <h2>1. Endpoint selection: matrix vs. judgment</h2>
+
+      <p>This is the most immediately practical difference between the two systems.</p>
+
+      <p><strong>FDA:</strong> The FDA publishes a <a href="https://www.fda.gov/medical-devices/biocompatibility-assessment-resource-center/biocompatibility-evaluation-endpoints-device-category">modified biocompatibility matrix</a> (Attachment A in the FDA's ISO 10993-1 guidance) that maps device contact type and duration to specific biological endpoints. This matrix tells you which endpoints to address. If you follow it, you are on solid ground. If you deviate from it, you justify the deviation against the FDA's published position. The matrix is not a checklist (the FDA says this explicitly), but in practice it functions as a structured framework that reduces ambiguity about what is expected.<sup><a href="#fn1">1</a></sup></p>
+
+      <p><strong>EU MDR:</strong> There is no equivalent EU matrix. Notified bodies assess your endpoint selection based on the ISO 10993-1 evaluation tables, MDCG guidance, and their own interpretation of what constitutes adequate evaluation for your device. Different notified bodies may have different expectations for the same device type. A BEP that one notified body accepts without comment may receive questions from another.<sup><a href="#fn2">2</a></sup></p>
+
+      <div class="example-box">
+        <div class="example-label">What this means in practice</div>
+        <p>For an FDA submission, you can reference the FDA-modified matrix directly: "Per the FDA biocompatibility matrix, the following endpoints are indicated for a prolonged-contact, tissue-contacting device..." This anchors your endpoint selection to a published agency position.</p>
+        <p>For an EU submission, the same approach does not work. Instead, you reference the <a href="https://www.iso.org/standard/68936.html">ISO 10993-1:2025</a> evaluation tables, justify each selection based on the device's specific characteristics, and demonstrate that your evaluation addresses the GSPR requirements in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32017R0745">MDR Annex I</a>. The justification must stand on its own scientific merit, not on a published matrix.</p>
+      </div>
+
+      <h2>2. Equivalence: substantial vs. three-phase</h2>
+
+      <p>Biological equivalence claims are scrutinized in both markets, but the frameworks are fundamentally different.</p>
+
+      <p><strong>FDA:</strong> Under the 510(k) pathway, substantial equivalence focuses on demonstrating that your device is similar enough to a predicate device. For biological evaluation, this typically means showing that materials, contact type, and intended use are the same or similar. The equivalence table often stops at identifying same or similar characteristics, and manufacturing-related differences may receive less scrutiny.<sup><a href="#fn3">3</a></sup></p>
+
+      <p><strong>EU MDR:</strong> Notified bodies apply a three-phase equivalence assessment covering technical, biological, and clinical equivalence as described in MDCG 2020-5. Biological equivalence under the EU framework specifically requires demonstrating that the materials are the same, that the release characteristics of substances (including degradation products and leachables) are similar, and that manufacturing process differences do not affect the biological risk profile. A biological equivalence argument that satisfies FDA 510(k) requirements may fail EU review because it does not address the release characteristics dimension or does not demonstrate access to the comparator device's data.<sup><a href="#fn4">4</a></sup></p>
+
+      <div class="example-box">
+        <div class="example-label">Common deficiency pattern</div>
+        <p><strong>FDA:</strong> Equivalence accepted based on same material, same contact type, same intended use. Manufacturing at a different facility noted but not challenged.</p>
+        <p><strong>EU notified body:</strong> Same equivalence argument receives a finding because the manufacturer did not address whether the different manufacturing facility could affect the extractable/leachable profile of the device. The notified body requests chemical characterization data comparing devices from both facilities.</p>
+      </div>
+
+      <h2>3. CMR substances: EU-only requirement</h2>
+
+      <p>This is an entire category of documentation that exists under the EU MDR but has no direct equivalent in the FDA framework.</p>
+
+      <p>MDR Annex I, Section 10.4.1 requires manufacturers to identify and justify the presence of any substances classified as carcinogenic, mutagenic, or toxic to reproduction (CMR) in concentrations above 0.1% weight by weight. The justification must demonstrate that no suitable alternative materials exist and that the benefit-risk ratio supports the substance's use. This applies regardless of whether the substance is expected to leach from the device.<sup><a href="#fn5">5</a></sup></p>
+
+      <p>The FDA does not have an equivalent threshold-based CMR disclosure requirement. Toxicological concerns about specific substances are addressed through the standard ISO 10993-17 TRA process, but there is no regulatory trigger at 0.1% w/w that requires a separate documented justification.</p>
+
+      <p>For manufacturers submitting to both markets, this means the EU submission may require additional material characterization and justification documentation that is not needed for the FDA submission. If your device contains phthalates, bisphenol A, or other substances on the CMR classification lists, this section of your technical documentation needs specific attention for the EU market.</p>
+
+      <h2>4. Review structure: single authority vs. variable interpretation</h2>
+
+      <p>This difference affects how you prepare for and respond to deficiency findings.</p>
+
+      <p><strong>FDA:</strong> The FDA is a single centralized authority. Review expectations are generally consistent and supported by published guidance. The FDA offers structured feedback mechanisms (Pre-Submissions, interactive review) that allow manufacturers to clarify expectations before a full submission. If you receive a deficiency, the FDA's position is the position. There is no alternative reviewer to approach.<sup><a href="#fn2">2</a></sup></p>
+
+      <p><strong>EU MDR:</strong> Conformity assessment is conducted by independent notified bodies, and different notified bodies may interpret requirements differently. Industry experience indicates that documentation acceptable to one notified body may require revision for another, particularly in areas like clinical evidence sufficiency, equivalence justification, and post-market clinical follow-up expectations.<sup><a href="#fn2">2</a></sup> This variability means manufacturers cannot always predict which aspects of their biological evaluation will receive the most scrutiny.</p>
+
+      <p>The practical consequence is that EU submissions generally need to be more self-contained and comprehensively justified. You cannot rely on a published agency position to anchor your rationale the way you can with FDA guidance. Your documentation needs to make the case on its own.</p>
+
+      <h2>5. Documentation lifecycle: snapshot vs. living file</h2>
+
+      <p><strong>FDA:</strong> An FDA submission (510(k), PMA, De Novo) is a discrete event. You submit, it is reviewed, you receive clearance or approval. Post-market changes may require new submissions, but the biological evaluation documentation is assessed at a specific point in time.<sup><a href="#fn6">6</a></sup></p>
+
+      <p><strong>EU MDR:</strong> The technical documentation is a living file that must be continuously maintained and available for notified body review at any time. The biological evaluation must be updated to reflect post-market surveillance findings, complaint trends, clinical follow-up data, and new scientific knowledge. The MDR's emphasis on lifecycle evaluation means your BEP and BER are not one-time documents; they are commitments to ongoing maintenance.<sup><a href="#fn5">5</a></sup></p>
+
+      <p>This has a practical impact on how you structure your biological evaluation. An FDA-focused BER can document the evaluation at the time of submission and reference a specific version of the risk management file. An EU-focused BER should include provisions for periodic review and updating, reference the post-market surveillance plan, and document how new information will be incorporated into future evaluation cycles.</p>
+
+      <h2>6. Chemical characterization: converging but not identical</h2>
+
+      <p>Both the FDA and EU expect chemical characterization under ISO 10993-18, but the specifics differ.</p>
+
+      <p><strong>FDA:</strong> The FDA has published detailed draft guidance (2024) on chemical analysis for biocompatibility assessment with specific recommendations for extraction methodology, AET calculations, and data reporting. FDA reviewers evaluate chemical characterization against these published positions. The FDA also explicitly lists which biological endpoints can be addressed through chemical characterization and TRA in lieu of biological testing.<sup><a href="#fn1">1</a></sup></p>
+
+      <p><strong>EU MDR:</strong> EU notified bodies reference ISO 10993-18:2020 as the state of the art but have not published equivalent detailed methodological guidance. The assessment is based on the standard itself and the notified body's interpretation. This means there is less published guidance to reference in your justifications, but also less risk of a deficiency based on deviation from a specific agency-recommended methodology. The EU's CMR requirements (Section 10.4.1) may also require chemical characterization beyond what is needed for the biological evaluation alone.<sup><a href="#fn5">5</a></sup></p>
+
+      <h2>Side-by-side summary</h2>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:30%">Area</th>
+            <th style="width:35%">FDA</th>
+            <th style="width:35%">EU MDR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Endpoint selection</strong></td>
+            <td>FDA-modified matrix provides structured framework</td>
+            <td>ISO 10993-1 tables plus notified body judgment; no equivalent matrix</td>
+          </tr>
+          <tr>
+            <td><strong>Equivalence</strong></td>
+            <td>Substantial equivalence; material and use similarity</td>
+            <td>Three-phase (technical, biological, clinical); release characteristics required</td>
+          </tr>
+          <tr>
+            <td><strong>CMR substances</strong></td>
+            <td>Addressed through standard TRA process</td>
+            <td>Specific threshold (0.1% w/w) triggers mandatory justification</td>
+          </tr>
+          <tr>
+            <td><strong>Review authority</strong></td>
+            <td>Single centralized agency; consistent published positions</td>
+            <td>Independent notified bodies; interpretation may vary</td>
+          </tr>
+          <tr>
+            <td><strong>Documentation lifecycle</strong></td>
+            <td>Point-in-time submission</td>
+            <td>Living technical file; continuous maintenance required</td>
+          </tr>
+          <tr>
+            <td><strong>Chemical characterization</strong></td>
+            <td>Detailed FDA draft guidance on methodology</td>
+            <td>ISO 10993-18 as state of the art; less prescriptive guidance</td>
+          </tr>
+          <tr>
+            <td><strong>Deficiency feedback</strong></td>
+            <td>Formal deficiency letters; Pre-Sub available</td>
+            <td>Varies by notified body; less structured early engagement</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Writing for both markets</h2>
+
+      <p>If you submit to both the FDA and EU, the most efficient approach is to write your biological evaluation documentation to the EU standard first. The EU MDR generally demands more comprehensive documentation, stricter equivalence justifications, and additional CMR substance considerations. Documentation that satisfies EU notified body expectations will typically satisfy FDA expectations as well, provided you also address FDA-specific items such as the modified biocompatibility matrix and any agency-specific guidance on chemical analysis methodology.</p>
+
+      <p>The reverse is not true. Documentation written solely for an FDA 510(k) submission will often generate deficiency findings from EU notified bodies due to missing CMR justifications, insufficient equivalence documentation, or lack of lifecycle maintenance provisions.</p>
+
+      <p>For detailed guidance on <a href="writing-biocompatibility-justifications.html">how to write justifications that hold up under both review frameworks</a>, see the companion article. <a href="index.html#what-it-does">BioEvalPro</a> evaluates your documentation against both FDA and EU MDR expectations, flagging where your justifications meet one framework but fall short of the other, and scoring the strength of each section so you know exactly where to focus before submission. <a href="index.html#waitlist">Join the waitlist</a> for early access, or <a href="index.html#contact">get in touch</a> to discuss your dual-market documentation needs.</p>
+
+      <div class="footnotes">
+        <p id="fn1"><sup>1</sup> FDA Guidance, "Use of International Standard ISO 10993-1: Biological evaluation of medical devices, Part 1: Evaluation and testing within a risk management process," updated 2023. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/use-international-standard-iso-10993-1-biological-evaluation-medical-devices-part-1-evaluation-and">fda.gov</a></p>
+        <p id="fn2"><sup>2</sup> Intertek, "EU MDR vs. FDA Expectations: Where They Truly Align and Where They Don't," March 2026. <a href="https://www.intertek.com/blog/2026/03-17-eu-mdr-vs.-fda-expectations">intertek.com</a></p>
+        <p id="fn3"><sup>3</sup> RQM+, "How To Approach Biological Equivalence Under The EU MDR," MedDevice Online. <a href="https://www.meddeviceonline.com/doc/how-to-approach-biological-equivalence-under-the-eu-mdr-0001">meddeviceonline.com</a></p>
+        <p id="fn4"><sup>4</sup> MDCG 2020-5, "Guidance on Clinical Evaluation: Equivalence." See also MED Institute, "Challenges of Demonstrating Biological Equivalence per ISO 10993-18 and EU MDR." <a href="https://medinstitute.com/blog/challenges-of-demonstrating-biological-equivalence-per-iso-10993-18-and-eu-mdr/">medinstitute.com</a></p>
+        <p id="fn5"><sup>5</sup> Regulation (EU) 2017/745 (Medical Device Regulation), Annex I, Chapter II, Sections 10.1, 10.2, 10.4, and 10.4.1 (CMR substances). See also Johner Institute, "Biocompatibility, Biological Safety, ISO 10993." <a href="https://www.johner-institute.com/articles/product-development/and-more/biocompatibility-iso-10993/">johner-institute.com</a></p>
+        <p id="fn6"><sup>6</sup> Complizen.ai, "EU MDR vs FDA: 2025 US-EU Medical Device Regulatory Comparison Guide." <a href="https://www.complizen.ai/post/eu-mdr-vs-fda-complete-regulatory-comparison-guide-2025">complizen.ai</a></p>
+      </div>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Submitting to both markets? Find out where your documentation falls short.</h3>
+          <p>BioEvalPro checks your biological evaluation against both FDA and EU MDR expectations and shows you exactly where a justification satisfies one framework but not the other.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <a href="index.html#waitlist" class="btn-primary">Join the Waitlist</a>
+          <a href="index.html#contact" style="color:#B0B0C0; font-size:14px; text-align:center; text-decoration:underline; text-underline-offset:3px;">Have questions? Get in touch</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@bioevalpro.com">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
