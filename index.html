@@ -731,6 +731,16 @@
     }
 
     /* ── FAQ ── */
+    .scope-item { border-bottom: 1px solid var(--border); cursor: pointer; padding: 0 16px; list-style: none; }
+    .scope-item:nth-child(odd) { background: #fff; }
+    .scope-item:nth-child(even) { background: var(--cream); }
+    .scope-header { display: flex; align-items: center; padding: 18px 0; gap: 12px; }
+    .scope-toggle { color: var(--ink-muted); font-size: 12px; transition: transform 0.2s; flex-shrink: 0; }
+    .scope-item.open .scope-toggle { transform: rotate(180deg); }
+    .scope-name { font-weight: 600; font-size: 17px; color: var(--ink); flex: 1; }
+    .scope-part { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--accent); background: var(--accent-light); padding: 3px 10px; border-radius: 4px; flex-shrink: 0; }
+    .scope-desc { font-size: 15px; color: var(--ink-muted); line-height: 1.6; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 0 0 24px; }
+    .scope-item.open .scope-desc { max-height: 100px; padding: 0 0 18px 24px; }
     .faq-list { margin-top: 48px; max-width: 720px; }
     .faq-item {
       border-bottom: 1px solid var(--border);
@@ -763,6 +773,10 @@
       transition: max-height 0.3s ease;
     }
     .faq-item.open .faq-a { max-height: 300px; }
+    .faq-collapse-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-collapse.open .faq-collapse-body { max-height: 2000px; }
+    .faq-collapse .faq-collapse-arrow { transition: transform 0.2s; display: inline-block; }
+    .faq-collapse.open .faq-collapse-arrow { transform: rotate(45deg); }
 
     /* ── FOOTER ── */
     footer {
@@ -875,10 +889,8 @@
     <a href="#" class="logo">BioEval<span>Pro</span></a>
     <nav>
       <a href="#what-it-does">The Tool</a>
-      <a href="#how">How It Works</a>
       <a href="#scope">Scope</a>
       <a href="blog.html">Resources</a>
-      <a href="#pricing">Pricing</a>
       <a href="#waitlist">Get Early Access</a>
     </nav>
     <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
@@ -888,10 +900,8 @@
 </header>
 <div class="mobile-nav" id="mobileNav">
   <a href="#what-it-does" onclick="document.getElementById('mobileNav').classList.remove('open')">The Tool</a>
-  <a href="#how" onclick="document.getElementById('mobileNav').classList.remove('open')">How It Works</a>
   <a href="#scope" onclick="document.getElementById('mobileNav').classList.remove('open')">Scope</a>
   <a href="blog.html">Resources</a>
-  <a href="#pricing" onclick="document.getElementById('mobileNav').classList.remove('open')">Pricing</a>
   <a href="#waitlist" onclick="document.getElementById('mobileNav').classList.remove('open')">Get Early Access</a>
 </div>
 
@@ -961,62 +971,10 @@
   </div>
 </section>
 
-<!-- PROBLEM -->
+
 <section>
-  <div class="container">
-    <div class="problem fade-up">
-      <div class="section-label">The Problem</div>
-      <div class="section-title">Your 10993 package has gaps you haven't found yet.</div>
-      <p style="color:#B0B0C0; font-size:17px; max-width:640px; line-height:1.65;">
-        ISO 10993-1:2025 introduced requirements most existing documentation doesn't address. Many notified body reviewers are expected to apply 2025 expectations quickly, and gaps found at submission cost months.
-      </p>
-      <div class="problem-stats">
-        <div>
-          <div class="problem-stat-num">$2k&ndash;8k</div>
-          <div class="problem-stat-text">Typical range for a single consultant-led gap analysis. BioEvalPro delivers results at a fraction of that cost.</div>
-        </div>
-        <div>
-          <div class="problem-stat-num">3&ndash;6 mo</div>
-          <div class="problem-stat-text">Estimated delay when a notified body requires revised biocompatibility documentation</div>
-        </div>
-        <div>
-          <div class="problem-stat-num">12+</div>
-          <div class="problem-stat-text">Distinct ISO 10993 sub-standards that must be addressed across the full package</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how">
   <div class="container fade-up">
-    <div class="section-label">How It Works</div>
-    <div class="section-title">From upload to remediation plan in 24 hours.</div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">Upload your package</div>
-        <div class="step-desc">Upload your BER, BEP, or full 10993 documentation as zipped files.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">Select evaluation type</div>
-        <div class="step-desc">Choose from the available options on how you need your package reviewed.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">Every section is evaluated</div>
-        <div class="step-desc">Evaluated against a requirements framework built from regulatory expertise and notified body expectations.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-title">Receive your gap report</div>
-        <div class="step-desc">Section-by-section scoring with explanations and specific remediation steps, delivered within 24 hours.</div>
-      </div>
-    </div>
-
-    <div style="margin-top:48px;">
+    <div style="margin-top:16px;">
       <p style="font-size:15px; font-weight:600; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.06em; font-family:'JetBrains Mono', monospace; margin-bottom:16px;">Simplified Report Preview</p>
       <div class="hero-card" style="max-width:520px;">
         <div class="card-topbar">
@@ -1066,155 +1024,137 @@
   <div class="container fade-up">
     <div class="section-label">Evaluation Scope</div>
     <div class="section-title">What gets evaluated across the 10993 series.</div>
-    <p class="section-desc">Each area scored Pass, Flag, or Fail with an explanation and remediation guidance.</p>
-    <div class="coverage-grid">
-      <div class="cov-item">
-        <div class="cov-icon">1</div>
-        <div>
-          <div class="cov-title">Biological Evaluation Plan</div>
-          <div class="cov-desc">Strategy justification, endpoint selection, and rationale completeness.</div>
+    <p class="section-desc" style="margin-bottom:32px;">Each area scored Pass, Flag, or Fail with an explanation and remediation guidance.</p>
+    <div style="max-width:680px;">
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Biological Evaluation Plan</span>
+          <span class="scope-part">Part 1</span>
         </div>
+        <div class="scope-desc">Strategy justification, endpoint selection, and rationale completeness.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">1</div>
-        <div>
-          <div class="cov-title">BER Structure &amp; Narrative</div>
-          <div class="cov-desc">Overall coherence against ISO 10993-1:2025 requirements.</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Biological Evaluation Report</span>
+          <span class="scope-part">Part 1</span>
         </div>
+        <div class="scope-desc">Overall coherence against ISO 10993-1:2025 requirements.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">18</div>
-        <div>
-          <div class="cov-title">Chemical Characterization</div>
-          <div class="cov-desc">Material identification, extractable/leachable coverage per Part 18.</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Chemical Characterization</span>
+          <span class="scope-part">Part 18</span>
         </div>
+        <div class="scope-desc">Material identification, extractable/leachable coverage.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">5</div>
-        <div>
-          <div class="cov-title">Cytotoxicity</div>
-          <div class="cov-desc">Test documentation and result interpretation per Part 5.</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Cytotoxicity</span>
+          <span class="scope-part">Part 5</span>
         </div>
+        <div class="scope-desc">Test documentation and result interpretation.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">10</div>
-        <div>
-          <div class="cov-title">Sensitization &amp; Irritation</div>
-          <div class="cov-desc">Protocol and endpoint documentation per Part 10.</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Sensitization &amp; Irritation</span>
+          <span class="scope-part">Part 10</span>
         </div>
+        <div class="scope-desc">Protocol and endpoint documentation.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">3</div>
-        <div>
-          <div class="cov-title">Genotoxicity</div>
-          <div class="cov-desc">Risk justification and test selection rationale per Part 3.</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Genotoxicity</span>
+          <span class="scope-part">Part 3</span>
         </div>
+        <div class="scope-desc">Risk justification and test selection rationale.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">17</div>
-        <div>
-          <div class="cov-title">Toxicological Risk Assessment</div>
-          <div class="cov-desc">TRA methodology and tolerable exposure calculations per Part 17.</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Hemocompatibility</span>
+          <span class="scope-part">Part 4</span>
         </div>
+        <div class="scope-desc">Blood interaction testing selection and documentation for devices contacting the cardiovascular system.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">&rarr;</div>
-        <div>
-          <div class="cov-title">ISO 14971 Risk Integration</div>
-          <div class="cov-desc">Risk management file cross-referencing: severity, probability, uncertainty.</div>
-          <div class="cov-badge new">New in 2025</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Implantation</span>
+          <span class="scope-part">Part 6</span>
         </div>
+        <div class="scope-desc">Local tissue response evaluation for implantable devices.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">&rarr;</div>
-        <div>
-          <div class="cov-title">Foreseeable Misuse</div>
-          <div class="cov-desc">Documentation of misuse scenarios and their biological safety implications.</div>
-          <div class="cov-badge new">New in 2025</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Systemic Toxicity</span>
+          <span class="scope-part">Part 11</span>
         </div>
+        <div class="scope-desc">Acute, subacute, and subchronic systemic toxicity evaluation and justification.</div>
       </div>
-      <div class="cov-item">
-        <div class="cov-icon">&Delta;</div>
-        <div>
-          <div class="cov-title">2018 &rarr; 2025 Version Gap Flagging</div>
-          <div class="cov-desc">Identifies elements compliant with 2018 but deficient under the 2025 standard.</div>
-          <div class="cov-badge new">Transition Support</div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Sample Preparation &amp; Reprocessing</span>
+          <span class="scope-part">Part 12</span>
         </div>
+        <div class="scope-desc">Extraction conditions, test article preparation, reprocessing simulation, and timepoint selection for reusable devices.</div>
+      </div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Toxicological Risk Assessment</span>
+          <span class="scope-part">Part 17</span>
+        </div>
+        <div class="scope-desc">TRA methodology and tolerable exposure calculations.</div>
+      </div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">ISO 14971 Risk Integration</span>
+          <span class="scope-part" style="background:var(--accent); color:#fff;">2025</span>
+        </div>
+        <div class="scope-desc">Risk management file cross-referencing: severity, probability, uncertainty.</div>
+      </div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">Foreseeable Misuse</span>
+          <span class="scope-part" style="background:var(--accent); color:#fff;">2025</span>
+        </div>
+        <div class="scope-desc">Documentation of misuse scenarios and their biological safety implications.</div>
+      </div>
+      <div class="scope-item" onclick="this.classList.toggle('open')">
+        <div class="scope-header">
+          <span class="scope-toggle">&#9662;</span>
+          <span class="scope-name">2018 to 2025 Transition Gap Flagging</span>
+          <span class="scope-part" style="background:#FEF4E4; color:var(--amber-flag);">Transition</span>
+        </div>
+        <div class="scope-desc">Identifies elements compliant with 2018 but deficient under the 2025 standard.</div>
       </div>
     </div>
     <p style="font-size:15px; color:var(--ink-light); margin-top:32px; line-height:1.65;">The evaluation framework draws from core <a href="https://www.iso.org/standard/68936.html" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;">ISO 10993</a> standards, published <a href="https://www.fda.gov/medical-devices/biocompatibility-assessment-resource-center/basics-biocompatibility-information-needed-assessment-fda" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;">FDA</a> and <a href="https://health.ec.europa.eu/medical-devices-sector/new-regulations/guidance-mdcg-endorsed-documents-and-other-guidance_en" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;">EU MDCG</a> guidance, and documented notified body review patterns. <a href="how-bioevalpro-works-with-your-team.html" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;">Learn how BioEvalPro fits into your team's workflow &rarr;</a></p>
   </div>
 </section>
-<section>
-  <div class="container fade-up">
-    <div class="section-label">Built For</div>
-    <div class="section-title">Designed for the people who do this work every day.</div>
-    <div class="audience-grid">
-      <div class="audience-card">
-        <div class="audience-role">Consultants</div>
-        <h3>Independent RA professionals</h3>
-        <p>Run every client package through a structured check before delivery. Catch gaps early, deliver stronger documentation.</p>
-      </div>
-      <div class="audience-card">
-        <div class="audience-role">Startups</div>
-        <h3>Device company RA leads</h3>
-        <p>Small teams can't always do a full internal gap review. Get notified body-level scrutiny before your package ships.</p>
-      </div>
-      <div class="audience-card">
-        <div class="audience-role">CROs</div>
-        <h3>Contract research organizations</h3>
-        <p>Add structured quality checks to your workflow. Deliver consistently thorough reviews across your client portfolio.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- COMPARISON -->
+<!-- WHAT YOU GET -->
 <section style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="container fade-up">
-    <div class="section-label">Why BioEvalPro</div>
-    <div class="section-title">How BioEvalPro compares to traditional gap analysis.</div>
-    <div class="compare-strip">
-      <div class="compare-strip-header"></div>
-      <div class="compare-strip-header">Traditional Consulting</div>
-      <div class="compare-strip-header highlight">BioEvalPro</div>
-
-      <div class="compare-strip-cell"><strong>Turnaround</strong></div>
-      <div class="compare-strip-cell">2&ndash;4 weeks typical</div>
-      <div class="compare-strip-cell highlight">Within 24 hours</div>
-
-      <div class="compare-strip-cell"><strong>Cost per review</strong></div>
-      <div class="compare-strip-cell">$2,000&ndash;$8,000</div>
-      <div class="compare-strip-cell highlight">A fraction of that</div>
-
-      <div class="compare-strip-cell"><strong>ISO 10993-1:2025 coverage</strong></div>
-      <div class="compare-strip-cell">Varies by consultant</div>
-      <div class="compare-strip-cell highlight">Consistent scope, every review</div>
-
-      <div class="compare-strip-cell"><strong>Structured scoring</strong></div>
-      <div class="compare-strip-cell">Usually narrative-only</div>
-      <div class="compare-strip-cell highlight">Pass / Flag / Fail per section</div>
-
-      <div class="compare-strip-cell"><strong>Remediation steps</strong></div>
-      <div class="compare-strip-cell">Depends on engagement</div>
-      <div class="compare-strip-cell highlight">Included in every report</div>
-
-      <div class="compare-strip-cell"><strong>2018 &rarr; 2025 delta flagging</strong></div>
-      <div class="compare-strip-cell">If specifically requested</div>
-      <div class="compare-strip-cell highlight">Built into every evaluation</div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-  <div class="container fade-up" style="text-align:center; max-width:700px;">
-    <div class="section-label">Pricing</div>
-    <div class="section-title">A fraction of the $2,000&ndash;$8,000 that other gap analysis services cost.</div>
-    <p class="section-desc" style="margin:0 auto 20px; text-align:center;">Traditional consultant-led gap analysis runs $2,000&ndash;$8,000 per engagement. BioEvalPro delivers first-pass gap detection at a fraction of the cost.</p>
-    <p style="font-size:16px; color:var(--ink-light); margin-bottom:36px; line-height:1.65;">Pricing is being finalized. Join the waitlist for early access and priority pricing.</p>
-    <a href="#waitlist" class="btn-primary" style="margin-right:16px;">Join Waitlist</a>
-    <a href="#contact" class="btn-secondary">Request Pricing</a>
+    <div class="section-label">What You Get</div>
+    <div class="section-title">A structured first pass so your experts can focus on what matters.</div>
+    <ul style="max-width:680px; font-size:16px; color:var(--ink-light); line-height:2.1; padding-left:20px; margin-top:32px;">
+      <li><strong style="color:var(--ink);">Reports in 1 to 2 business days.</strong> Upload your package, get back a scored gap report with specific remediation steps.</li>
+      <li><strong style="color:var(--ink);">Consistent scope, every review.</strong> The same evaluation framework applied to every package, regardless of who runs it or when.</li>
+      <li><strong style="color:var(--ink);">Section-by-section scoring.</strong> Pass, Flag, or Fail for each area of your biological evaluation, with explanations for every score.</li>
+      <li><strong style="color:var(--ink);">Justification strength assessment.</strong> Every justification in your package scored for specificity, traceability, and evidence quality.</li>
+      <li><strong style="color:var(--ink);">FDA and EU MDR coverage.</strong> Evaluated against both frameworks so you know where your documentation satisfies one but falls short of the other.</li>
+    </ul>
   </div>
 </section>
 
@@ -1226,15 +1166,10 @@
     <p class="section-desc">Enterprise-grade infrastructure built for regulated industries.</p>
     <div class="trust-row">
       <div class="trust-item"><div class="trust-icon">&#128274;</div> Encryption in transit and at rest</div>
-      <div class="trust-item"><div class="trust-icon">&#128465;</div> Documents deleted after processing</div>
+      <div class="trust-item"><div class="trust-icon">&#128203;</div> Secure portal to access your documents and reports</div>
       <div class="trust-item"><div class="trust-icon">&#127466;&#127482;</div> GDPR compliant. DPA available</div>
-      <div class="trust-item"><div class="trust-icon">&#9729;</div> Enterprise cloud hosting (Azure / AWS)</div>
-      <div class="trust-item"><div class="trust-icon">&#128203;</div> SOC 2 on roadmap</div>
-      <div class="trust-item"><div class="trust-icon">&#128221;</div> Mutual NDA available</div>
+      <div class="trust-item"><div class="trust-icon">&#128221;</div> NDA available</div>
     </div>
-    <p style="font-size:14px; color:var(--ink-muted); margin-top:32px; max-width:640px; line-height:1.6;">
-      <strong>Disclaimer:</strong> All findings and recommendations from BioEvalPro should be reviewed and approved by your qualified regulatory and scientific professionals before action. Product safety determinations and notified body approval outcomes are the responsibility of the submitting organization. Use of this platform and its output is at your own discretion and risk.
-    </p>
   </div>
 </section>
 
@@ -1284,36 +1219,42 @@
 <!-- FAQ -->
 <section>
   <div class="container">
-    <div class="section-label">FAQ</div>
-    <div class="section-title">Common questions.</div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does this replace my regulatory consultant or toxicologist?</div>
-        <div class="faq-a">No. BioEvalPro evaluates documentation quality and flags gaps. Device-specific scientific judgment calls remain with your regulatory team, toxicologist, or contracted experts.</div>
+    <div class="faq-collapse" onclick="this.classList.toggle('open')" style="max-width:720px; cursor:pointer; padding:24px 0; border-bottom:1px solid var(--border);">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div class="section-title" style="margin-bottom:0; font-size:28px;">Frequently Asked Questions</div>
+        <span style="font-size:20px; color:var(--ink-muted); transition:transform 0.2s;" class="faq-collapse-arrow">+</span>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which version of ISO 10993-1 does it evaluate against?</div>
-        <div class="faq-a">The 2025 standard, with full 2018-to-2025 delta awareness. Select your evaluation type and the analysis adjusts accordingly.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What file formats do you accept?</div>
-        <div class="faq-a">PDF and Word (.docx). Individual documents or a complete package.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is my documentation handled?</div>
-        <div class="faq-a">Encrypted in transit and at rest. Deleted after your report is delivered. Enterprise cloud hosting, GDPR compliant, DPA available on request.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much does it cost?</div>
-        <div class="faq-a">A fraction of the $2,000&ndash;$8,000 traditional consultants charge. Per-submission and subscription options. Pricing is being finalized ahead of launch.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does the evaluation take?</div>
-        <div class="faq-a">Within 24 hours. Full section-by-section scoring with explanations and remediation steps.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can it check my Clinical Evaluation Report too?</div>
-        <div class="faq-a">CER gap scanning is on the roadmap. Launch focuses on core ISO 10993 biological evaluation documentation.</div>
+      <div class="faq-collapse-body">
+        <div class="faq-list" style="margin-top:24px;">
+          <div class="faq-item">
+            <div class="faq-q" onclick="event.stopPropagation(); this.parentElement.classList.toggle('open')">Does this replace my regulatory consultant or toxicologist?</div>
+            <div class="faq-a">No. BioEvalPro evaluates documentation quality and flags gaps. Device-specific scientific judgment calls remain with your regulatory team, toxicologist, or contracted experts.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="event.stopPropagation(); this.parentElement.classList.toggle('open')">Which version of ISO 10993-1 does it evaluate against?</div>
+            <div class="faq-a">The 2025 standard, with full 2018-to-2025 delta awareness. Select your evaluation type and the analysis adjusts accordingly.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="event.stopPropagation(); this.parentElement.classList.toggle('open')">What file formats do you accept?</div>
+            <div class="faq-a">PDF and Word (.docx). Individual documents or a complete package.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="event.stopPropagation(); this.parentElement.classList.toggle('open')">How is my documentation handled?</div>
+            <div class="faq-a">Encrypted in transit and at rest. Stored in a secure portal where you can access your documents and reports at any time. GDPR compliant, DPA available on request.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="event.stopPropagation(); this.parentElement.classList.toggle('open')">How much does it cost?</div>
+            <div class="faq-a">Per-submission and subscription options. Pricing is being finalized ahead of launch. Contact us for details.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="event.stopPropagation(); this.parentElement.classList.toggle('open')">How long does the evaluation take?</div>
+            <div class="faq-a">1 to 2 business days. Full section-by-section scoring with explanations and remediation steps.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="event.stopPropagation(); this.parentElement.classList.toggle('open')">Can it check my Clinical Evaluation Report too?</div>
+            <div class="faq-a">CER gap scanning is on the roadmap. Launch focuses on core ISO 10993 biological evaluation documentation.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1351,8 +1292,7 @@
     <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
     <div class="footer-links">
       <a href="mailto:hello@bioevalpro.com">Contact</a>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
+      <a href="legal.html">Legal</a>
     </div>
   </div>
 </footer>
