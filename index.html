@@ -891,7 +891,7 @@
       <a href="#what-it-does">The Tool</a>
       <a href="#scope">Scope</a>
       <a href="blog.html">Resources</a>
-      <a href="#waitlist">Request Gap Analysis</a>
+      <a href="#contact">Request Gap Analysis</a>
     </nav>
     <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -902,7 +902,7 @@
   <a href="#what-it-does" onclick="document.getElementById('mobileNav').classList.remove('open')">The Tool</a>
   <a href="#scope" onclick="document.getElementById('mobileNav').classList.remove('open')">Scope</a>
   <a href="blog.html">Resources</a>
-  <a href="#waitlist" onclick="document.getElementById('mobileNav').classList.remove('open')">Request Gap Analysis</a>
+  <a href="#contact" onclick="document.getElementById('mobileNav').classList.remove('open')">Request Gap Analysis</a>
 </div>
 
 <!-- HERO -->
@@ -912,7 +912,7 @@
       <div class="hero-badge">Pre-Launch &ndash; Request Early Access</div>
       <h1>Upload your 10993 package and get a scored gap report.</h1>
       <p class="hero-sub">See where your biological evaluation has gaps, what justifications are weak, and what to strengthen before your notified body or FDA submission. BioEvalPro evaluates your documentation section by section, scored against ISO 10993 and both EU MDR and FDA expectations. Reports delivered in 1 to 2 business days.</p>
-      <a href="#waitlist" class="btn-primary">Request a Gap Analysis</a>
+      <a href="#contact" class="btn-primary">Request a Gap Analysis</a>
       <a href="#contact" class="btn-secondary">Talk to Us</a>
     </div>
   </div>
@@ -1173,22 +1173,6 @@
   </div>
 </section>
 
-<!-- WAITLIST -->
-<section class="waitlist" id="waitlist">
-  <div class="container">
-    <div class="section-label">Early Access</div>
-    <div class="section-title">Request your gap analysis.</div>
-    <p class="section-desc">Submit your email and we will reach out to schedule your biological evaluation gap analysis.</p>
-    <form class="waitlist-form" id="waitlistForm" onsubmit="return handleWaitlist(event)">
-      <input type="email" name="email" class="waitlist-input" placeholder="you@company.com" required aria-label="Email address">
-      <input type="hidden" name="formType" value="waitlist">
-      <button type="submit" class="btn-primary">Request Gap Analysis</button>
-    </form>
-    <p class="waitlist-note">We will only contact you about your gap analysis request.</p>
-    <p class="waitlist-success" id="waitlistSuccess">Request received. We will be in touch shortly.</p>
-  </div>
-</section>
-
 <!-- LATEST RESOURCES -->
 <section style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="container fade-up">
@@ -1263,26 +1247,28 @@
 <!-- CONTACT -->
 <section id="contact" style="background:#fff; border-top:1px solid var(--border);">
   <div class="container fade-up">
-    <div class="section-label">Get in Touch</div>
-    <div class="section-title">Have a question? Want to discuss pricing?</div>
-    <p class="section-desc">Questions about the tool, coverage, or pricing? We'd like to hear from you.</p>
+    <div class="section-label">Get Started</div>
+    <div class="section-title">Request a gap analysis or ask us anything.</div>
+    <p class="section-desc">Tell us about your project, request a biological evaluation gap analysis, or ask a question. We will get back to you within one business day.</p>
     <form class="contact-grid" id="contactForm" onsubmit="return handleContact(event)">
       <input type="text" name="name" class="contact-input" placeholder="Your name" required aria-label="Your name">
       <input type="email" name="email" class="contact-input" placeholder="you@company.com" required aria-label="Email address">
       <select name="topic" class="contact-input full" required aria-label="Topic" style="color:var(--ink-muted);">
         <option value="" disabled selected>What can we help with?</option>
+        <option value="Request gap analysis" style="color:var(--ink);">Request a gap analysis</option>
+        <option value="Project need" style="color:var(--ink);">Discuss a project need</option>
         <option value="Pricing inquiry" style="color:var(--ink);">Pricing inquiry</option>
         <option value="Product question" style="color:var(--ink);">Product question</option>
         <option value="Partnership or advisory" style="color:var(--ink);">Partnership or advisory opportunity</option>
         <option value="General inquiry" style="color:var(--ink);">General inquiry</option>
       </select>
-      <textarea name="message" class="contact-textarea full" placeholder="Your question or message..." required aria-label="Message"></textarea>
+      <textarea name="message" class="contact-textarea full" placeholder="Tell us about your project, your documentation package, or your question..." required aria-label="Message"></textarea>
       <input type="hidden" name="formType" value="question">
       <div class="full">
-        <button type="submit" class="btn-primary">Send Message</button>
+        <button type="submit" class="btn-primary">Submit</button>
       </div>
     </form>
-    <p class="contact-success" id="contactSuccess">Message sent. We'll get back to you shortly.</p>
+    <p class="contact-success" id="contactSuccess">Request received. We will get back to you within one business day.</p>
   </div>
 </section>
 
