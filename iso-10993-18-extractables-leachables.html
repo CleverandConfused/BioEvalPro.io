@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://bioevalpro.com/iso-10993-18-extractables-leachables.html">
+  <title>ISO 10993-18 Chemical Characterization: What Your Extractables and Leachables Documentation Actually Needs to Include</title>
+  <meta name="description" content="Extractables and leachables documentation under ISO 10993-18 requires more than test results. Solvent selection rationale, AET calculation methodology, polarity coverage, and how E&L data must connect to your toxicological risk assessment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FAF6F0; --cream-dark: #F0EAE0; --ink: #1A1A2E; --ink-light: #3A3A52; --ink-muted: #6B6B80; --accent: #1B6B4A; --accent-light: #E8F5EE; --accent-hover: #14523A; --amber-flag: #D4880F; --border: #DDD5C8; --shadow-md: 0 4px 16px rgba(26,26,46,0.08); --radius: 6px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', 'Georgia', serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,240,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before { content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px; background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1; }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back::before { content: '\2190 '; }
+    .article-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px; }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding: 0 0 80px; }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body strong { color: var(--ink); }
+    .callout { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 var(--radius) var(--radius) 0; margin: 32px 0; }
+    .callout p { color: var(--ink); margin-bottom: 0; }
+    .article-cta { background: var(--ink); border-radius: var(--radius); padding: 40px; margin: 48px 0 0; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .article-cta-text { flex: 1; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; color: #fff; font-size: 22px; margin: 0 0 8px; }
+    .article-cta-text p { color: #B0B0C0; font-size: 15px; margin: 0; }
+    .article-cta .btn-primary { background: var(--accent); color: #fff; border: none; padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; white-space: nowrap; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; }
+    .footnotes { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .footnotes p { font-size: 14px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 8px; }
+    @media (max-width: 600px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Resources</a>
+      <a href="index.html#contact">Request Gap Analysis</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Resources</a>
+      <div class="article-meta">
+        <span>April 2026</span>
+        <span class="article-tag">Chemical Characterization</span>
+        <span>9 min read</span>
+      </div>
+      <h1>ISO 10993-18 Chemical Characterization: What Your Extractables and Leachables Documentation Actually Needs to Include</h1>
+    </div>
+
+    <div class="article-body">
+
+      <p>Chemical characterization under <a href="https://www.iso.org/standard/68936.html">ISO 10993-18</a> is one of the most documentation-intensive areas in a biological evaluation package. The testing itself is technical, but the deficiency findings that come back from reviewers are rarely about the analytical chemistry. They are about what the documentation failed to justify, explain, or connect.</p>
+
+      <p>A lab delivers a clean extractables and leachables report with well-run chromatography and properly identified peaks. The manufacturer includes it in the submission. The notified body or FDA reviewer sends back a deficiency asking why only one solvent polarity was used, why the analytical evaluation threshold has no supporting calculation, or why three of the seven identified compounds have no corresponding entry in the toxicological risk assessment. The analytical work was sound. The documentation around it was not.</p>
+
+      <p>This article covers what E&L documentation actually needs to include beyond the test results themselves, and where gaps most commonly appear.</p>
+
+      <h2>Solvent selection and polarity coverage</h2>
+
+      <p>ISO 10993-18 and the <a href="https://www.fda.gov/medical-devices/biocompatibility-assessment-resource-center/basics-biocompatibility-information-needed-assessment-fda">FDA's draft guidance on chemical characterization</a> both expect extraction studies to cover the range of polarity relevant to the clinical contact environment. For most devices, this means using both polar and non-polar solvents, because the substances that leach from a device into body tissues include compounds across the polarity spectrum.</p>
+
+      <p>In practice, many E&L studies are conducted with a single polar solvent. Sometimes this is appropriate, for example, when the device contact is exclusively with aqueous fluids and there is no lipophilic tissue contact. But the documentation needs to say that explicitly. The rationale for solvent selection must address why the chosen solvents represent the clinical exposure conditions and, if a polarity range was excluded, why that exclusion is justified for this specific device and its intended use.</p>
+
+      <p>A study that used only water and isopropanol without explaining why non-polar extraction was omitted will draw a finding. Not because the solvent choice was necessarily wrong, but because the reviewer has no basis to evaluate whether it was appropriate. The documentation gap is the problem, not the analytical decision.</p>
+
+      <div class="callout">
+        <p><strong>What reviewers expect to see:</strong> A documented rationale for each solvent used, an explanation of how the selected solvents represent the clinical contact conditions (aqueous, lipophilic, or mixed), and a justification for any polarity range that was not covered in the study.</p>
+      </div>
+
+      <h2>Analytical evaluation threshold</h2>
+
+      <p>The analytical evaluation threshold (AET) defines the concentration below which an extractable compound does not require individual identification and toxicological assessment. It is the line that separates compounds requiring a margin of safety calculation from those that can be addressed through threshold-based arguments like the Threshold of Toxicological Concern (TTC).</p>
+
+      <p>The AET is one of the most common sources of deficiency findings in E&L documentation. The issue is not that companies set it incorrectly. The issue is that they state the AET as a number without showing how it was derived. A reviewer who sees "AET = 1.5 µg/device" with no supporting methodology cannot verify whether the threshold is appropriate for the device, the patient exposure scenario, or the analytical method's sensitivity.</p>
+
+      <p>A properly documented AET derivation connects several inputs: the tolerable exposure or tolerable intake value for a compound of concern, the uncertainty factors applied, the number of devices a patient could be exposed to simultaneously, and the clinical exposure duration. It also needs to account for the semi-quantitative nature of the analytical techniques used. The FDA has specifically noted that submitted AET calculations often fail to account for the instrument variability inherent to techniques like GC-MS and LC-MS when applied semi-quantitatively.<sup><a href="#fn1">1</a></sup></p>
+
+      <p>If your AET documentation consists of a stated value and a reference to ISO 10993-18, that is likely insufficient. The calculation methodology, the inputs, and the assumptions all need to be visible in the documentation.</p>
+
+      <h2>Exhaustive vs simulated-use extraction</h2>
+
+      <p>ISO 10993-18 distinguishes between exhaustive extraction (designed to remove the maximum quantity of extractable substances) and simulated-use extraction (designed to approximate the quantity of substances released under clinical conditions). Both have a role in chemical characterization, and the documentation needs to justify which approach was used and why.</p>
+
+      <p>Exhaustive extraction is typically used for initial characterization and worst-case hazard identification. It tells you what could come out of the device. Simulated-use extraction tells you what actually comes out under conditions that approximate clinical exposure. The toxicological risk assessment needs to be based on clinically relevant exposure data, which usually means simulated-use conditions. But the hazard identification may rely on exhaustive extraction to ensure nothing was missed.</p>
+
+      <p>The documentation gap that commonly appears here is when a study uses exhaustive extraction conditions but the TRA treats the resulting quantities as if they represent clinical exposure without any adjustment or discussion. Exhaustive extraction deliberately overestimates patient exposure. If the margin of safety calculations use exhaustive extraction quantities directly, the documentation should acknowledge that the resulting MOS values are conservative. If simulated-use data is available, the TRA should reference it for the exposure estimates and explain the relationship between the two data sets.</p>
+
+      <h2>Identified vs unidentified peaks</h2>
+
+      <p>No extractables study identifies every single peak in the chromatographic profile. The question reviewers ask is not whether 100% identification was achieved, but whether the unidentified fraction was adequately addressed.</p>
+
+      <p>ISO 10993-18 expects that compounds above the AET are identified and quantified to the extent possible. When compounds above the AET cannot be identified, the documentation needs to explain what analytical steps were taken to attempt identification, why identification was not achievable, and how the toxicological risk of the unidentified compound was assessed in the absence of specific structural information.</p>
+
+      <p>A common documentation gap is handling unidentified peaks with a blanket statement like "unidentified compounds are present at low levels and are not expected to pose a toxicological concern." This is not a risk assessment. If the compound is above the AET, it requires individual assessment regardless of the perceived level. When identification is not possible, approaches like TTC-based assessment or structural class categorization based on available spectral data can be used, but the rationale needs to be documented and the limitations acknowledged.</p>
+
+      <h2>Connecting E&L data to the toxicological risk assessment</h2>
+
+      <p>The chemical characterization study and the <a href="chemical-characterization-skip-animal-testing.html">toxicological risk assessment</a> are separate documents that need to function as a connected chain. Every compound identified above the AET in the E&L study should have a corresponding entry in the TRA with an individual margin of safety calculation. This sounds straightforward, but the chain breaks in practice more often than it should.</p>
+
+      <p>The most common breaks are compounds identified in the E&L study that do not appear in the TRA at all, compounds that appear in both documents but with different quantification values because the TRA referenced a different version of the E&L report, and compounds that appear in the TRA but with a generic safety statement instead of a calculated margin of safety.</p>
+
+      <p>For example, an E&L study identifies seven compounds above the AET. The TRA calculates margins of safety for four of them, addresses one by referencing a published safety assessment from a regulatory body, and describes the remaining two as "trace-level compounds present below toxicological concern." That documentation will generate a finding. Every compound above the AET needs a documented, individual risk assessment with traceable tolerable exposure values from recognized sources such as EPA IRIS, ECHA DNEL, or published TDI/ADI values.</p>
+
+      <div class="callout">
+        <p><strong>The chain that reviewers verify:</strong> E&L study identifies compound above AET &#8594; compound appears in TRA &#8594; TRA assigns tolerable exposure from a recognized source &#8594; TRA calculates patient exposure based on clinical use conditions &#8594; TRA calculates margin of safety &#8594; MOS is adequate for the exposure scenario. Every link in this chain needs to be documented and traceable.</p>
+      </div>
+
+      <h2>Final finished form and the test article</h2>
+
+      <p>ISO 10993-18 requires chemical characterization to be performed on the device in its final finished form, meaning after all manufacturing processes, surface treatments, coatings, and sterilization have been applied. This requirement is frequently cited but not always met in practice.</p>
+
+      <p>The documentation gap appears when the test article differs from the final device in ways that are not addressed. For example, testing was performed on a pre-sterilized sample because sterilization was not yet validated at the time of testing, or testing was performed on a material coupon rather than the finished device because the device geometry made extraction impractical. These are not necessarily disqualifying, but the documentation must acknowledge the difference, assess the potential impact on the extractable profile, and justify why the results remain representative of the final device.</p>
+
+      <p>If your E&L report describes the test article as the "final finished device" but your manufacturing records show that the sterilization process changed between testing and the current production process, that inconsistency will be found during review. The documentation needs to address any differences between the tested article and the current production device, including whether the differences could affect the extractable profile.</p>
+
+      <h2>What changed in 2025</h2>
+
+      <p>The <a href="iso-10993-2025-changes.html">2025 revision of ISO 10993-1</a> removed the "physical and/or chemical information" column from the endpoint evaluation tables (previously Tables A.1 in the 2018 version, now Tables 1 through 4). Some companies have interpreted this removal as a reduced emphasis on chemical characterization. That interpretation is incorrect.</p>
+
+      <p>Chemical characterization remains a prerequisite for biological risk assessment under the 2025 standard. The definition of chemical characterization in the 2025 revision is unchanged: "the process of obtaining chemical information, accomplished either by information gathering or by information generation, for example, by literature review or chemical testing." The removal from the tables was intended to clarify that chemical characterization is not an endpoint to be evaluated in the same way as cytotoxicity or sensitization, but rather a foundational input to the entire risk assessment process.<sup><a href="#fn2">2</a></sup></p>
+
+      <p>If your biological evaluation documentation was updated for 2025 and chemical characterization was deprioritized or removed from the evaluation plan based on the table changes, that will likely generate a finding. The documentation should reflect that chemical characterization is still required as an input to risk assessment, regardless of its position in the evaluation tables.</p>
+
+      <h2>Common documentation gaps at a glance</h2>
+
+      <p><strong>Solvent selection without rationale.</strong> The E&L study used specific solvents but the documentation does not explain why those solvents represent the clinical contact conditions or why other polarity ranges were excluded.</p>
+
+      <p><strong>AET stated without methodology.</strong> The analytical evaluation threshold appears as a number with no derivation showing the inputs, assumptions, and calculation methodology.</p>
+
+      <p><strong>Exhaustive extraction treated as clinical exposure.</strong> Margin of safety calculations use exhaustive extraction quantities without acknowledging the conservative nature of the data or referencing simulated-use conditions.</p>
+
+      <p><strong>Unidentified peaks dismissed generically.</strong> Compounds above the AET that could not be identified are addressed with blanket safety statements rather than documented risk assessment approaches.</p>
+
+      <p><strong>Broken chain to the TRA.</strong> Compounds identified in the E&L study are absent from the TRA, present with different quantification values, or addressed with generic statements instead of individual margin of safety calculations.</p>
+
+      <p><strong>Test article does not match the final device.</strong> The E&L study was performed on a sample that differs from the current production device, and the documentation does not address the difference or its potential impact.</p>
+
+      <p><strong>2025 revision misinterpreted.</strong> Chemical characterization was deprioritized in the evaluation plan based on the removal of the physical/chemical column from the endpoint tables, without recognizing that it remains a prerequisite for risk assessment.</p>
+
+      <p>If your biological evaluation package includes extractables and leachables data, the documentation surrounding that data needs to be as thorough as the analytical work itself. A well-run E&L study paired with inadequate documentation is a preventable source of deficiency findings. If you want to check how your chemical characterization documentation holds up before submission, <a href="index.html#contact">request a gap analysis</a> or <a href="index.html#contact">get in touch</a> to discuss your package.</p>
+
+      <div class="footnotes">
+        <p id="fn1"><sup>1</sup> FDA Draft Guidance, "Biocompatibility Testing Considerations for Medical Devices: Chemical Characterization of Materials" (2024). Section on AET derivation and semi-quantitative analytical method variability.</p>
+        <p id="fn2"><sup>2</sup> NAMSA, "ISO 10993-1:2025 Updates: Top 10 Biological Evaluation Essentials in the Revision" (October 2025). Discussion of chemical characterization's removal from endpoint tables and its continued role as a risk assessment input.</p>
+      </div>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>BioEvalPro scores your chemical characterization documentation.</h3>
+          <p>Solvent rationale, AET methodology, polarity coverage, E&L-to-TRA traceability, and final finished form consistency. Every sub-criterion scored with specific findings and remediation guidance.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <a href="index.html#contact" class="btn-primary">Request Gap Analysis</a>
+          <a href="index.html#contact" style="color:#B0B0C0; font-size:14px; text-align:center; text-decoration:underline; text-underline-offset:3px;">Have questions? Get in touch</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="index.html#contact">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
