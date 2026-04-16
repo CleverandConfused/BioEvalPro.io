@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://bioevalpro.com/biological-hazards-hazardous-situations-harms.html">
+  <title>Biological Hazards, Hazardous Situations, and Harms: What Your BER Needs to Get Right</title>
+  <meta name="description" content="ISO 10993-1:2025 aligns biological evaluation with ISO 14971 risk management terminology. Biological hazards, biologically hazardous situations, and biological harms must be identified, connected, and documented. Where BERs commonly fall short and what reviewers expect.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FAF6F0; --cream-dark: #F0EAE0; --ink: #1A1A2E; --ink-light: #3A3A52; --ink-muted: #6B6B80; --accent: #1B6B4A; --accent-light: #E8F5EE; --accent-hover: #14523A; --amber-flag: #D4880F; --border: #DDD5C8; --shadow-md: 0 4px 16px rgba(26,26,46,0.08); --radius: 6px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', 'Georgia', serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,240,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before { content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px; background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1; }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back::before { content: '\2190 '; }
+    .article-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px; }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding: 0 0 80px; }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body strong { color: var(--ink); }
+    .callout { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 var(--radius) var(--radius) 0; margin: 32px 0; }
+    .callout p { color: var(--ink); margin-bottom: 0; }
+    .callout p + p { margin-top: 12px; }
+    .article-cta { background: var(--ink); border-radius: var(--radius); padding: 40px; margin: 48px 0 0; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .article-cta-text { flex: 1; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; color: #fff; font-size: 22px; margin: 0 0 8px; }
+    .article-cta-text p { color: #B0B0C0; font-size: 15px; margin: 0; }
+    .article-cta .btn-primary { background: var(--accent); color: #fff; border: none; padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; white-space: nowrap; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; }
+    .footnotes { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .footnotes p { font-size: 14px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 8px; }
+    @media (max-width: 600px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Resources</a>
+      <a href="index.html#contact">Request Gap Analysis</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Resources</a>
+      <div class="article-meta">
+        <span>April 2026</span>
+        <span class="article-tag">Risk Management</span>
+        <span>10 min read</span>
+      </div>
+      <h1>Biological Hazards, Hazardous Situations, and Harms: What Your BER Needs to Get Right</h1>
+    </div>
+
+```
+<div class="article-body">
+
+  <p>The 2025 revision of <a href="https://www.iso.org/standard/68936.html">ISO 10993-1</a> deliberately aligns biological evaluation with the risk management terminology from <a href="https://www.iso.org/standard/72704.html">ISO 14971</a>. The standard now explicitly uses the terms "biological hazard," "biologically hazardous situation," and "biological harm" and expects manufacturers to identify, connect, and document all three as part of their biological evaluation.<sup><a href="#fn1">1</a></sup></p>
+
+  <p>This is not a cosmetic change. The previous edition framed biological evaluation primarily around endpoints and testing. The 2025 edition frames it as a risk management activity. The distinction matters because reviewers are no longer just checking whether you tested for the right endpoints. They are checking whether you identified the biological hazards associated with your device, described the circumstances under which those hazards could result in patient exposure, and assessed the potential harms that could follow.</p>
+
+  <p>Getting these three concepts right in your BER is where many manufacturers struggle, and where notified body questions are increasingly focused.</p>
+
+  <h2>The definitions and why they matter</h2>
+
+  <p><strong>A biological hazard</strong> is a potential source of biological harm. It exists as an inherent property of the device, its materials, or its manufacturing process. For example, a nickel-containing alloy in a surgical implant is a biological hazard because nickel is a known sensitizer. The hazard exists regardless of whether any patient is ever exposed to it. It is a property of the material, not an event.<sup><a href="#fn2">2</a></sup></p>
+
+  <p><strong>A biologically hazardous situation</strong> is a circumstance in which a patient or user is actually exposed to a biological hazard. The nickel-containing alloy becomes a biologically hazardous situation when the implant is placed in contact with tissue and nickel ions leach from the device surface into surrounding tissue. The hazard (nickel as a sensitizer) has become a situation (patient tissue exposed to nickel ions). This distinction matters because some hazards never lead to hazardous situations under normal clinical conditions, and your BER needs to explain why.<sup><a href="#fn3">3</a></sup></p>
+
+  <p><strong>Biological harm</strong> is the actual injury or damage to health that results from exposure to the hazard. In this example, the biological harm would be a type IV hypersensitivity reaction (contact dermatitis or, in the case of an implant, localized inflammation, pain, or implant loosening). Not every hazardous situation results in harm. Whether harm occurs depends on factors like the dose, the duration of exposure, the patient's individual susceptibility, and the effectiveness of any risk controls in place.<sup><a href="#fn4">4</a></sup></p>
+
+  <div class="callout">
+    <p><strong>The chain reviewers verify:</strong> Biological hazard (potential source of harm) &#8594; Biologically hazardous situation (patient exposed to the hazard) &#8594; Biological harm (injury or damage to health). Your BER needs to document all three elements and the connections between them for every identified hazard. Missing any link in this chain is one of the most common reasons for notified body questions.</p>
+  </div>
+
+  <h2>Where BERs commonly fall short</h2>
+
+  <p>The most frequent documentation failure is not that manufacturers fail to identify hazards. Most BERs list relevant biological hazards somewhere in the document. The problem is that the hazards are listed without the connecting logic that ties them to specific hazardous situations and specific potential harms. The reviewer sees a list of hazards but cannot trace the path from hazard to patient exposure to potential injury.</p>
+
+  <h3>Hazards without hazardous situations</h3>
+
+  <p>A BER identifies "residual ethylene oxide (EO) from sterilization" as a biological hazard. This is correct. But the document never describes the hazardous situation: how is the patient exposed to the residual EO? Through direct tissue contact with the device surface? Through inhalation of off-gassing during package opening? Through systemic absorption from a device implanted in contact with blood? Each of these is a different hazardous situation with different exposure characteristics, different duration, and different potential harms. A reviewer who sees "residual EO" listed as a hazard but no description of the exposure pathway will ask for clarification, because without the hazardous situation, it is not possible to assess the risk.</p>
+
+  <h3>Hazardous situations without severity and probability</h3>
+
+  <p>A BER describes a hazardous situation: "patient tissue is exposed to extractable compounds from the device's silicone housing during prolonged implantation." This is a well-defined hazardous situation. But the document then jumps directly to the TRA results without first establishing the potential harms, their severity, or the probability of occurrence. The <a href="iso-10993-2025-changes.html">2025 standard</a> expects the biological evaluation to estimate risk using ISO 14971 methodology, which means assigning severity and probability to each identified harm. A BER that identifies hazardous situations but skips the risk estimation step will draw questions about whether the biological evaluation is actually integrated with the risk management process.</p>
+
+  <h3>Harms described generically</h3>
+
+  <p>A BER states that the potential biological harm from extractable compounds is "toxicity." This is too broad to be useful. What kind of toxicity? Acute systemic toxicity from a bolus release of a high-concentration leachable? Chronic toxicity from cumulative low-dose exposure over the device's implant life? Local tissue irritation at the device-tissue interface? Each of these is a different harm with a different severity level, different probability of occurrence, and potentially different risk control measures. Using medically precise terminology (from sources like the MedDRA dictionary) to define potential harms makes the risk assessment more defensible and helps reviewers understand exactly what was evaluated.<sup><a href="#fn5">5</a></sup></p>
+
+  <h2>Examples: what is and is not a hazardous situation</h2>
+
+  <p>One of the harder conceptual distinctions in biological evaluation is recognizing when a hazard exists but a hazardous situation does not. This matters because if no hazardous situation exists, there is no patient exposure, and therefore no biological risk to assess. Documenting this reasoning in your BER is important because it justifies why certain hazards were identified but did not require testing or further evaluation.</p>
+
+  <h3>Hazard present, no hazardous situation</h3>
+
+  <p><strong>A polycarbonate housing contains bisphenol A (BPA) as a residual monomer.</strong> BPA is a known endocrine disruptor and a biological hazard. However, the device is an external monitoring device that contacts only intact skin for periods of less than 24 hours. Extraction studies under simulated clinical conditions showed no detectable BPA migration above the analytical evaluation threshold. In this case, the biological hazard (BPA in the material) exists, but the biologically hazardous situation (patient exposure to BPA at a biologically relevant dose) does not occur under the intended use conditions. The BER should document the hazard, reference the extraction data that demonstrates no clinically relevant exposure, and conclude that no hazardous situation arises. This is a justified exclusion, not a gap.</p>
+
+  <p><strong>A titanium implant contains trace aluminum from the alloy (Ti-6Al-4V).</strong> Aluminum is a documented neurotoxin at high doses, making it a biological hazard. However, the device is an orthopedic implant with no contact with neural tissue, and the release rate of aluminum ions from the passivated titanium alloy surface has been extensively characterized in published literature and shown to be well below established tolerable intake values. The hazard exists (aluminum in the alloy), but the hazardous situation (patient neural tissue exposed to neurotoxic doses of aluminum) does not arise because the exposure route, dose, and target tissue do not align. The BER documents this with reference to the specific alloy composition, published corrosion data, and tolerable intake calculations.</p>
+
+  <h3>Hazard present, hazardous situation exists, but harm does not necessarily follow</h3>
+
+  <p><strong>A urinary catheter made from PVC contains the plasticizer DEHP.</strong> DEHP is classified as a CMR substance (reproductive toxicant) under EU regulations, making it a biological hazard. The device contacts mucosal membrane for prolonged duration (greater than 24 hours), and extraction studies confirmed DEHP leaches from the catheter surface at quantifiable levels. This is a biologically hazardous situation: the patient is exposed to a known reproductive toxicant through mucosal contact. However, whether biological harm actually occurs depends on the dose relative to the patient's tolerable exposure, the duration of use, and the patient population (for example, the risk considerations are different for a neonatal patient versus an elderly patient). The BER must document the hazard, the hazardous situation, the exposure data, and the risk assessment demonstrating that the exposure level is below the tolerable intake for the intended patient population, or, if it is not, what risk controls are in place (such as labeling restrictions or material substitution).</p>
+
+  <p><strong>A wound dressing releases trace amounts of a colorant additive.</strong> The colorant was identified as an extractable in E&L testing above the AET. This is a biological hazard and a biologically hazardous situation exists (the patient's wound bed is exposed to the colorant through direct contact with compromised tissue). Whether biological harm occurs depends on the toxicological profile of the specific colorant, the quantity released per exposure, and the duration of use. The TRA evaluates the margin of safety. If the MOS is adequate, the BER documents that the hazardous situation was identified, the risk was assessed, and the residual biological risk is acceptable. If the MOS is inadequate, the BER must document what risk controls were implemented.</p>
+
+  <h3>Hazard present, hazardous situation exists, harm is probable without controls</h3>
+
+  <p><strong>A device sterilized with ethylene oxide has EO residual levels that exceed ISO 10993-7 limits.</strong> EO is a known mutagen and carcinogen. The device is implanted in direct contact with tissue. The hazardous situation is clear (patient tissue exposed to mutagenic and carcinogenic residuals above established limits), and biological harm (genotoxic effects, potential carcinogenic effects) is probable without additional risk controls. This is not a documentation problem to justify away. It requires either reducing EO residuals through process changes until they meet ISO 10993-7 limits, or implementing alternative sterilization methods. The BER documents the hazard, the hazardous situation, the identified harm, and the risk control measures taken to reduce the residual risk to an acceptable level.</p>
+
+  <h2>What triggers notified body questions</h2>
+
+  <p>Notified body reviewers are trained to look for the complete chain from hazard through hazardous situation to harm. When questions come back, they typically fall into these categories:</p>
+
+  <p><strong>"The biological hazards have not been sufficiently identified."</strong> This usually means the BER listed hazards generically (e.g., "chemical hazards from device materials") without identifying specific hazards tied to the device's actual material composition, manufacturing processes, and sterilization method. The reviewer expects to see hazards identified at the level of specific substances or specific material interactions, not broad categories.</p>
+
+  <p><strong>"The relationship between identified hazards and biological endpoints has not been established."</strong> This means the BER identified hazards and separately listed the endpoints that were tested, but never connected the two. For example, the BER identified extractable compounds as a hazard and reported that cytotoxicity testing was performed, but never explained which specific hazard the cytotoxicity test was intended to address, or why cytotoxicity was the appropriate endpoint for that particular hazard. The <a href="iso-10993-2025-changes.html">2025 standard</a> expects each evaluated endpoint to be traceable back to an identified biological hazard.</p>
+
+  <p><strong>"The risk assessment does not include severity and probability estimation for identified biological harms."</strong> This means the BER identified hazards and hazardous situations but treated the risk assessment as a pass/fail exercise (test passed, therefore safe) rather than estimating the severity and probability of the potential harms. The alignment with ISO 14971 means that a biological evaluation is expected to include quantitative or semi-quantitative risk estimation, not just a binary "the test passed" conclusion.</p>
+
+  <p><strong>"Foreseeable misuse scenarios have not been considered in the hazard identification."</strong> This is a <a href="foreseeable-misuse-10993.html">new requirement in the 2025 revision</a>. The BER identified hazards and hazardous situations for the intended use conditions but did not consider what happens under reasonably foreseeable misuse. For example, a device intended for 24-hour skin contact was not evaluated for the hazardous situation that arises when a patient leaves the device in place for 72 hours, which is a foreseeable misuse scenario that changes the exposure duration and potentially the biological risk profile.</p>
+
+  <h2>How to structure the documentation</h2>
+
+  <p>There is no single required format for documenting biological hazards, hazardous situations, and harms in a BER. But the documentation needs to make the chain visible and traceable. Reviewers should be able to follow the logic from any identified hazard to the hazardous situation it creates (or the justification for why it does not create one), to the potential harm, to the risk estimation, to the risk control, and to the residual risk assessment.</p>
+
+  <p>Some manufacturers use a tabular format where each row traces a single hazard through the complete chain. Others integrate the analysis into the narrative sections of the BER. Either approach works as long as the connections are explicit and traceable. What does not work is listing hazards in one section, endpoints in another section, and test results in a third section with no documented relationship between them.</p>
+
+  <p>The BER should also explicitly reference the risk management file (per ISO 14971) and demonstrate that the biological hazards identified in the biological evaluation are consistent with the hazards identified in the broader risk analysis. If the risk management file identifies a biological hazard that does not appear in the BER, or vice versa, a reviewer will ask why. Consistency between these two documents is a frequent source of questions during notified body review.</p>
+
+  <p>If your BER treats hazard identification as a checklist exercise rather than a device-specific risk analysis, or if the connections between hazards, hazardous situations, and harms are not explicitly documented, your documentation is likely to generate questions during review. If you want to check whether your biological evaluation documentation gets this chain right before submission, <a href="index.html#contact">request a gap analysis</a> or <a href="index.html#contact">get in touch</a> to discuss your package.</p>
+
+  <div class="footnotes">
+    <p id="fn1"><sup>1</sup> NAMSA, "ISO 10993-1:2025 Updates: Top 10 Biological Evaluation Essentials in the Revision" (October 2025). Discusses the alignment with ISO 14971 terminology including biological hazard, biologically hazardous situation, and biological harm.</p>
+    <p id="fn2"><sup>2</sup> ISO 14971:2019, Section 3.2. Defines hazard as "potential source of harm."</p>
+    <p id="fn3"><sup>3</sup> ISO 14971:2019, Section 3.4. Defines hazardous situation as "circumstance in which people, property, or the environment are exposed to one or more hazard(s)."</p>
+    <p id="fn4"><sup>4</sup> ISO 14971:2019, Section 3.3. Defines harm as "injury or damage to the health of people, or damage to property or the environment."</p>
+    <p id="fn5"><sup>5</sup> Exeed Quality Management, "Avoiding ISO 14971 Mistakes: What Does Harm Really Mean" (Med Device Online, 2021). Discusses the importance of using medically precise terminology from MedDRA when defining harms in risk analysis.</p>
+  </div>
+
+  <div class="article-cta">
+    <div class="article-cta-text">
+      <h3>BioEvalPro checks your hazard-to-harm chain.</h3>
+      <p>Risk management integration is one of the 14 areas BioEvalPro evaluates in your biological evaluation documentation. Every identified hazard is checked for a connected hazardous situation, severity and probability estimation, and traceability to your evaluated endpoints.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="index.html#contact" class="btn-primary">Request Gap Analysis</a>
+      <a href="index.html#contact" style="color:#B0B0C0; font-size:14px; text-align:center; text-decoration:underline; text-underline-offset:3px;">Have questions? Get in touch</a>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="index.html#contact">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
