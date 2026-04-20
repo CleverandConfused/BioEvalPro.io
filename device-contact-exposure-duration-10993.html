@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://bioevalpro.com/device-contact-exposure-duration-10993.html">
+  <title>Device Contact Categories and Exposure Duration Under ISO 10993-1:2025: When to Go Beyond the Tables</title>
+  <meta name="description" content="ISO 10993-1:2025 replaced Table A.1 with four contact-specific tables and changed how exposure duration is calculated. Contact days, intermittent contact, bioaccumulation, and when your biological evaluation needs to go beyond what the tables require.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FAF6F0; --cream-dark: #F0EAE0; --ink: #1A1A2E; --ink-light: #3A3A52; --ink-muted: #6B6B80; --accent: #1B6B4A; --accent-light: #E8F5EE; --accent-hover: #14523A; --amber-flag: #D4880F; --border: #DDD5C8; --shadow-md: 0 4px 16px rgba(26,26,46,0.08); --radius: 6px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', 'Georgia', serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,240,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; margin-left: 32px; transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .article-header { padding: 80px 0 40px; max-width: 720px; position: relative; }
+    .article-header::before { content: ''; position: absolute; top: -64px; left: -200px; right: -200px; height: 300px; background: linear-gradient(170deg, var(--accent-light) 0%, var(--cream) 60%); z-index: -1; }
+    .article-back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 24px; }
+    .article-back::before { content: '\2190 '; }
+    .article-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; display: flex; gap: 16px; }
+    .article-tag { background: var(--accent-light); color: var(--accent); padding: 2px 10px; border-radius: 4px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: 40px; line-height: 1.2; letter-spacing: -0.02em; }
+    .article-body { max-width: 720px; padding: 0 0 80px; }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); margin: 48px 0 16px; }
+    .article-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.75; color: var(--ink-light); }
+    .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body strong { color: var(--ink); }
+    .callout { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 var(--radius) var(--radius) 0; margin: 32px 0; }
+    .callout p { color: var(--ink); margin-bottom: 0; }
+    .callout p + p { margin-top: 12px; }
+    .article-cta { background: var(--ink); border-radius: var(--radius); padding: 40px; margin: 48px 0 0; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .article-cta-text { flex: 1; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; color: #fff; font-size: 22px; margin: 0 0 8px; }
+    .article-cta-text p { color: #B0B0C0; font-size: 15px; margin: 0; }
+    .article-cta .btn-primary { background: var(--accent); color: #fff; border: none; padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; white-space: nowrap; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 14px; color: var(--ink-muted); }
+    .footer-links a { font-size: 14px; color: var(--ink-muted); text-decoration: none; margin-left: 24px; }
+    .footnotes { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .footnotes p { font-size: 14px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 8px; }
+    @media (max-width: 600px) {
+      .article-header h1 { font-size: 30px; }
+      .article-cta { flex-direction: column; text-align: center; padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">BioEval<span>Pro</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Resources</a>
+      <a href="index.html#contact">Request Gap Analysis</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="article-header">
+      <a href="blog.html" class="article-back">Back to Resources</a>
+      <div class="article-meta">
+        <span>April 2026</span>
+        <span class="article-tag">ISO 10993-1:2025</span>
+        <span>9 min read</span>
+      </div>
+      <h1>Device Contact Categories and Exposure Duration Under ISO 10993-1:2025: When to Go Beyond the Tables</h1>
+    </div>
+
+```
+<div class="article-body">
+
+  <p>One of the most consequential changes in <a href="https://www.iso.org/standard/68936.html">ISO 10993-1:2025</a> is the restructuring of how devices are categorized for biological evaluation. The single Table A.1 from the 2018 edition has been replaced by four separate tables organized by contact type. At the same time, the standard introduced new rules for calculating exposure duration that will reclassify some devices into higher-risk categories than they were previously assigned. And critically, the tables are now explicitly a starting point for your biological evaluation, not the endpoint.</p>
+
+  <p>Getting the categorization wrong has real consequences. Under-categorize your device and your biological evaluation misses endpoints that a reviewer will flag. Over-categorize it and you commit to testing that may not be scientifically justified for your device. Either way, the documentation needs to show the reasoning behind your categorization, not just the result.</p>
+
+  <h2>What changed from Table A.1 to Tables 1 through 4</h2>
+
+  <p>In the 2018 edition, Table A.1 was a single matrix that covered all device types, contact categories, and exposure durations in one table. Manufacturers found their device's row based on contact type (surface device, externally communicating, or implant) and contact duration (limited, prolonged, or permanent), then read across to see which biological effects needed evaluation.</p>
+
+  <p>The 2025 edition replaced this with four tables, each organized by the type of tissue the device contacts:<sup><a href="#fn1">1</a></sup></p>
+
+  <p><strong>Table 1: Devices in contact with intact skin.</strong> This covers surface-contacting devices like electrodes, wound dressings on intact skin, compression garments, and external monitoring equipment.</p>
+
+  <p><strong>Table 2: Devices in contact with mucosal membranes.</strong> This covers contact lenses, urinary catheters, endotracheal tubes, dental materials in contact with oral mucosa, and similar devices.</p>
+
+  <p><strong>Table 3: Devices in contact with breached or compromised surfaces, or internal tissue.</strong> This covers wound dressings on compromised skin, surgical instruments that contact tissue, orthopedic implants, and any device that contacts tissue below the intact skin barrier.</p>
+
+  <p><strong>Table 4: Devices in contact with blood.</strong> This covers catheters in the cardiovascular system, blood oxygenators, dialysis equipment, vascular stents, and heart valves.</p>
+
+  <p>The terms "surface device," "externally communicating device," and "implant device" from the 2018 edition have been removed because they created ambiguity. For example, an externally communicating device could contact mucosa, internal tissue, or blood depending on the specific device, and all three require different biological evaluation approaches. The 2025 categorization by tissue type resolves this by focusing on what the device actually touches rather than how it is constructed.<sup><a href="#fn2">2</a></sup></p>
+
+  <h2>How exposure duration is calculated now</h2>
+
+  <p>The 2025 revision introduced significant changes to how contact duration is determined. The three duration categories remain the same (limited: up to 24 hours, prolonged: more than 24 hours to 30 days, long-term: more than 30 days), but how you calculate the total exposure period has changed.</p>
+
+  <h3>Any contact on a calendar day counts as a full day</h3>
+
+  <p>Under the 2025 standard, any portion of a day during which the device contacts the patient counts as one contact day. A device that touches a patient's skin for 15 minutes on Monday is counted as one contact day, the same as a device that remains in place for 23 hours. This simplifies duration calculation and eliminates the ambiguity that arose under the previous standard when manufacturers tried to argue that brief contact periods should not count toward cumulative exposure.<sup><a href="#fn3">3</a></sup></p>
+
+  <h3>Intermittent contact</h3>
+
+  <p>Intermittent contact is defined as contact with an interval of at least 24 hours between consecutive periods of tissue contact. This distinction matters because it changes how you count cumulative exposure.</p>
+
+  <p>For example, consider a blood glucose monitoring sensor that is applied to the skin for 14 days continuously, then removed for a day while the patient replaces it with a new sensor. The first sensor had 14 continuous contact days. If the patient uses a new sensor for another 14 days, the total exposure period for that type of device is 28 contact days in a single patient, which crosses the threshold from prolonged into long-term contact. The fact that there was a one-day gap between the two sensor applications does not reset the clock. The total exposure period is the sum of all contact days from first to last use.<sup><a href="#fn4">4</a></sup></p>
+
+  <p>Contrast this with a surgical retractor that contacts internal tissue for 45 minutes during a procedure, and the same patient undergoes another procedure three months later using the same type of retractor. This is intermittent contact (well over 24 hours between contacts), and the total exposure is 2 contact days. Unless the device introduces substances that bioaccumulate, this would be categorized as limited contact despite the three-month span between uses.</p>
+
+  <div class="callout">
+    <p><strong>Key distinction:</strong> The elapsed calendar time between first and last use does not determine the duration category. The total number of contact days does. A device used for one day per month over two years has 24 contact days (limited contact), not two years of exposure (long-term contact). But if the device releases substances that bioaccumulate, the duration category may need to be elevated regardless of the contact day count.</p>
+  </div>
+
+  <h3>Bioaccumulation changes the math</h3>
+
+  <p>The 2025 standard explicitly requires manufacturers to consider whether the device releases substances that bioaccumulate in the body. If a device with limited or prolonged contact releases substances that persist in the patient's body between uses, the biological evaluation may need to treat the device as long-term contact, because the patient's cumulative chemical exposure does not reset between contact periods even though the physical contact does.<sup><a href="#fn5">5</a></sup></p>
+
+  <p>For example, a dialysis catheter contacts blood for several hours per session, three times per week. Based on contact days alone, this might be categorized as prolonged contact. But if the catheter releases phthalate plasticizers that accumulate in the patient's tissues between sessions, the biological evaluation needs to account for the cumulative chemical exposure, not just the intermittent physical contact. This could require additional endpoints or more conservative tolerable exposure calculations in the TRA.</p>
+
+  <h2>When the tables are not enough</h2>
+
+  <p>The four tables in ISO 10993-1:2025 list the biological effects that should be considered for each combination of contact type and duration. But the standard is clear that these tables are a starting framework, not a comprehensive list of everything your biological evaluation needs to address. There are several situations where your evaluation must go beyond what the tables specify.</p>
+
+  <h3>When the device contacts multiple tissue types</h3>
+
+  <p>Many devices contact more than one type of tissue during clinical use. For example, an endotracheal tube contacts mucosal membrane (Table 2) at the oral and tracheal surfaces, and may also contact breached tissue if intubation causes minor mucosal trauma (Table 3). A central venous catheter contacts skin at the insertion site (Table 1), subcutaneous tissue along the tunneled segment (Table 3), and blood at the tip (Table 4). In these cases, the biological evaluation needs to address the requirements from every relevant table, not just the table for the primary contact type. The BER should document which portions of the device fall under which table and evaluate accordingly.</p>
+
+  <h3>When the device creates conditions not covered by the tables</h3>
+
+  <p>The tables address biological effects related to material-body interaction. They do not cover every possible biological risk. For example, a device that generates localized heat during operation (like certain laser delivery systems or RF ablation catheters) may create thermal injury risks that are not captured by the standard material-based endpoints. The biological evaluation should identify these risks through the <a href="biological-hazards-hazardous-situations-harms.html">hazard identification process</a> and address them even though they do not correspond to a table entry.</p>
+
+  <h3>When clinical data or post-market surveillance reveals unexpected effects</h3>
+
+  <p>If clinical experience with the device or similar devices has revealed biological effects that are not predicted by the table-based evaluation, the BER needs to address those effects. For example, if post-market surveillance for a class of silicone breast implants revealed an association with a rare lymphoma (BIA-ALCL), the biological evaluation for a new silicone implant needs to address that risk even though the standard tables do not include a specific endpoint for it. The tables tell you the minimum. Clinical evidence can tell you there is more to evaluate.</p>
+
+  <h3>When foreseeable misuse changes the contact category</h3>
+
+  <p>The 2025 standard explicitly requires consideration of <a href="foreseeable-misuse-10993.html">reasonably foreseeable misuse</a>. If a device intended for limited skin contact is frequently left in place longer than the manufacturer's instructions (a foreseeable misuse scenario), the biological evaluation should consider the biological effects associated with the longer exposure duration, not just the intended duration. For example, a transdermal drug delivery patch labeled for 24-hour use but commonly left in place for 48 to 72 hours (documented through post-market surveillance or clinical literature) would need evaluation for the prolonged contact endpoints, not just the limited contact endpoints.<sup><a href="#fn6">6</a></sup></p>
+
+  <h3>When the standard says "unless otherwise justified"</h3>
+
+  <p>Several entries in Tables 1 through 4 include the qualifier "unless otherwise justified." This means the biological effect should be evaluated unless the manufacturer provides a documented scientific rationale for why it is not applicable to their specific device. This is not a blanket exemption. "Unless otherwise justified" means you need a <a href="writing-biocompatibility-justifications.html">device-specific justification</a> that explains why the risk does not apply, references relevant data, and is traceable to your hazard identification. A statement like "this endpoint is not applicable" without supporting rationale will not satisfy a reviewer.</p>
+
+  <h2>Common categorization mistakes</h2>
+
+  <p><strong>Categorizing by the device instead of by the tissue contact.</strong> A manufacturer categorizes their device as "Table 1 - intact skin" because the device is worn on the body, without considering that part of the device also contacts mucosal membrane or breached skin. Each contact interface needs its own evaluation against the appropriate table.</p>
+
+  <p><strong>Calculating duration from a single use rather than cumulative exposure.</strong> A reusable surgical instrument is categorized as limited contact because each procedure is less than one hour. But the instrument is used on the same type of patient repeatedly, and the manufacturer does not assess whether the cumulative contact days across a patient's treatment course (for example, multiple debridement sessions on a chronic wound patient) could move the device into prolonged contact territory.</p>
+
+  <p><strong>Ignoring bioaccumulation for intermittent contact devices.</strong> A device with genuinely intermittent contact (more than 24 hours between uses) is categorized based on contact days alone, without assessing whether any released substances persist in the body between uses. If they do, the effective chemical exposure is continuous even though the physical contact is intermittent.</p>
+
+  <p><strong>Treating the tables as a pass/fail checklist.</strong> A manufacturer evaluates every endpoint listed in the relevant table, receives passing results, and concludes the biological evaluation is complete. But the tables are the starting framework, not the complete scope. If the manufacturer's own hazard identification or clinical evidence suggests additional risks beyond what the tables list, those risks need to be addressed in the biological evaluation regardless of the table content.</p>
+
+  <h2>What the documentation needs to show</h2>
+
+  <p>The BEP and BER need to document the categorization reasoning, not just the result. This means identifying the specific tissue types the device contacts, explaining how the total exposure period was calculated (including whether contact is daily, intermittent, or continuous), documenting whether bioaccumulation was considered and what the conclusion was, and justifying any cases where the evaluation goes beyond or falls short of what the tables indicate.</p>
+
+  <p>For devices that fall into multiple tables or have complex exposure scenarios, the documentation should make the reasoning visible enough that a reviewer can follow the logic from the device description to the contact categorization to the selected biological effects to the evaluation strategy. If any of those connections are missing or implicit, the reviewer will ask for clarification.</p>
+
+  <p>If your biological evaluation documentation includes device categorization and you want to verify that it accurately reflects the 2025 requirements before submission, <a href="index.html#contact">request a gap analysis</a> or <a href="index.html#contact">get in touch</a> to discuss your package.</p>
+
+  <div class="footnotes">
+    <p id="fn1"><sup>1</sup> NAMSA, "ISO 10993-1:2025 Updates: Top 10 Biological Evaluation Essentials in the Revision" (October 2025). Discussion of the transition from Table A.1 to Tables 1 through 4.</p>
+    <p id="fn2"><sup>2</sup> Advena Medical, "ISO 10993-1:2025: How Will This Update Change the Way We Evaluate Biological Safety in Medical Devices" (January 2026). Discussion of the removal of "externally communicating" terminology.</p>
+    <p id="fn3"><sup>3</sup> MED Institute, "ISO 10993-1:2025 Revision Highlights Part 2: Exposure Duration" (December 2025). Clarification of contact day counting rules.</p>
+    <p id="fn4"><sup>4</sup> MED Institute, ibid. Discussion of total exposure period calculation for intermittent and repeated-use devices.</p>
+    <p id="fn5"><sup>5</sup> Measurlabs, "ISO 10993-1:2025: Key Changes at a Glance" (February 2026). Discussion of bioaccumulation considerations in exposure duration categorization.</p>
+    <p id="fn6"><sup>6</sup> ISO 10993-1:2025. Reasonably foreseeable misuse includes "use for longer than the period intended by the manufacturer, resulting in a longer duration of exposure."</p>
+  </div>
+
+  <div class="article-cta">
+    <div class="article-cta-text">
+      <h3>Is your device categorization defensible under the 2025 standard?</h3>
+      <p>BioEvalPro checks whether your contact categorization, exposure duration calculation, and endpoint selection are consistent with each other and with what the 2025 tables require for your device type.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="index.html#contact" class="btn-primary">Request Gap Analysis</a>
+      <a href="index.html#contact" style="color:#B0B0C0; font-size:14px; text-align:center; text-decoration:underline; text-underline-offset:3px;">Have questions? Get in touch</a>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">&copy; 2026 BioEvalPro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="index.html#contact">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
